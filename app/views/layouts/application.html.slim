@@ -1,0 +1,34 @@
+doctype 5
+html
+    head
+        meta charset='utf-8'
+        title = page_title
+        = csrf_meta_tag
+        = favicon_link_tag '/favicon.png'
+        = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+        = stylesheet_link_tag 'application.less', rel: 'stylesheet/less'
+        /[if lt IE 9]
+            = javascript_include_tag 'html5'
+    body
+        div#main-container
+            header
+                div.container
+                    h1 = link_to image_tag('layout/logo.png', alt: 'sirva.me'), root_path, title: page_title
+                    ul.account
+                        li = link_to 'Minha Conta', '/#'
+                        li = link_to 'Meu Mini-Site', '/#'
+                        li = link_to 'Feedback', '/#'
+                    == render partial: './navigation'
+            section#main-content
+                div.container
+                    == yield
+            footer
+                div.container
+                    = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
+                    p.disclaimer == disclaimer
+                    div.payment-methods
+                        p Meios de Pagamento Aceitos
+                        = image_tag 'layout/payment_methods.png', alt: 'PagSeguro, Visa, MasterCard, Diners, American Express, Bradesco, Itaú, Banco do Brasil, Boleto'
+                    == render partial: './navigation'
+                    span.powered-by !improviso!
+        = javascript_include_tag :defaults
