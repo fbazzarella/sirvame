@@ -1,1 +1,20 @@
-p Company Index
+== render partial: './advertise'
+header.body.search
+    div.container
+        h3 Encontre o que precisa, em Valença:
+        div.input-prepend
+            span.add-on = image_tag 'zoom_tool.png', alt: 'Zoom Tool'
+            input.span10 type='text' placeholder='Exemplos: pizza, lanche, restaurante do zé... e tecle ENTER!'
+        == render partial: './addthis'
+header.body
+    div.container
+        h3 Saiba Mais e Experimente Grátis
+        h4 Saiba como podemos ajudar seu negócio a ter mais visibilidade e seus consumidores a encontrarem o que precisam com mais comodidade.
+        == render partial: './addthis'
+header.body.company
+    div.container
+        = link_to '« Ver Catálogo', '/#', title: 'Voltar ao Catálogo Comercial', class: 'back-to-catalog'
+        h2 Padaria Ki-Sabor
+        == render partial: './addthis'
+div.container.main-content
+    p Company Index

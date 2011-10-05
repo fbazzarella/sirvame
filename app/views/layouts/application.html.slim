@@ -7,10 +7,12 @@ html
         = favicon_link_tag '/favicon.png'
         = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,700'
         = stylesheet_link_tag 'application.less', rel: 'stylesheet/less'
+        = stylesheet_link_tag 'pie'
+        = javascript_include_tag 'less'
         /[if lt IE 9]
             = javascript_include_tag 'html5'
     body
-        div#main-container
+        div.main-container
             header
                 div.container
                     h1 = link_to image_tag('layout/logo.png', alt: 'sirva.me'), root_path, title: page_title
@@ -19,16 +21,28 @@ html
                         li = link_to 'Meu Mini-Site', '/#'
                         li = link_to 'Feedback', '/#'
                     == render partial: './navigation'
-            section#main-content
-                div.container
-                    == yield
+            section.body
+                == yield
             footer
                 div.container
                     = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
-                    p.disclaimer == disclaimer
+                    p.disclaimer == 'O sirva.me é um serviço com <strong>foco nos consumidores</strong>, para que possam encontrar os produtos e serviços aos quais necessitam. Você que é empreendedor, terá a oportunidade de <strong>atingir tais consumidores</strong> com mais eficiência, por um custo irrisório.'
                     div.payment-methods
                         p Meios de Pagamento Aceitos
                         = image_tag 'layout/payment_methods.png', alt: 'PagSeguro, Visa, MasterCard, Diners, American Express, Bradesco, Itaú, Banco do Brasil, Boleto'
                     == render partial: './navigation'
                     span.powered-by !improviso!
+
+        div.modals
+            div#advertise-video.modal.hide.fade
+                div.modal-header
+                    a.close href='javascript:void(0)' title='Fechar' &times;
+                    h3 Apresentação: entenda como o sirva.me funciona.
+                div.modal-body
+                    iframe width='800' height='480' src='http://www.youtube.com/embed/Mw4Ombo83lw' frameborder='0' allowfullscreen='allowfullscreen'
+                div.modal-footer
+                    div.pull-right
+                        a.s-alternative-button.small href='#' title='Saiba mais sobre o serviço' SAIBA MAIS
+                        a.s-action-button.small href='#' title='Experimente grátis por 30 dias' EXPERIMENTE GRÁTIS »
+
         = javascript_include_tag :defaults

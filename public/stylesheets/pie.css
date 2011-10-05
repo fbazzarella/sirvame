@@ -1,0 +1,6 @@
+
+.account,
+.s-action-button, .s-alternative-button,
+.add-on
+
+    { behavior: url(/javascripts/PIE.htc) }
