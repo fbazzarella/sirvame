@@ -17,9 +17,9 @@ html
                 div.container
                     h1 = link_to image_tag('layout/logo.png', alt: 'sirva.me'), root_path, title: page_title
                     ul.account
-                        li = link_to 'Minha Conta', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true'}
-                        li = link_to 'Meu Mini-Site', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true'}
-                        li = link_to 'Feedback', 'javascript:void(0)', {'data-controls-modal' => 'feedback', 'data-backdrop' => 'true', 'data-keyboard' => 'true'}
+                        li = link_to 'Minha Conta', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Visualizar e editar as informações da conta'}
+                        li = link_to 'Meu Mini-Site', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Visualizar e editar o mini-site'}
+                        li = link_to 'Feedback', 'javascript:void(0)', {'data-controls-modal' => 'feedback', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Enviar feedback sobre o serviço'}
                     == render partial: './navigation'
             section.body
                 == yield

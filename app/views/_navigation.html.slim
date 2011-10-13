@@ -1,6 +1,6 @@
 ul.navigation
-    li = link_to 'Home', root_path
-    li = link_to 'Saiba Mais', know_more_path
-    li = link_to 'Experimente Grátis', try_for_free_path
-    li = link_to 'Fale Conosco', 'javascript:void(0)', {'data-controls-modal' => 'contact-us', 'data-backdrop' => 'true', 'data-keyboard' => 'true'}
+    li = link_to 'Home', root_path, title: 'Voltar ao Catálogo Comercial'
+    li = link_to 'Saiba Mais', know_more_path, title: 'Saiba mais sobre o serviço'
+    li = link_to 'Experimente Grátis', try_for_free_path, title: 'Experimente grátis por 30 dias'
+    li = link_to 'Fale Conosco', 'javascript:void(0)', {'data-controls-modal' => 'contact-us', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Entrar em Contato'}
     li = link_to 'Ajuda', '/#'
