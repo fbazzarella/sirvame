@@ -1,0 +1,55 @@
+div#advertise-video.modal.hide.fade
+    div.modal-header
+        a.close href='javascript:void(0)' title='Fechar' &times;
+        h3 Apresentação: entenda como o sirva.me funciona.
+    div.modal-body
+        iframe width='800' height='480' src='http://www.youtube.com/embed/Mw4Ombo83lw' frameborder='0' allowfullscreen='allowfullscreen'
+    div.modal-footer
+        div.pull-right
+            = link_to 'SAIBA MAIS', know_more_path, title: 'Saiba mais sobre o serviço', class: 's-alternative-button small'
+            = link_to 'EXPERIMENTE GRÁTIS »', try_for_free_path, title: 'Experimente grátis por 30 dias', class: 's-action-button small'
+
+div#contact-us.modal.hide.fade
+    div.modal-header
+        a.close href='javascript:void(0)' title='Fechar' &times;
+        h3 Entre em Contato
+    div.modal-body
+        p Entre em Contato
+    div.modal-footer
+        div.pull-right
+            a.s-alternative-button.small.cancel href='#' title='Cancelar' CANCELAR
+            a.s-action-button.small href='#' title='Enviar' ENVIAR »
+
+div#feedback.modal.hide.fade
+    div.modal-header
+        a.close href='javascript:void(0)' title='Fechar' &times;
+        h3 Envie seu Feedback
+    div.modal-body
+        p Envie seu Feedback
+    div.modal-footer
+        div.pull-right
+            a.s-alternative-button.small.cancel href='#' title='Cancelar' CANCELAR
+            a.s-action-button.small href='#' title='Enviar Feedback' ENVIAR FEEDBACK »
+
+div#login.modal.hide.fade
+    div.modal-header
+        a.close href='javascript:void(0)' title='Fechar' &times;
+        h3 Entrar no Sistema
+    div.modal-body
+        p Entrar no Sistema
+    div.modal-footer
+        div.pull-right
+            a.s-alternative-button.small.cancel href='#' title='Cancelar' CANCELAR
+            a.s-action-button.small href='#' title='Entrar' ENTRAR »
+        a.other-modal href='#' data-controls-modal='remember-password' data-backdrop='true' data-keyboard='true' Recuperar Senha
+
+div#remember-password.modal.hide.fade
+    div.modal-header
+        a.close href='javascript:void(0)' title='Fechar' &times;
+        h3 Recuperar Senha
+    div.modal-body
+        p Recuperar Senha
+    div.modal-footer
+        div.pull-right
+            a.s-alternative-button.small.cancel href='#' title='Cancelar' CANCELAR
+            a.s-action-button.small href='#' title='Recuperar Senha' RECUPERAR SENHA »

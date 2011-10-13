@@ -55,7 +55,7 @@
   var Modal = function ( content, options ) {
     this.settings = $.extend({}, $.fn.modal.defaults)
     this.$element = $(content)
-      .delegate('.close', 'click.modal', $.proxy(this.hide, this))
+      .delegate('.close, .cancel, .other-modal', 'click.modal', $.proxy(this.hide, this))
 
     $.extend( this.settings, options )
 
