@@ -39,16 +39,16 @@ div.container.main-content
             li.f-8
                 h6 Seguro
                 p Suas informações estão em base de dados própria, em um servidor dedicado e privado, com cópias diárias e o sistema ainda é testado constantemente contra falhas de segurança.
-            li.last.f-9
+            li.last-f
                 p == 'Para ver como o sirva.me é surpreendente, <a href="javascript:void(0)" data-controls-modal="advertise-video" data-backdrop="true" data-keyboard="true" title="Apresentação: entenda como o sirva.me funciona">assista ao vídeo</a> que preparamos para você. Se ainda assim restarem dúvidas ou quiser saber mais sobre o serviço, <a href="javascript:void(0)" data-controls-modal="contact-us" data-backdrop="true" data-keyboard="true" title="Entrar em Contato">entre em contato</a> conosco. Teremos o maior prazer em lhe atender.'
     form.create-account.form-stacked.pull-right
         fieldset
             legend == '<strong>Crie seu mini-site agora</strong> e ganhe 30 dias grátis.'
-            label == "Digite o nome da sua empresa: #{tag :input, type: 'text'}"
-            label == "Digite o seu nome: #{tag :input, type: 'text'}"
-            label == "Digite o e-mail da empresa: #{tag :input, type: 'text'}"
-            label == "Escolha seu nome de usuário: #{tag :input, type: 'text'}"
-            label == "Escolha sua senha: #{tag :input, type: 'text'}"
-            label == "Escolha a melhor periodicidade para você: <label>#{tag :input, type: 'radio'} Pagamento Mensal</label> <label>#{tag :input, type: 'radio'} Pagamento Trimestral</label>"
+            label == "Digite o nome da sua empresa: #{tag :input, type: 'text', title: 'Nome da Empresa', 'data-content' => 'Este será o nome que irá aparecer no seu mini-site e nas buscas do catálogo. Utilize seu nome fantasia.'}"
+            label == "Digite o seu nome: #{tag :input, type: 'text', title: 'Nome do Representante', 'data-content' => 'O nome do proprietário ou gerente da empresa. Usaremos apenas para facilitar o contato.'}"
+            label == "Digite o e-mail da empresa: #{tag :input, type: 'text', title: 'Endereço Eletrônico', 'data-content' => 'Será usado para receber suas cobranças e comunicados sobre sua conta.'}"
+            label == "Escolha seu nome de usuário: #{tag :input, type: 'text', title: 'Nome de Usuário', 'data-content' => 'Este nome será usado para formar o seu endereço. Exemplo: <span class="company-url">http://&nbsp;' + request.domain(3) + '&nbsp;/&nbsp;<strong>usuario</strong></span> Além disso, será necessário para se identificar no sistema. <small>Digite somente letras, números e traços ( - ). No máximo 30 caracteres.</small>'}"
+            label == "Escolha sua senha: #{tag :input, type: 'password', title: 'Senha de Acesso', 'data-content' => 'Será usada para acessar sua conta e editar suas informações. Escolha uma que seja difícil de adivinhar. Caso a esqueça, você pode solicitar uma nova a qualquer momento.'}"
+            label == "Escolha a melhor periodicidade para você: <label title='Pagamento Mensal', data-content='Você será cobrado em R$24,90 por mês. <small>Para pagamentos por Boleto, o PagSeguro cobra uma taxa administrativa de R$1,00. Não há taxas para pagamentos por Cartão de Crédito ou Transferência/Débito Online.</small>'>#{tag :input, type: 'radio'} Pagamento Mensal</label> <label title='Pagamento Trimestral', data-content='Você terá um desconto de 10% e será cobrado em R$67,20 a cada três meses. <small>Para pagamentos por Boleto, o PagSeguro cobra uma taxa administrativa de R$1,00. Não há taxas para pagamentos por Cartão de Crédito ou Transferência/Débito Online.</small>'>#{tag :input, type: 'radio'} Pagamento Trimestral</label>"
             input.s-action-button.medium type='submit' value='CRIAR CONTA COM 30 DIAS GRÁTIS »'
             p.small-print Você está criando uma conta com 30 dias grátis, que termina em 29 de outubro de 2011. Após esse período, nós lhe enviaremos uma cobrança periodicamente. Caso você não tenha interesse em continuar utilizando o serviço, basta não efetuar o pagamento e seu mini-site não estará mais disponível após 5 dias do vencimento da cobrança, porém, você continuará aparecendo no catálogo com suas informações básicas, sem custo. Caso resolva continuar utilizando o serviço, basta solicitar uma nova cobrança diretamente na página da sua conta e o seu mini-site estará disponível novamente tão logo o pagamento seja compensado.
