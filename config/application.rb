@@ -47,5 +47,14 @@ module SirvaMe
 
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs jquery.center spin twitter/modal twitter/twipsy twitter/popover twitter/tabs)
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      if instance.error_message.kind_of?(Array)
+        %(<small class="error">#{instance.error_message.join(', ').humanize}.</small>#{html_tag}).html_safe
+      else
+        %(<small class="error">#{instance.error_message.humanize}.</small>#{html_tag}).html_safe
+      end
+    end
+
   end
 end
