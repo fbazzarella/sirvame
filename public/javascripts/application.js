@@ -7,7 +7,7 @@ $(function(){
 
     $('input[type=text]', '.create-account').popover({placement: 'left', offset: 5, trigger: 'focus', html: true})
     $('input[type=password]', '.create-account').popover({placement: 'above', offset: 20, trigger: 'focus', html: true})
-    $('label > label', '.create-account').popover({placement: 'left', offset: 5, trigger: 'hover', html: true})
+    $('.payment-period', '.create-account').popover({placement: 'left', offset: 5, trigger: 'hover', html: true})
 
 /*
     $('#teste').spin({
