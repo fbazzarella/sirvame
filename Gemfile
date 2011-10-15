@@ -1,10 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'pg'
-gem 'acts-as-taggable-on', '2.1.1'
-gem 'slim'
 gem 'unicorn'
+gem 'slim'
+gem 'pg'
+
+gem 'exception_notification', '2.5.2'
+gem 'acts-as-taggable-on',    '2.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
