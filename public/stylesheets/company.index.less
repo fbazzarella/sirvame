@@ -3,26 +3,33 @@
     margin: -10px;
 
     li {
-        display: inline-block;
+        float: left;
         margin: 10px;
         border: 3px solid #999;
         padding: 6px 5px;
-        width: 288px;
+        width: 290px;
         height: 110px;
         color: #666;
-
-        &.plus {
-            border: 3px solid #333;
-            color: #333; }
+        overflow: hidden;
 
         p {
+            margin-bottom: 4px;
+            height: 18px;
+            overflow: hidden;
+
             &.name {
+                margin-bottom: 8px;
                 font-size: 1.3em;
                 font-weight: bold;
-                text-shadow: 1px 1px 1px #ccc; }
+                text-shadow: 1px 1px 1px #ccc;
+                overflow: visible; }
 
             &.phone, &.address {
                 font-size: .9em; }
 
+            &.address {
+                height: 36px; }
+
             &.tags {
-                font-size: .8em; }}}}
+                font-size: .8em;
+                font-weight: bold; }}}}
