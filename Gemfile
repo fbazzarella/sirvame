@@ -1,18 +1,14 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'unicorn'
-gem 'slim'
-gem 'pg'
+gem 'slim',  '1.0.2'
+gem 'pg',    '0.11.0'
 
 gem 'exception_notification', '2.5.2'
 gem 'acts-as-taggable-on',    '2.1.1'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+# gem 'jquery-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
 # gem 'sass-rails',   '3.1.0'
 # gem 'coffee-rails', '3.1.0'
@@ -20,15 +16,9 @@ group :assets do
 # gem 'uglifier'
 end
 
-# gem 'jquery-rails'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+group :development, :test do
+	gem 'unicorn',            '4.1.1'
+  gem 'rspec-rails',        '2.6.1'
+  gem 'shoulda-matchers',   '1.0.0'
+  gem 'factory_girl_rails', '1.1.0'
 end

@@ -3,5 +3,4 @@ db/schema.rb
 log/*
 tmp/**/*
 tmp/restart.txt
-nbproject/
 public/assets/uploads/*
