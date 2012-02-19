@@ -48,14 +48,6 @@ module SirvaMe
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs jquery.center spin twitter/modal twitter/twipsy twitter/popover twitter/tabs)
 
-    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
-      if instance.error_message.kind_of?(Array)
-        %(<small class="error">#{instance.error_message.join(', ').humanize}.</small>#{html_tag}).html_safe
-      else
-        %(<small class="error">#{instance.error_message.humanize}.</small>#{html_tag}).html_safe
-      end
-    end
-
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       :address => 'smtp.gmail.com', :port => 587,
