@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe ApplicationHelper do
 	describe "page title" do
-		it "should returns anything" do
+		it "should return anything" do
 			page_title.should be
 		end
 	end
