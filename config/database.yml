@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: sirvame_development
+  username: postgres
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: sirvame_test
+  username: postgres
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: sirvame_production
+  username: postgres
+  password: lkh23F28h3
