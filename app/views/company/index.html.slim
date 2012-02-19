@@ -12,13 +12,13 @@ header.body.search
         h2 Padaria Ki-Sabor
         == render partial: './addthis'
 div.container.main-content
-    ul.search-results
-        - if @companies.any?
+    - if @companies.any?
+        ul.search-results
             - @companies.each do |company|
                 li
-                    p = company.name
-                    p = company.phone
-                    p = company.address
-                    p = "#{company.segment_list} [#{company.product_list}]"
-        - else
-            p.none-companies Nenhuma empresa encontrada.
+                    p.name = company.name
+                    p.phone = company.phone
+                    p.address = company.address
+                    p.tags = "#{company.segment_list} [#{company.product_list}]"
+    - else
+        p.none-companies Nenhuma empresa encontrada.
