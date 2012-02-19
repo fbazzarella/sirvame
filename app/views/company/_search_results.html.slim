@@ -1,0 +1,10 @@
+- if @companies.any?
+    ul.search-results
+        - @companies.each do |company|
+            li data-id="#{company.id}"
+                p.name = company.name
+                p.phone = company.phone
+                p.address = company.address
+                p.tags = "#{company.segment_list} [#{company.product_list}]"
+- else
+    p.none-companies Nenhuma empresa encontrada.

@@ -4,7 +4,7 @@ header.body.search
         h3 Encontre o que precisa:
         div.input-prepend
             span.add-on = image_tag 'zoom_tool.png', alt: 'Lupa'
-            input type='text' placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
+            input#search type='text' placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
         == render partial: './addthis'
 /!header.body.company
     div.container
@@ -12,13 +12,4 @@ header.body.search
         h2 Padaria Ki-Sabor
         == render partial: './addthis'
 div.container.main-content
-    - if @companies.any?
-        ul.search-results
-            - @companies.each do |company|
-                li
-                    p.name = company.name
-                    p.phone = company.phone
-                    p.address = company.address
-                    p.tags = "#{company.segment_list} [#{company.product_list}]"
-    - else
-        p.none-companies Nenhuma empresa encontrada.
+    == render partial: 'search_results'
