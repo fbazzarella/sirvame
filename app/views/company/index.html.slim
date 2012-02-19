@@ -13,15 +13,12 @@ header.body.search
         == render partial: './addthis'
 div.container.main-content
     ul.search-results
-        li.plus Anúncio 1.1
-        li.plus Anúncio 1.2
-        li.plus Anúncio 1.3
-        li Anúncio 2.1
-        li Anúncio 2.2
-        li Anúncio 2.3
-        li Anúncio 3.1
-        li Anúncio 3.2
-        li Anúncio 3.3
-        li Anúncio 4.1
-        li Anúncio 4.2
-        li Anúncio 4.3
+        - if @companies.any?
+            - @companies.each do |company|
+                li
+                    p = company.name
+                    p = company.phone
+                    p = company.address
+                    p = "#{company.segment_list} [#{company.product_list}]"
+        - else
+            p.none-companies Nenhuma empresa encontrada.
