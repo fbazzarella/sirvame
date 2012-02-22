@@ -5,7 +5,7 @@ gem 'slim',  '1.0.2'
 gem 'pg',    '0.11.0'
 
 gem 'exception_notification', '2.5.2'
-gem 'acts-as-taggable-on',    '2.1.1'
+gem 'acts-as-taggable-on',    '2.2.2'
 
 # gem 'jquery-rails'
 
