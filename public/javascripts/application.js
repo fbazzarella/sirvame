@@ -5,12 +5,14 @@ $(function(){
             .focus(function(){if($(this).val()==ph)$(this).val('').css('color', '#333')})
             .blur(function(){if(!$(this).val())$(this).val(ph).css('color', '#666')})})
 
-    $('form.container').submit(function(e){
+    $('.search form').submit(function(e){
         e.preventDefault()
+        sp = $(this).find('input').val()
+        search_url = '/pesquisar' + (sp ? '/' + sp : '') + '.js'
+
         $.ajax({
-            url: '/search.js',
+            url: search_url,
             type: 'GET',
-            data: {search: $(this).find('#search').val()},
             dataType: 'html',
             success: function(data){
                 $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'})}})})

@@ -3,12 +3,14 @@ require 'spec_helper'
 
 describe CompanyController do
   describe "routing" do
-    it "should routes to index" do
+    it "should root path routes to index" do
       get('/').should route_to('company#index')
       root_path.should == '/'
+    end
 
-      get('/search').should route_to('company#index')
-      search_path.should == '/search'
+    it "should search path routes to index" do
+      get('/pesquisar').should route_to('company#index')
+      search_path.should == '/pesquisar'
     end
   end
 end
