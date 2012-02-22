@@ -1,10 +1,11 @@
-- if @companies.any?
-    ul.search-results
-        - @companies.each do |company|
-            li data-id="#{company.id}"
-                p.name = company.name
-                p.phone = company.phone
-                p.address = company.address
-                p.tags = "#{company.segment_list} [#{company.product_list}]"
-- else
-    p.none-companies Nenhuma empresa encontrada.
+ul.search-results
+	- if @companies.any?
+	    - @companies.each do |company|
+	        li data-id="#{company.id}"
+	            p.name = company.name
+	            p.phone = company.phone
+	            p.address = company.address
+	            p.tags = "#{company.segment_list} [#{company.product_list}]"
+	- else
+	    li data-id="0"
+	    		p.none-companies Nenhuma empresa encontrada.
