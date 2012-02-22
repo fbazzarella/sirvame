@@ -1,14 +1,15 @@
 $(function(){
     
     $('input[placeholder]').each(function(){
-        var ph = $(this).attr('placeholder'); $(this).val(ph).css('color', '#666')
-            .focus(function(){if($(this).val()==ph)$(this).val('').css('color', '#333')})
+        var ph = $(this).attr('placeholder')
+        if(!$(this).val()) $(this).val(ph).css('color', '#666')
+        $(this).focus(function(){if($(this).val()==ph)$(this).val('').css('color', '#333')})
             .blur(function(){if(!$(this).val())$(this).val(ph).css('color', '#666')})})
 
     $('.search form').submit(function(e){
         e.preventDefault()
         sp = $(this).find('input').val()
-        search_url = '/pesquisar' + (sp ? '/' + sp : '') + '.js'
+        search_url = $(this).attr('action') + (sp ? '/' + sp : '') + '.js'
 
         $.ajax({
             url: search_url,
