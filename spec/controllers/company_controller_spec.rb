@@ -6,16 +6,30 @@ describe CompanyController do
 	
 	describe "GET index" do
 		let!(:company) { Factory(:company) }
+		let!(:other_company) { Factory(:company, product_list: 'bicicletas') }
 
-		before :each do
-			get :index
+		context	"with search params" do
+			it "should return companies filtered by search params" do
+				get :index, search: 'bicicletas'
+				assigns(:companies).should == [other_company]
+			end
+
+			it "should return empty array when does not exists any companies with specified search param" do
+				get :index, search: 'sorvete'
+				assigns(:companies).should == []
+			end
 		end
 
-		it "should return all companies" do
-			assigns(:companies).should == [company]
+		context "without search params" do
+			it "should return all companies" do
+				get :index
+				assigns(:companies).should be_include(company)
+				assigns(:companies).should be_include(other_company)
+			end
 		end
 
 		it "should return success" do
+			get :index
 			response.should be_success
 		end
 	end

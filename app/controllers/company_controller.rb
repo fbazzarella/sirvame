@@ -1,6 +1,14 @@
 class CompanyController < ApplicationController
   def index
-  	@companies = Company.limit(rand(30)).sort_by{rand}
+  	@companies = if search_params = params[:search].try(:split, %r{,|\s+})
+  		name_query = ''
+  		search_params.each_with_index do |sp, i|
+  			name_query << " #{'or' if i > 0} lower(name) like '%#{sp.downcase}%'" unless sp.blank?
+  		end
+  		Company.where(name_query).all + Company.tagged_with(search_params, any: true, wild: true).all
+  	else
+  		Company.all.sort_by{rand}
+  	end.uniq
 
   	respond_to do |f|
   		f.html
