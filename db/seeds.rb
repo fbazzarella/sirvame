@@ -5,7 +5,8 @@ Company.create!([{
 	name:         'Carlão Academia',
 	phone:        '24 2453 3399',
 	segment_list: 'Academia, Musculação',
-	product_list: 'musculação, lutas, jiu-jitsu, judô'
+	product_list: 'musculação, lutas, jiu-jitsu, judô',
+	plus:         true
 },{
 	name:         'Açougue Boi Bom',
 	phone:        '24 2453 4053',
@@ -15,7 +16,8 @@ Company.create!([{
 	name:         'Miliartes',
 	phone:        '24 2453 3123',
 	segment_list: 'Gráfica, Identidade, Visual',
-	product_list: 'adesivos, cartões, visita, panfletos, cartazes, impressões'
+	product_list: 'adesivos, cartões, visita, panfletos, cartazes, impressões',
+	plus:         true
 },{
 	name:         'Adelino dos Santos',
 	phone:        '24 2452 3638',
@@ -30,7 +32,8 @@ Company.create!([{
 	name:         'Casa das Antenas',
 	phone:        '24 2453 3358',
 	segment_list: 'Antenas, Alarmes',
-	product_list: 'segurança, portão, portões, sky, parabólicas'
+	product_list: 'segurança, portão, portões, sky, parabólicas',
+	plus:         true
 },{
 	name:         'Águas do Vale',
 	phone:        '24 2452 3864',
