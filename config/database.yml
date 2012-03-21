@@ -1,18 +1,12 @@
-development:
+commom: &commom
   adapter: postgresql
   encoding: utf8
-  database: sirvame_development
   username: postgres
+
+development:
+  <<: *commom
+  database: sirvame_development
 
 test:
-  adapter: postgresql
-  encoding: utf8
+  <<: *commom
   database: sirvame_test
-  username: postgres
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: sirvame_production
-  username: postgres
-  password: lkh23F28h3
