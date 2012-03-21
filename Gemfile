@@ -9,14 +9,14 @@ gem 'acts-as-taggable-on',    '2.2.2'
 gem 'typus',                  '3.1.9'
 gem 'kaminari',               '0.13.0'
 
-# gem 'jquery-rails'
+gem 'jquery-rails',           '2.0.1'
 
 group :assets do
-# gem 'sass-rails',   '3.1.0'
-# gem 'coffee-rails', '3.1.0'
-# gem 'therubyracer', '0.9.4'
-# gem 'execjs',       '1.3.0'
-# gem 'uglifier'
+	gem 'therubyracer',         '0.9.10'
+	gem 'execjs',               '1.3.0'
+	gem 'sass-rails',           '3.2.5'
+	# gem 'coffee-rails',         '3.2.2'
+	gem 'uglifier',             '1.2.3'
 end
 
 group :development, :test do

@@ -40,13 +40,13 @@ module SirvaMe
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs jquery.center jquery.easing jquery.quicksand spin twitter/modal twitter/twipsy twitter/popover twitter/tabs)
+    # config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs jquery.center jquery.easing jquery.quicksand spin twitter/modal twitter/twipsy twitter/popover twitter/tabs)
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {

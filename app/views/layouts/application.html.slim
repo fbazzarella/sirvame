@@ -6,9 +6,8 @@ html
         = csrf_meta_tag
         = favicon_link_tag '/favicon.png'
         = stylesheet_link_tag 'fonts/fonts'
-        = stylesheet_link_tag 'application.less', rel: 'stylesheet/less'
+        = stylesheet_link_tag 'application'
         = stylesheet_link_tag 'pie'
-        = javascript_include_tag 'less'
         /[if lt IE 9]
             = javascript_include_tag 'html5'
     body
@@ -34,4 +33,4 @@ html
                     /!span.powered-by !improviso!
         div.modals
             == render partial: './modals'
-        = javascript_include_tag :defaults
+        = javascript_include_tag 'application'
