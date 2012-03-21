@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.2.2'
 gem 'slim',  '1.0.2'
 gem 'pg',    '0.11.0'
 
 gem 'exception_notification', '2.5.2'
 gem 'acts-as-taggable-on',    '2.2.2'
+gem 'typus',                  '3.1.9'
 
 # gem 'jquery-rails'
 
@@ -13,6 +14,7 @@ group :assets do
 # gem 'sass-rails',   '3.1.0'
 # gem 'coffee-rails', '3.1.0'
 # gem 'therubyracer', '0.9.4'
+# gem 'execjs',       '1.3.0'
 # gem 'uglifier'
 end
 
