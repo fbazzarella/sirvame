@@ -7,6 +7,7 @@ gem 'pg',    '0.11.0'
 gem 'exception_notification', '2.5.2'
 gem 'acts-as-taggable-on',    '2.2.2'
 gem 'typus',                  '3.1.9'
+gem 'kaminari',               '0.13.0'
 
 # gem 'jquery-rails'
 
