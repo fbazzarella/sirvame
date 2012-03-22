@@ -7,7 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./plugins/
-//= require_tree ./twitter/
 
 $(function(){
     
@@ -37,8 +36,4 @@ $(function(){
             }
         });
     });
-
-    // $('input[type=text]', '.create-account').popover({placement: 'left', offset: 5, trigger: 'focus', html: true})
-    // $('input[type=password]', '.create-account').popover({placement: 'above', offset: 20, trigger: 'focus', html: true})
-    // $('.payment-period', '.create-account').popover({placement: 'left', offset: 5, trigger: 'hover', html: true})
 });
