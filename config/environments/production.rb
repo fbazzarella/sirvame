@@ -60,7 +60,7 @@ SirvaMe::Application.configure do
 
   config.middleware.use ExceptionNotifier,
     :email_prefix => '[ERROR] ',
-    :sender_address => %{'sirva.me' <fale-com@sirva.me>},
+    :sender_address => %{'Sirva.me Apps' <heroku-apps@sirva.me>},
     :exception_recipients => %w{fbazzarella@gmail.com}
 
 end
