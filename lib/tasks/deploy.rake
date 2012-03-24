@@ -8,9 +8,6 @@ task :deploy do
 		raise "Command #{cmd.inspect} failed!" unless $?.success?
 	end
 
-	puts '-----> Integrating Before Deploy'.yellow.bold
-	Rake::Task['integrate'].invoke
-
 	puts '-----> Deploying to Production'.green.bold
 	run "git push git@heroku.com:#{APP}.git HEAD:master -f"
 
