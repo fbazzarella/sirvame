@@ -1,20 +1,17 @@
 # encoding: utf-8
-task :integrate do
+task :deploy do
 	require 'colored'
-	APP = 'sirvame-staging'
+	APP = 'sirvame-production'
 
 	def run(*cmd)
 		system(*cmd)
 		raise "Command #{cmd.inspect} failed!" unless $?.success?
 	end
 
-	puts '-----> Pulling from Bitbucket'.green.bold
-	run "git pull --rebase"
+	puts '-----> Integrating Before Deploy'.yellow.bold
+	Rake::Task['integrate'].invoke
 
-	puts '-----> Pushing to Bitbucket'.green.bold
-	run "git push origin master"
-
-	puts '-----> Deploying to Staging'.green.bold
+	puts '-----> Deploying to Production'.green.bold
 	run "git push git@heroku.com:#{APP}.git HEAD:master -f"
 
 	puts '-----> Migrating'.green.bold
@@ -22,4 +19,6 @@ task :integrate do
 
 	puts '-----> Restarting'.green.bold
 	run "heroku restart --app #{APP}"
+
+	puts '-----> Tá no ar! Reza pra essa joça funcionar!'.yellow.bold
 end
