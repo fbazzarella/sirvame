@@ -21,6 +21,7 @@ end
 
 group :development, :test do
 	gem 'heroku'
+	gem 'colored'
 	gem 'unicorn',            '4.1.1'
   gem 'rspec-rails',        '2.6.1'
   gem 'shoulda-matchers',   '1.0.0'
