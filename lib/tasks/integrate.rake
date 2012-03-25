@@ -9,7 +9,7 @@ task :integrate do
 	end
 
 	puts '-----> Pulling from Bitbucket'.green.bold
-	run "git pull --rebase"
+	run "git pull --rebase origin master"
 
 	puts '-----> Pushing to Bitbucket'.green.bold
 	run "git push origin master"
