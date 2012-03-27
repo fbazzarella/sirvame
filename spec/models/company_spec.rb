@@ -9,7 +9,7 @@ describe Company do
 	end
 
 	describe "validations" do
-		[:name, :phone, :segment_list, :product_list].each do |attr|
+		[:name, :phone, :segment_list].each do |attr|
 			it { should validate_presence_of(attr)}
 		end
 	end
