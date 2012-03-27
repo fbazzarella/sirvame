@@ -27,7 +27,7 @@ Typus.setup do |config|
 
   # Define username and password for +:http_basic+ authentication.
   config.username = "sirvame"
-  config.password = "sirvame"
+  config.password = "jSaEWi4$2k@"
 
   # Define subdomain to use instead of additional path
   # config.subdomain = "admin"
