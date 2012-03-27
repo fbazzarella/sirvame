@@ -1,0 +1,17 @@
+<ul class="search-results">
+	<% if @companies.any? %>
+		<% @companies.each do |company| %>
+			<li data-id="<%= company.id %>" class="<%= 'plus' if company.plus %>">
+				<%= link_to image_tag('layout/see_details.png'), '#', class: 'see-details' %>
+				<p class="name"><%= company.name %></p>
+				<p class="phone"><%= company.phone %></p>
+				<p class="address"><%= company.address %></p>
+				<p class="tags"><%= company.segment_list %><%= " [#{company.product_list}]" unless company.product_list.blank? %></p>
+			</li>
+		<% end %>
+	<% else %>
+		<li data-id="0">
+			<p class="none-companies">Nenhuma empresa encontrada.</p>
+		</li>
+	<% end %>
+</ul>
