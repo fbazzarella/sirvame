@@ -6,16 +6,16 @@ describe CompanyController do
 
 	describe "GET index" do
 		let!(:company) { Factory(:company) }
-		let!(:other_company) { Factory(:company, product_list: 'bicicletas') }
+		let!(:other_company) { Factory(:company, product_list: 'bike') }
 
 		context	"with search params" do
 			it "should return companies filtered by search params" do
-				get :index, search_params: 'bicicletas'
+				get :index, search_params: 'bike'
 				assigns(:companies).should == [other_company]
 			end
 
 			it "should return empty array when does not exists any companies with specified search param" do
-				get :index, search_params: 'sorvete'
+				get :index, search_params: 'icecream'
 				assigns(:companies).should == []
 			end
 		end

@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 FactoryGirl.define do
 	factory :company do
-		name         'Padaria Ki-Sabor'
+		name         'Company Name'
 		phone        '24 2452 2222'
-		address      'Rua Com. Antonio Jannuzzi, 42, A, Belo Horizonte (Subida do Quartel)'
-		segment_list 'Padaria, Confeitaria'
-		product_list 'bolos, tortas, salgados, pão, pães'
+		address      'Company Address, 11, 111'
+		segment_list 'Segment, List'
+		product_list 'product, list'
 	end
 end
