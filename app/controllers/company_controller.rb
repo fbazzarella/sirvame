@@ -7,7 +7,7 @@ class CompanyController < ApplicationController
   		end
   		Company.where(name_query).all + Company.tagged_with(search_params, any: true, wild: true).all
   	else
-  		Company.all.sort_by{rand}
+  		Company.random(9)
   	end.uniq
 
   	respond_to do |f|
