@@ -16,7 +16,7 @@ $(function(){
 
             if(!$(this).val()){ $(this).val(ph).css('color', '#666') };
 
-            $(this).focus(function(){
+            $(this).bind('focus click', function(){
                 if($(this).val()==ph){ $(this).val('').css('color', '#333') };
             }).blur(function(){
                 if(!$(this).val()){ $(this).val(ph).css('color', '#666') }; }); }); };
@@ -53,7 +53,7 @@ $(function(){
             '!/encontrar/:encontrar': 'search' },
 
         search: function(searchParams){
-            searchForm.find('input').val(normalizeSearchParams(searchParams, 'back'));
+            searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
             searchForm.submit();
             checkPlaceHolders(); } }) );
 
