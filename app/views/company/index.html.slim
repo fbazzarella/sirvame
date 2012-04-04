@@ -4,7 +4,7 @@ header.body.search
         h3 Encontre o que precisa:
         div.input-prepend
             span.add-on = image_tag 'zoom_tool.png', alt: 'Lupa'
-            input type='text' name='search_params' value="#{params[:search_params]}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
+            input type='text' name='encontrar' value="#{params[:encontrar]}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
         == render partial: './addthis'
 /!header.body.company
     div.container

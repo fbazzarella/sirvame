@@ -25,7 +25,7 @@ $(function(){
         });
     });
 
-    var searchPath = '/pesquisar';
+    var searchPath = '/encontrar';
 
     $('.search form').submit(function(e){
         e.preventDefault();

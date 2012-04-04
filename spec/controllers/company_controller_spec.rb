@@ -10,12 +10,12 @@ describe CompanyController do
 			let!(:other_company) { Factory(:company, product_list: 'bike') }
 
 			it "should return companies filtered by search params" do
-				get :index, search_params: 'bike'
+				get :index, encontrar: 'bike'
 				assigns(:companies).should == [other_company]
 			end
 
 			it "should return empty array if not found any company with search params" do
-				get :index, search_params: 'icecream'
+				get :index, encontrar: 'icecream'
 				assigns(:companies).should == []
 			end
 		end

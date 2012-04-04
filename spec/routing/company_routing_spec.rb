@@ -9,8 +9,7 @@ describe CompanyController do
     end
 
     it "should search path routes to index" do
-      get('/pesquisar').should route_to('company#index')
-      search_path.should == '/pesquisar'
+      get('/encontrar').should route_to('company#index')
     end
   end
 end
