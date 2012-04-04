@@ -8,6 +8,9 @@
 //= require jquery_ujs
 //= require_tree ./plugins/
 
+window.SirvaMeRouting = new (Backbone.Router.extend({routes: {null:null}}));
+Backbone.history.start({pushState: true});
+
 $(function(){
     
     $('input[placeholder]').each(function(){
@@ -25,10 +28,12 @@ $(function(){
     $('.search form').submit(function(e){
         e.preventDefault();
         sp = $(this).find('input').val();
-        search_url = $(this).attr('action') + (sp ? '/' + sp : '') + '.js';
+        search_url = $(this).attr('action') + (sp ? '/' + sp : '');
+
+        SirvaMeRouting.navigate(search_url);
 
         $.ajax({
-            url: search_url,
+            url: search_url + '.js',
             type: 'GET',
             dataType: 'html',
             success: function(data){
@@ -36,4 +41,5 @@ $(function(){
             }
         });
     });
+    
 });
