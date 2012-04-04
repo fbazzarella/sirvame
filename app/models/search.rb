@@ -5,8 +5,8 @@ class Search < ActiveRecord::Base
 	acts_as_taggable_on :terms
 
 	class << self
-		def filter_terms(terms = [])
-			terms - %w(da de do)
+		def filter_terms(terms = nil)
+			(terms || []) - %w(da de do)
 		end
 	end
 end
