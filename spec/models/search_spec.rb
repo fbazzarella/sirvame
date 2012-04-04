@@ -34,7 +34,7 @@ describe Search do
 
 		context "without term list" do
 			it "should return maximum 12 random companies" do
-				10.times { Factory(:company) }
+				15.times { Factory(:company) }
 				Search.bring_me_results_for.count.should <= 12
 			end
 		end
