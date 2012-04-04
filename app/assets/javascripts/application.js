@@ -11,7 +11,7 @@
 $(function(){
 
     function normalizeParams(params, direction){
-        params = params.replace(/,|\s|\++/gi, '+')
+        params = decodeURI(params.replace(/,|\s|\++/gi, '+'));
         switch(direction){
             case 'go':   params = params.replace(/\++/gi, '+');  break;
             case 'back': params = params.replace(/\++/gi, ', '); break; }
@@ -36,7 +36,7 @@ $(function(){
         sp = $(this).find('input').val();
         searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate('!' + normalizeParams(searchUrl, 'go'));
+        SirvaMeRouting.navigate(normalizeParams(searchUrl, 'go'));
 
         $.ajax({
             url: searchUrl + '.js',
@@ -49,13 +49,13 @@ $(function(){
     });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
-        routes: {'!/encontrar/:encontrar': 'search'},
+        routes: {'encontrar/:encontrar': 'search'},
         search: function(searchParams){
             searchForm.find('input').val(normalizeParams(searchParams, 'back'));
             searchForm.submit();
         }
     }));
 
-    Backbone.history.start();
+    Backbone.history.start({pushState: true});
 
 });
