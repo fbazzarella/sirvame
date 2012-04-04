@@ -11,12 +11,12 @@ gem 'kaminari',               '0.13.0'
 gem 'randumb',                '0.1.4'
 
 gem 'jquery-rails',           '2.0.1'
+gem 'less-rails',             '2.1.8'
+gem 'yui-compressor',         '0.9.6'
 
 group :assets do
 	gem 'therubyracer',         '0.9.10'
 	gem 'execjs',               '1.3.0'
-	gem 'less-rails',           '2.1.8'
-	gem 'yui-compressor',       '0.9.6'
 	gem 'uglifier',             '1.2.3'
 end
 
