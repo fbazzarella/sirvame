@@ -5,26 +5,27 @@ describe CompanyController do
 	render_views
 
 	describe "GET index" do
-		context	"with search params" do
-			let!(:company) { Factory(:company) }
-			let!(:other_company) { Factory(:company, product_list: 'bike') }
+		Factory(:company, product_list: 'bike')
 
-			it "should return companies filtered by search params" do
+		context "with search params" do
+			it "should assign a array on companies with results" do
 				get :index, encontrar: 'bike'
-				assigns(:companies).should == [other_company]
+				assigns(:companies).should be_a(Array)
+				assigns(:companies).first.should be_a(Company)
 			end
 
-			it "should return empty array if not found any company with search params" do
+			it "should assign a array on companies without results" do
 				get :index, encontrar: 'icecream'
-				assigns(:companies).should == []
+				assigns(:companies).should be_a(Array)
+				assigns(:companies).should be_empty
 			end
 		end
 
 		context "without search params" do
-			it "should return maximum 9 random companies" do
-				10.times { Factory(:company) }
+			it "should assign a array on companies with random results" do
 				get :index
-				assigns(:companies).count.should <= 9
+				assigns(:companies).should be_a(Array)
+				assigns(:companies).first.should be_a(Company)
 			end
 		end
 
