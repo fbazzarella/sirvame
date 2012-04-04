@@ -1,7 +1,7 @@
 <ul class="search-results">
 	<% if @companies.any? %>
 		<% @companies.each do |company| %>
-			<li data-id="<%= company.id %>" class="<%= 'plus' if company.plus %>">
+			<li data-id="<%= company.id %>" class="result<%= ' plus' if company.plus %>">
 				<%= link_to image_tag('layout/see_details.png'), '#', class: 'see-details' %>
 				<p class="name"><%= company.name_list %></p>
 				<p class="phone"><%= company.phone %></p>
@@ -10,8 +10,13 @@
 			</li>
 		<% end %>
 	<% else %>
-		<li data-id="0">
-			<p class="none-companies">Nenhuma empresa encontrada.</p>
+		<li data-id="0" class="none-companies">
+				<p class="title">
+					Nenhuma empresa foi encontrada.
+				</p>
+				<p class="instructions">
+					Por favor, verifique os termos digitados e tente novamente. Caso a empresa que você procura não esteja cadastrada, envie-nos um e-mail e iremos cadastrá-la para você. Se você for lojista e tenha interesse em anunciar, não hesite, entre em contato também.
+				</p>
 		</li>
 	<% end %>
 </ul>

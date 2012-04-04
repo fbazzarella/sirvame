@@ -2,7 +2,7 @@
     list-style: none;
     margin: -10px;
 
-    li {
+    li.result {
         background-color: #FFF;
         float: left;
         margin: 10px;
@@ -48,4 +48,27 @@
 
             &.tags {
                 font-size: .8em;
-                font-weight: bold; }}}}
+                font-weight: bold; }}}
+
+    li.none-companies {
+        background: image-url('icons/not_found.png') no-repeat;
+        margin: 30px 10px;
+        padding-left: 150px;
+        color: #333;
+        text-shadow: 1px 1px 1px #ccc;
+
+        p {
+            &.title {
+                margin-bottom: 30px;
+                font-size: 2.2em;
+                font-weight: bold;
+            }
+
+            &.instructions {
+                width: 600px;
+                font-size: 1.3em;
+                line-height: 1.7em;
+            }
+        }
+    }
+                }
