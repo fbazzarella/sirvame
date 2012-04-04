@@ -1,0 +1,199 @@
+@import 'twitter/bootstrap.less';
+
+.clear { clear: both }
+
+small.error {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #B00; }
+
+.modal {
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none; }}}
+
+.popover {
+    .company-url, small {
+        display: block;
+        margin: 10px 0;
+        color: #333; }
+
+    small {
+        line-height: 1.5em; }}
+
+html, body {
+    background-image: image-url('layout/background_body.png');
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+
+    .main-container {
+        position: relative;
+        min-height: 100%;
+
+        .navigation {
+            right: -5px;
+
+            li {
+                display: inline-block;
+                padding: 0 15px;
+
+                a {
+                    font-weight: bold; }}}
+
+        header, footer {
+            text-shadow: 1px 1px 2px #000; }
+
+        > header, > footer {
+            > div > * {
+                position: absolute; }
+
+            a, &:active, &:visited, &:hover {
+                color: #FFF; }}
+
+        > header {
+            background: #FFF image-url('layout/background_header.jpg') no-repeat center top;
+            border-top: 5px solid #333;
+
+            > div {
+                height: 55px;
+
+                h1 {
+                    top: 9px; }
+
+                .account {
+                    background-color: #333;
+                    right: 10px;
+                    top: -5px;
+                    .border-radius(5px);
+                    padding: 2px 0;
+
+                    li {
+                        display: inline-block;
+                        padding: 0 10px;
+
+                        a {
+                            font-size: 12px; }}}
+
+                .navigation {
+                    top: 18px; }}}
+
+        section.body {
+            header.body {
+                background: #FFF image-url('layout/background_body_header.png') repeat-x;
+                height: 143px;
+
+                .back-to-catalog {
+                    font-size: 15px;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: #FFF;
+
+                    &:active, &:visited, &:hover {
+                        color: #FFF; }
+
+                    &:hover {
+                        text-decoration: none; }}
+
+                .addthis {
+                    position: absolute;
+                    right: 10px;
+                    top: 40px;
+
+                    p {
+                        margin-left: 2px;
+                        margin-bottom: 5px;
+                        font-weight: bold; }}
+
+                h2, h3, h4, p {
+                    color: #FFF; }
+
+                h2, h3, h4 {
+                    width: 690px; }
+
+                h3 {
+                    margin: 15px 0;
+                    font-size: 35px; }
+
+                h4 {
+                    font-size: 18px;
+                    line-height: 1.5em; }
+
+                &.search {
+                    h3 {
+                        font-size: 25px; }
+
+                    .add-on {
+                        padding: 4px 8px;
+                        height: 30px; }
+
+                    input {
+                        padding: 10px;
+                        width: 570px;
+                        font-size: 18px; }}
+
+                &.company {
+                    background: #FFF image-url('layout/background_content_header.png') repeat-x;
+                    height: 101px;
+
+                    .back-to-catalog {
+                        display: block;
+                        margin: 10px 0 15px; }
+
+                    h2 {
+                        font-size: 35px; }
+
+                    .addthis {
+                        top: 19px; }}}
+
+            .main-content {
+                padding: 15px 10px 70px;
+
+                a {
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none; }}}}
+
+        footer {
+            background: #FFF image-url('layout/background_footer.png') repeat-x;
+            position: absolute;
+            bottom: 0;
+            padding: 0;
+            width: 100%;
+            height: 55px;
+            color: #FFF;
+
+            .logo {
+                top: 16px; }
+
+            .navigation {
+                top: 22px; }
+
+            .disclaimer {
+                top: 55px;
+                width: 390px;
+                font-size: 13px;
+
+                strong {
+                    font-weight: normal;
+                    color: @s-green; }}
+
+            .payment-methods {
+                left: 420px;
+                top: 55px;
+
+                p {
+                    font-size: 13px; }}
+
+            .powered-by {
+                right: 10px;
+                top: 115px;
+                font-size: 12px; }}}}
+
+@import 'buttons.less';
+@import '_advertise.less';
+@import 'company.index.less';
+@import 'company.new.less';
