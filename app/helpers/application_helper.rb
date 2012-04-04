@@ -4,7 +4,7 @@ module ApplicationHelper
     'Encontre o que precisa - sirva.me'
   end
 
-  def normalize_search_params(search_params)
-  	search_params.gsub(/,|\s|\++/i, '+').gsub(/\++/i, ', ')
+  def normalize_search_params(search_params = nil)
+  	search_params.gsub(/,|\s|\++/i, '+').gsub(/\++/i, ', ') unless search_params.nil?
   end
 end
