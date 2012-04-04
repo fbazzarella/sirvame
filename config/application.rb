@@ -55,5 +55,10 @@ module SirvaMe
       :authentication => 'plain', :enable_starttls_auto => true
     }
 
+    # If using less-rails
+    config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
+    config.less.compress = true
+    config.app_generators.stylesheet_engine :less
+
   end
 end
