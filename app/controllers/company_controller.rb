@@ -1,6 +1,6 @@
 class CompanyController < ApplicationController
   def index
-  	@companies = if search_params = params[:encontrar].try(:split, %r{,|\s+})
+  	@companies = if search_params = params[:encontrar].try(:split, %r{,|\s|\++})
   		name_query = ''
   		search_params.each_with_index do |sp, i|
   			name_query << " #{'or' if i > 0} lower(name) like '%#{sp.downcase}%'" unless sp.blank?
