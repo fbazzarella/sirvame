@@ -13,8 +13,13 @@ describe ApplicationHelper do
 			normalize_search_params('first+second').should == 'first, second'
 		end
 
+		it "should remove unecessary separator" do
+			normalize_search_params('+first+second').should == 'first, second'
+			normalize_search_params('+').should be_nil
+		end
+
 		it "should return nothing if no param is passed" do
-			normalize_search_params.should be_blank
+			normalize_search_params.should be_nil
 		end
 	end
 end

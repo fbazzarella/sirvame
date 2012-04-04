@@ -17,27 +17,30 @@ $(function(){
             if(!$(this).val()){ $(this).val(ph).css('color', '#666') };
 
             $(this).bind('focus click', function(){
-                if($(this).val()==ph){ $(this).val('').css('color', '#333') };
+                if($(this).val()==ph){ $(this).val('').css('color', '#333') }
             }).blur(function(){
-                if(!$(this).val()){ $(this).val(ph).css('color', '#666') }; }); }); };
+                if(!$(this).val()){ $(this).val(ph).css('color', '#666') } }) }) };
 
     function normalizeSearchParams(params, direction){
         if(!params) return '';
 
-        params = decodeURI(params.replace(/,|\s|\++/gi, '+'));
+        params = decodeURI(params.replace(/,|\s|\++/gi, '+')).split('+');
+
+        for(i = params.length; i >= 0; i--){
+            if(!params[i]){ params.splice(i, 1) } };
+
         switch(direction){
-            case 'go':   params = params.replace(/\++/gi, '+');  break;
-            case 'back': params = params.replace(/\++/gi, ', '); break; }
-        return params };
+            case 'go':   return params.join('+');
+            case 'back': return params.join(', '); } };
     
     var searchForm = $('.search form');
 
     searchForm.submit(function(e){
         e.preventDefault();
-        sp = $(this).find('input').val();
+        sp = normalizeSearchParams($(this).find('input').val(), 'go');
         searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate('!' + normalizeSearchParams(searchUrl, 'go'));
+        SirvaMeRouting.navigate('!' + searchUrl);
 
         $.ajax({
             url: encodeURI(searchUrl + '.js'),
@@ -55,7 +58,7 @@ $(function(){
         search: function(searchParams){
             searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
             searchForm.submit();
-            checkPlaceHolders(); } }) );
+            checkPlaceHolders() } }) );
 
     checkPlaceHolders();
     Backbone.history.start();

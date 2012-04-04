@@ -5,6 +5,9 @@ module ApplicationHelper
   end
 
   def normalize_search_params(params = nil)
-  	params.gsub(/,|\s|\++/i, '+').gsub(/\++/i, ', ') unless params.nil?
+  	return nil if params.nil?
+
+		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
+		params.any? ? params.join(', ') : nil
   end
 end
