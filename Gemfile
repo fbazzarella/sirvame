@@ -15,8 +15,8 @@ gem 'jquery-rails',           '2.0.1'
 group :assets do
 	gem 'therubyracer',         '0.9.10'
 	gem 'execjs',               '1.3.0'
-	# gem 'sass-rails',           '3.2.5'
-	# gem 'coffee-rails',         '3.2.2'
+	gem 'less-rails',           '2.1.8'
+	gem 'yui-compressor',       '0.9.6'
 	gem 'uglifier',             '1.2.3'
 end
 
