@@ -46,8 +46,8 @@ $(function(){
         var zoomTool = spinContainer.html();
         var spinner = new Spinner(opts).spin(spinContainer.empty()[0]);
 
-        sp = normalizeSearchParams($(this).find('input').val(), 'go');
-        searchUrl = '/encontrar' + (sp ? '/' + sp : '');
+        var sp = normalizeSearchParams($(this).find('input').val(), 'go');
+        var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
         SirvaMeRouting.navigate('!' + searchUrl);
 
@@ -56,8 +56,8 @@ $(function(){
             type: 'GET',
             dataType: 'html',
             success: function(data){
-                spinContainer.html(zoomTool);
-                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}); } }); });
+                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'});
+                spinContainer.html(zoomTool); } }); });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
         routes: {
