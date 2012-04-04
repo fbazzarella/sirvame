@@ -10,25 +10,26 @@
 
 $(function(){
 
-    function normalizeParams(params, direction){
+    function checkPlaceHolders(){
+        $('input[placeholder]').each(function(){
+            var ph = $(this).attr('placeholder');
+
+            if(!$(this).val()){ $(this).val(ph).css('color', '#666') };
+
+            $(this).focus(function(){
+                if($(this).val()==ph){ $(this).val('').css('color', '#333') };
+            }).blur(function(){
+                if(!$(this).val()){ $(this).val(ph).css('color', '#666') }; }); }); };
+
+    function normalizeSearchParams(params, direction){
+        if(!params) return '';
+
         params = decodeURI(params.replace(/,|\s|\++/gi, '+'));
         switch(direction){
             case 'go':   params = params.replace(/\++/gi, '+');  break;
             case 'back': params = params.replace(/\++/gi, ', '); break; }
         return params };
     
-    $('input[placeholder]').each(function(){
-        var ph = $(this).attr('placeholder');
-
-        if(!$(this).val()){ $(this).val(ph).css('color', '#666') };
-
-        $(this).focus(function(){
-            if($(this).val()==ph){ $(this).val('').css('color', '#333') };
-        }).blur(function(){
-            if(!$(this).val()){ $(this).val(ph).css('color', '#666') };
-        });
-    });
-
     var searchForm = $('.search form');
 
     searchForm.submit(function(e){
@@ -36,26 +37,27 @@ $(function(){
         sp = $(this).find('input').val();
         searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate(normalizeParams(searchUrl, 'go'));
+        SirvaMeRouting.navigate('!' + normalizeSearchParams(searchUrl, 'go'));
 
         $.ajax({
             url: encodeURI(searchUrl + '.js'),
             type: 'GET',
             dataType: 'html',
             success: function(data){
-                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'});
-            }
-        });
-    });
+                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}); } }); });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
-        routes: {'encontrar/:encontrar': 'search'},
-        search: function(searchParams){
-            searchForm.find('input').val(normalizeParams(searchParams, 'back'));
-            searchForm.submit();
-        }
-    }));
+        routes: {
+            '':                       'search',
+            '!/encontrar':            'search',
+            '!/encontrar/:encontrar': 'search' },
 
-    Backbone.history.start({pushState: true});
+        search: function(searchParams){
+            searchForm.find('input').val(normalizeSearchParams(searchParams, 'back'));
+            searchForm.submit();
+            checkPlaceHolders(); } }) );
+
+    checkPlaceHolders();
+    Backbone.history.start();
 
 });
