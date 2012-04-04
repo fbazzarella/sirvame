@@ -1,0 +1,7 @@
+# Use the README file as a reference to customize settings.
+
+Search:
+  fields:
+    default: term_list, created_at
+    form: term_list
+  application: Sirva.me

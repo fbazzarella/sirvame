@@ -286,6 +286,7 @@
         format: "%{attribute}%{message}"
     models:
       company: Empresa
+      search: Pesquisa
     attributes:
       company:
         name: Nome
@@ -294,3 +295,6 @@
         segment_list: Categorias
         product_list: Produtos
         plus: Pagante?
+      search:
+        term_list: "Termos"
+        created_at: "Quando"
