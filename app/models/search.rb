@@ -9,7 +9,7 @@ class Search < ActiveRecord::Base
 		def bring_me_results_for(term_list = nil)
 			if filtered_terms = filter_terms(term_list)
 				create({term_list: filtered_terms})
-				Company.tagged_with(filtered_terms.split(', '), any: true, wild: true)
+				Company.tagged_with(filtered_terms.split(', '), any: true, wild: true).all
 			else
 				Company.random(12)
 			end
