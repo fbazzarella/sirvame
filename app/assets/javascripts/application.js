@@ -39,7 +39,7 @@ $(function(){
         SirvaMeRouting.navigate(normalizeParams(searchUrl, 'go'));
 
         $.ajax({
-            url: searchUrl + '.js',
+            url: encodeURI(searchUrl + '.js'),
             type: 'GET',
             dataType: 'html',
             success: function(data){
