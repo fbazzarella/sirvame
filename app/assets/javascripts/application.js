@@ -32,7 +32,7 @@ $(function(){
         sp = $(this).find('input').val();
         searchUrl = searchPath + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate(searchUrl);
+        SirvaMeRouting.navigate(searchUrl.replace(/,|\s|\++/gi, '+').replace(/\++/gi, '+'));
 
         $.ajax({
             url: searchUrl + '.js',
