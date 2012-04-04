@@ -289,7 +289,7 @@
       search: Pesquisa
     attributes:
       company:
-        name: Nome
+        name_list: Nome
         phone: Telefone
         address: Endereço
         segment_list: Categorias
