@@ -25,15 +25,17 @@ $(function(){
         });
     });
 
+    var searchPath = '/pesquisar';
+
     $('.search form').submit(function(e){
         e.preventDefault();
         sp = $(this).find('input').val();
-        search_url = $(this).attr('action') + (sp ? '/' + sp : '');
+        searchUrl = searchPath + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate(search_url);
+        SirvaMeRouting.navigate(searchUrl);
 
         $.ajax({
-            url: search_url + '.js',
+            url: searchUrl + '.js',
             type: 'GET',
             dataType: 'html',
             success: function(data){
@@ -41,5 +43,5 @@ $(function(){
             }
         });
     });
-    
+
 });
