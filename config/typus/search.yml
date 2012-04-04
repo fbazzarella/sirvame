@@ -4,4 +4,5 @@ Search:
   fields:
     default: term_list, created_at
     form: term_list
+  order_by: -created_at
   application: Sirva.me
