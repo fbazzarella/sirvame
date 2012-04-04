@@ -37,6 +37,15 @@ $(function(){
 
     searchForm.submit(function(e){
         e.preventDefault();
+
+        var opts = {
+            lines: 15, length: 5, width: 2, radius: 6, color: '#000',
+            speed: 1, trail: 30, shadow: false };
+
+        var spinContainer = $(this).find('.add-on');
+        var zoomTool = spinContainer.html();
+        var spinner = new Spinner(opts).spin(spinContainer.empty()[0]);
+
         sp = normalizeSearchParams($(this).find('input').val(), 'go');
         searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
@@ -47,6 +56,7 @@ $(function(){
             type: 'GET',
             dataType: 'html',
             success: function(data){
+                spinContainer.html(zoomTool);
                 $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}); } }); });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
