@@ -8,10 +8,14 @@
 //= require jquery_ujs
 //= require_tree ./plugins/
 
-window.SirvaMeRouting = new (Backbone.Router.extend({routes: {null:null}}));
-Backbone.history.start({pushState: true});
-
 $(function(){
+
+    function normalizeParams(params, direction){
+        params = params.replace(/,|\s|\++/gi, '+')
+        switch(direction){
+            case 'go':   params = params.replace(/\++/gi, '+');  break;
+            case 'back': params = params.replace(/\++/gi, ', '); break; }
+        return params };
     
     $('input[placeholder]').each(function(){
         var ph = $(this).attr('placeholder');
@@ -25,14 +29,14 @@ $(function(){
         });
     });
 
-    var searchPath = '/encontrar';
+    var searchForm = $('.search form');
 
-    $('.search form').submit(function(e){
+    searchForm.submit(function(e){
         e.preventDefault();
         sp = $(this).find('input').val();
-        searchUrl = searchPath + (sp ? '/' + sp : '');
+        searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
-        SirvaMeRouting.navigate(searchUrl.replace(/,|\s|\++/gi, '+').replace(/\++/gi, '+'));
+        SirvaMeRouting.navigate(normalizeParams(searchUrl, 'go'));
 
         $.ajax({
             url: searchUrl + '.js',
@@ -43,5 +47,15 @@ $(function(){
             }
         });
     });
+
+    window.SirvaMeRouting = new (Backbone.Router.extend({
+        routes: {'encontrar/:encontrar': 'search'},
+        search: function(searchParams){
+            searchForm.find('input').val(normalizeParams(searchParams, 'back'));
+            searchForm.submit();
+        }
+    }));
+
+    Backbone.history.start({pushState: true});
 
 });
