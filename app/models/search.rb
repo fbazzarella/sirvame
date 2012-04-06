@@ -1,6 +1,5 @@
 # encoding: utf-8
 class Search < ActiveRecord::Base
-	BLACKLIST = %w(e da das de do dos)
 	attr_accessible :term_list
 	validates :term_list, presence: true
 	acts_as_taggable_on :terms
@@ -17,7 +16,7 @@ class Search < ActiveRecord::Base
 
 		def filter_terms(terms = nil)
 			terms = terms.try(:split, ', ')
-			terms ? (terms - BLACKLIST).join(', ') : nil
+			terms ? (terms - %w(e da das de do dos)).join(', ') : nil
 		end
 	end
 end
