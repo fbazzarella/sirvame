@@ -1,15 +1,9 @@
-/!== render partial: './advertise'
 header.body.search
     form.container action="/" method='get'
         h3 Encontre o que precisa:
         div.input-prepend
             span.add-on = image_tag 'zoom_tool.png', alt: 'Lupa'
             input type='text' name='encontrar' value="#{normalize_search_params(params[:encontrar])}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
-        == render partial: './addthis'
-/!header.body.company
-    div.container
-        = link_to '« Ver Catálogo', '/#', title: 'Voltar ao Catálogo Comercial', class: 'back-to-catalog'
-        h2 Padaria Ki-Sabor
         == render partial: './addthis'
 div.container.main-content
     == render partial: 'search_results'

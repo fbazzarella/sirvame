@@ -14,22 +14,11 @@ html
             header
                 div.container
                     h1 = link_to image_tag('layout/logo.png', alt: 'sirva.me'), root_path, title: page_title
-                    /!ul.account
-                        li = link_to 'Minha Conta', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Visualizar e editar as informações da conta'}
-                        li = link_to 'Meu Mini-Site', 'javascript:void(0)', {'data-controls-modal' => 'login', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Visualizar e editar o mini-site'}
-                        li = link_to 'Feedback', 'javascript:void(0)', {'data-controls-modal' => 'feedback', 'data-backdrop' => 'true', 'data-keyboard' => 'true', title: 'Enviar feedback sobre o serviço'}
                     == render partial: './navigation'
             section.body
                 == yield
             footer
                 div.container
                     = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
-                    /!p.disclaimer == 'O sirva.me é um serviço com <strong>foco nos consumidores</strong>, para que possam encontrar os produtos e serviços aos quais necessitam. Você que é empreendedor, terá a oportunidade de <strong>atingir tais consumidores</strong> com mais eficiência, por um custo irrisório.'
-                    /!div.payment-methods
-                        p Meios de Pagamento Aceitos
-                        = image_tag 'layout/payment_methods.png', alt: 'PagSeguro, Visa, MasterCard, Diners, American Express, Bradesco, Itaú, Banco do Brasil, Boleto'
                     == render partial: './navigation'
-                    /!span.powered-by !improviso!
-        div.modals
-            == render partial: './modals'
         = javascript_include_tag 'application'
