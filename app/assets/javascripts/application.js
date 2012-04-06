@@ -35,13 +35,13 @@ $(function(){
 
     function markMatches(params) {
         if(!params) return false;
-        
+
         params = params.split('+');
 
-        $('li.result').each(function(){
-            var result = $(this);
+        $('.name, .tags', 'li.result').each(function(){
+            var resultText = $(this);
             $.each(params, function(i, val){
-                result.html(result.html().replace(new RegExp('(' + val + ')', 'gi'), '<span class="matched">$1</span>')) }) }) }
+                if(val.length > 3){ resultText.html(resultText.html().replace(new RegExp('(' + val + ')', 'gi'), '<span class="matched">$1</span>')) } }) }) }
     
     var searchForm = $('.search form');
 
