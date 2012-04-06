@@ -32,6 +32,16 @@ $(function(){
         switch(direction){
             case 'go':   return params.join('+');
             case 'back': return params.join(', '); } };
+
+    function markMatches(params) {
+        if(!params) return false;
+        
+        params = params.split('+');
+
+        $('li.result').each(function(){
+            var result = $(this);
+            $.each(params, function(i, val){
+                result.html(result.html().replace(new RegExp('(' + val + ')', 'gi'), '<span class="matched">$1</span>')) }) }) }
     
     var searchForm = $('.search form');
 
@@ -56,8 +66,9 @@ $(function(){
             type: 'GET',
             dataType: 'html',
             success: function(data){
-                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'});
-                spinContainer.html(zoomTool); } }); });
+                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
+                    markMatches(sp);
+                    spinContainer.html(zoomTool); }) } }) });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
         routes: {
