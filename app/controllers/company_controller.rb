@@ -1,5 +1,6 @@
 class CompanyController < ApplicationController
   def index
+  	nil.split('d')
     search_params = normalize_search_params(params[:encontrar])
     @companies = Search.bring_me_results_for search_params
 
