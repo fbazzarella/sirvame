@@ -19,16 +19,22 @@ describe Search do
 			end
 
 			let!(:company) { Factory(:company) }
-			let!(:company1) { Factory(:company, product_list: 'bike') }
-			let!(:company2) { Factory(:company, product_list: 'ball') }
+			let!(:company1) { Factory(:company, segment_list: 'motors', product_list: 'bike') }
+			let!(:company2) { Factory(:company, segment_list: 'sports', product_list: 'ball') }
 
 			it "should return companies filtered by term list" do
 				Search.bring_me_results_for('bike, ball').should include(company1, company2)
 				Search.bring_me_results_for('bike, ball').should_not include(company)
 			end
 
+			it "should return companies ordered by relevance" do
+				Search.bring_me_results_for('motors, bike, ball').should == [company1, company2]
+				Search.bring_me_results_for('sports, bike, ball').should == [company2, company1]
+			end
+
 			it "should return empty array if not found any company with term list" do
-				Search.bring_me_results_for('icecream').should == []
+				Search.bring_me_results_for('icecream').should be_a(Array)
+				Search.bring_me_results_for('icecream').should be_empty
 			end
 		end
 

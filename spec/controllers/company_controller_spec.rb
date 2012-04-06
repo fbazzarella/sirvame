@@ -5,13 +5,19 @@ describe CompanyController do
 	render_views
 
 	describe "GET index" do
-		Factory(:company, product_list: 'bike')
+		let!(:company) { Factory(:company, product_list: 'coffee') }
+		let!(:company1) { Factory(:company, product_list: 'fruit, juice') }
 
 		context "with search params" do
 			it "should assign a array on companies with results" do
-				get :index, encontrar: 'bike'
+				get :index, encontrar: 'coffee'
 				assigns(:companies).should be_a(Array)
 				assigns(:companies).first.should be_a(Company)
+			end
+
+			it "should return companies ordered by relevance" do
+				get :index, encontrar: 'coffee+fruit+juice'
+				assigns(:companies).should == [company1, company]
 			end
 
 			it "should assign a array on companies without results" do
