@@ -46,19 +46,11 @@ module SirvaMe
     config.assets.version = '1.0'
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs jquery.center jquery.easing jquery.quicksand spin twitter/modal twitter/twipsy twitter/popover twitter/tabs)
-
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      :address => 'smtp.gmail.com', :port => 587,
-      :user_name => ENV['SMTP_ADDRESS'], :password => ENV['SMTP_PASSWORD'],
-      :authentication => 'plain', :enable_starttls_auto => true
-    }
+    # config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs)
 
     # If using less-rails
     config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
     config.less.compress = true
     config.app_generators.stylesheet_engine :less
-
   end
 end

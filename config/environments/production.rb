@@ -61,9 +61,19 @@ SirvaMe::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.action_mailer.default_url_options = { :host => 'sirva.me' }
+
+  config.action_mailer.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "25",
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => ENV['SENDGRID_DOMAIN']
+  }
+
   config.middleware.use ExceptionNotifier,
     :email_prefix => '[ERROR] ',
     :sender_address => %{'Sirva.me Apps' <heroku-apps@sirva.me>},
-    :exception_recipients => %w{fbazzarella@gmail.com}
-
+    :exception_recipients => %w{heroku-apps@sirva.me}
 end
