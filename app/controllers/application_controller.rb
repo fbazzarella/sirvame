@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   before_filter :login_required_for_production_view
 
   def login_required_for_production_view
-    if Rails.env.production?
+    if Rails.env.production? || Rails.env.staging?
       authenticate_or_request_with_http_basic do |name, password|
-        name == 'root' && password == '1q2w3e4r'
+        name == 'root' && password == 'qwe123'
       end
     end
   end
