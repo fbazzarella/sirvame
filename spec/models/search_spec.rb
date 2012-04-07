@@ -18,13 +18,18 @@ describe Search do
 				end.to change(Search, :count).by(1)
 			end
 
-			let!(:company) { Factory(:company) }
+			let!(:company) { Factory(:company, name_list: 'petit marché') }
 			let!(:company1) { Factory(:company, segment_list: 'motors', product_list: 'bike') }
 			let!(:company2) { Factory(:company, segment_list: 'sports', product_list: 'ball') }
 
 			it "should return companies filtered by term list" do
 				Search.bring_me_results_for('bike, ball').should include(company1, company2)
 				Search.bring_me_results_for('bike, ball').should_not include(company)
+			end
+
+			it "should return companies filtered by term list ignoring accents" do
+				Search.bring_me_results_for('petít').should include(company)
+				Search.bring_me_results_for('marche').should include(company)
 			end
 
 			it "should return companies ordered by relevance" do
