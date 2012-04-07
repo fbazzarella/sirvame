@@ -54,17 +54,15 @@ $(function(){
                 if(val.length >= 3){ resultText.html(resultText.html().replace(new RegExp('(' + val + ')', 'gi'), '<span class="matched">$1</span>')) } }) }) }
 
     var searchForm = $('.search form');
+    var spinContainer = searchForm.find('.add-on');
+    var zoomTool = spinContainer.html();
 
     searchForm.submit(function(e){
         e.preventDefault();
 
-        var opts = {
+        var spinner = new Spinner({
             lines: 15, length: 5, width: 2, radius: 6, color: '#000',
-            speed: 1, trail: 30, shadow: false };
-
-        var spinContainer = $(this).find('.add-on');
-        var zoomTool = spinContainer.html();
-        var spinner = new Spinner(opts).spin(spinContainer.empty()[0]);
+            speed: 1, trail: 30, shadow: false }).spin(spinContainer.empty()[0]);
 
         var sp = normalizeSearchParams($(this).find('input').val(), 'go');
         var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
