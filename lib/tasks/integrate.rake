@@ -8,12 +8,6 @@ task :integrate do
 		raise "Command #{cmd.inspect} failed!" unless $?.success?
 	end
 
-	puts '-----> Pulling from Bitbucket'.green.bold
-	run "git pull --rebase origin master"
-
-	puts '-----> Pushing to Bitbucket'.green.bold
-	run "git push origin master"
-
 	puts '-----> Deploying to Staging'.green.bold
 	run "git push git@heroku.com:#{APP}.git HEAD:master -f"
 
