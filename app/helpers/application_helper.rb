@@ -10,4 +10,11 @@ module ApplicationHelper
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
 		params.any? ? params.join(', ') : nil
   end
+
+  def account_token_for(service = nil)
+  	{
+  		analytics: 'UA-30669028-1',
+  		mixpanel:  '6d5bc5a92a2b3d1600f2757133b6ae80'
+  	}[service]
+  end
 end
