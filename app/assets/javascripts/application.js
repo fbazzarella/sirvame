@@ -69,6 +69,11 @@ $(function(){
 
         SirvaMeRouting.navigate('!' + searchUrl);
 
+        if(typeof mixpanel != 'undefined'){
+            mixpanel.track('search', {
+                'city': 'Valença',
+                'terms': normalizeSearchParams(sp, 'back') }) };
+
         $.ajax({
             url: encodeURI(searchUrl + '.js'),
             type: 'GET',
