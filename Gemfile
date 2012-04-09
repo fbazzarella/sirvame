@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'thin'
 gem 'slim'
 gem 'pg'
 gem 'exception_notification'
@@ -20,7 +21,6 @@ end
 group :development do
 	gem 'heroku'
 	gem 'colored'
-	gem 'thin'
 end
 
 group :development, :test do
