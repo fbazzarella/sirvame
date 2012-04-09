@@ -1,6 +1,3 @@
-coverage/
 db/schema.rb
 log/*
 tmp/**/*
-tmp/restart.txt
-public/assets/uploads/*
