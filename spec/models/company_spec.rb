@@ -16,7 +16,7 @@ describe Company do
 
 	describe "evaluate relevance based on" do
 		let!(:company) { FactoryGirl.create(:company,
-			name_list: 'Company Name', segment_list: 'motors', product_list: 'bikes') }
+			name_list: 'Company Name', segment_list: 'Motors', product_list: 'bikes') }
 
 		it "should return result relevance based on term list" do
 			company.evaluate_relevance_based_on('company, name, motors, bikes').should == -9
