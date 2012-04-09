@@ -18,9 +18,9 @@ describe Search do
 				end.to change(Search, :count).by(1)
 			end
 
-			let!(:company) { Factory(:company, name_list: 'petit marché') }
-			let!(:company1) { Factory(:company, segment_list: 'motors', product_list: 'bike') }
-			let!(:company2) { Factory(:company, segment_list: 'sports', product_list: 'ball') }
+			let!(:company) { FactoryGirl.create(:company, name_list: 'petit marché') }
+			let!(:company1) { FactoryGirl.create(:company, segment_list: 'motors', product_list: 'bike') }
+			let!(:company2) { FactoryGirl.create(:company, segment_list: 'sports', product_list: 'ball') }
 
 			it "should return companies filtered by term list" do
 				Search.bring_me_results_for('bike, ball').should include(company1, company2)
@@ -45,7 +45,7 @@ describe Search do
 
 		context "without term list" do
 			it "should return maximum 12 random companies" do
-				15.times { Factory(:company) }
+				15.times { FactoryGirl.create(:company) }
 				Search.bring_me_results_for.count.should <= 12
 			end
 		end

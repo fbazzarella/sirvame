@@ -5,8 +5,8 @@ describe CompanyController do
 	render_views
 
 	describe "GET index" do
-		let!(:company) { Factory(:company, product_list: 'coffee') }
-		let!(:company1) { Factory(:company, product_list: 'fruit, juice') }
+		let!(:company) { FactoryGirl.create(:company, product_list: 'coffee') }
+		let!(:company1) { FactoryGirl.create(:company, product_list: 'fruit, juice') }
 
 		context "with search params" do
 			it "should assign a array on companies with results" do
