@@ -4,7 +4,8 @@ require 'spec_helper'
 describe ApplicationHelper do
 	describe "page title" do
 		it "should return anything" do
-			page_title.should be
+			page_title.should be_a(String)
+			page_title.should_not be_blank
 		end
 	end
 
@@ -26,10 +27,12 @@ describe ApplicationHelper do
 	describe "account token for" do
 		it "should return a token string for analytics" do
 			account_token_for(:analytics).should be_a(String)
+			account_token_for(:analytics).should_not be_blank
 		end
 
 		it "should return a token string for mixpanel" do
 			account_token_for(:mixpanel).should be_a(String)
+			account_token_for(:mixpanel).should_not be_blank
 		end
 
 		it "should return nil if service token don't exists" do
