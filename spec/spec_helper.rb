@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
-require "spork"
+require 'spork'
+require 'capybara/rspec'
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= "test"
@@ -7,8 +8,11 @@ Spork.prefork do
   require "rspec/rails"
 
   RSpec.configure do |config|
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
     config.mock_with :rspec
+    config.before(:suite) { DatabaseCleaner.strategy = :truncation }
+    config.before(:each) { DatabaseCleaner.start }
+    config.after(:each) { DatabaseCleaner.clean }
   end
 
   ActiveSupport::Dependencies.clear
