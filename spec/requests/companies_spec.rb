@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe "Companies" do
+describe "Home Page" do
 	before do
 		FactoryGirl.create(:company, segment_list: 'Movies', product_list: 'dvds')
 		visit root_path
@@ -15,20 +15,40 @@ describe "Companies" do
 	end
 
 	describe "perform company search" do
-		it "should display 'not found' message if none companies found" do
-			fill_in 'search-field', with: 'coffee, fruit'
-			click_button 'submit-search'
+		context "using ajax", js: true do
+			it "should display 'not found' message if none companies found" do
+				fill_in 'search-field', with: 'coffee, fruit'
+				click_button 'submit-search'
 
-			page.should have_no_selector(:xpath, './/li[@class="result"]')
-			page.should have_selector(:xpath, './/li[@class="none-companies"]')
+				page.should have_no_selector(:xpath, './/li[@class="result"]')
+				page.should have_selector(:xpath, './/li[@class="none-companies"]')
+			end
+
+			it "should display search results if companies found" do
+				fill_in 'search-field', with: 'movies, dvds'
+				click_button 'submit-search'
+
+				page.should have_content('Company Name')
+				page.should have_content('Movies [dvds]')
+			end
 		end
 
-		it "should display search results if companies found" do
-			fill_in 'search-field', with: 'movies, dvds'
-			click_button 'submit-search'
+		context "without using ajax" do
+			it "should display 'not found' message if none companies found" do
+				fill_in 'search-field', with: 'coffee, fruit'
+				click_button 'submit-search'
 
-			page.should have_content('Company Name')
-			page.should have_content('Movies [dvds]')
+				page.should have_no_selector(:xpath, './/li[@class="result"]')
+				page.should have_selector(:xpath, './/li[@class="none-companies"]')
+			end
+
+			it "should display search results if companies found" do
+				fill_in 'search-field', with: 'movies, dvds'
+				click_button 'submit-search'
+
+				page.should have_content('Company Name')
+				page.should have_content('Movies [dvds]')
+			end
 		end
 	end
 end
