@@ -1,9 +1,10 @@
 header.body.search
-    form.container action="/" method='get'
+    form.search-form.container action="/" method='get'
         h3 Encontre o que precisa em Valença:
         div.input-prepend
             span.add-on = image_tag 'zoom_tool.png', alt: 'Lupa'
-            input type='text' name='encontrar' value="#{normalize_search_params(params[:encontrar])}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
+            input id='search-field' type='text' name='encontrar' value="#{normalize_search_params(params[:encontrar])}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
+            input.hide id='submit-search' type='submit'
         == render partial: './addthis'
 div.container.main-content
     == render partial: 'search_results'
