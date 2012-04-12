@@ -68,7 +68,7 @@ $(function(){
 
         search: function(searchParams){
             searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
-            searchForm.submit();
+            if(searchParams){ searchForm.submit() };
             checkPlaceHolders() } }) );
 
     checkPlaceHolders();
