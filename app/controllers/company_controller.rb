@@ -8,4 +8,7 @@ class CompanyController < ApplicationController
   		f.js { render partial: 'search_results' }
   	end
   end
+
+  def academia_equilibrio
+  end
 end
