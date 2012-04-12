@@ -3,4 +3,5 @@
 Company:
   fields:
     default: name_list, phone, address, segment_list, product_list, plus
+    csv: name_list, phone, segment_list, product_list
   application: Sirva.me
