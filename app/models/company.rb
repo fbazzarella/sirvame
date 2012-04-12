@@ -9,6 +9,7 @@ class Company < ActiveRecord::Base
 		{names: 3, segments: 1, products: 2}.each do |context, weight|
 			relevance -= (prepare_context(try(context)) & terms).count * weight
 		end
+		relevance -= 100 if plus
 		relevance
 	end
 
