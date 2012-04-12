@@ -33,26 +33,6 @@ $(function(){
             case 'go':   return params.join('+');
             case 'back': return params.join(', ') } };
 
-    function filterParams(params){
-        params = params.split('+');
-        blackList = ['e', 'da', 'das', 'de', 'do', 'dos'];
-
-        for(i = params.length; i >= 0; i--){
-            for(ii = blackList.length; ii >= 0; ii--){
-                if(params[i] == blackList[ii]){ params.splice(i, 1) } } };
-
-        return params.join('+') };
-    
-    function markMatches(params) {
-        if(!params) return false;
-
-        params = filterParams(params).split('+');
-
-        $('.name, .tags', 'li.result').each(function(){
-            var resultText = $(this);
-            $.each(params, function(i, val){
-                if(val.length >= 3){ resultText.html(resultText.html().replace(new RegExp('(' + val + ')', 'gi'), '<span class="matched">$1</span>')) } }) }) }
-
     var searchForm = $('.search form');
     var spinContainer = searchForm.find('.add-on');
     var zoomTool = spinContainer.html();
@@ -78,7 +58,6 @@ $(function(){
             dataType: 'html',
             success: function(data){
                 $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
-                    markMatches(sp);
                     spinContainer.html(zoomTool) }) } }) });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
