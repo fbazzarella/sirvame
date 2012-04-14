@@ -289,12 +289,12 @@
       search: Pesquisa
     attributes:
       company:
-        name_list: Nome
+        name: Nome
         phone: Telefone
         address: Endereço
-        segment_list: Categorias
-        product_list: Produtos
+        segments: Categorias
+        products: Produtos
         plus: Pagante?
       search:
-        term_list: "Termos"
+        terms: "Termos"
         created_at: "Quando"
