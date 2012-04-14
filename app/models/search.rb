@@ -18,7 +18,7 @@ class Search < ActiveRecord::Base
 					3.times { terms << "%#{t.downcase}%" }
 				end
 
-				Company.where(where_clause.join(' or '), *terms).order(:plus, :name).all
+				Company.where(where_clause.join(' or '), *terms).all
 			else
 				Company.random(12)
 			end
