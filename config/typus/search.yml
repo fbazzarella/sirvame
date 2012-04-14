@@ -2,7 +2,7 @@
 
 Search:
   fields:
-    default: term_list, created_at
-    form: term_list
+    default: terms, created_at
+    form: terms
   order_by: -created_at
   application: Sirva.me
