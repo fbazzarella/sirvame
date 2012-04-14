@@ -5,7 +5,7 @@ namespace :db do
       require 'csv'
       require 'colored'
 
-      puts "Importing all new companies to database...\n"
+      puts "-----> Importing all new companies to database".green.bold
       count = {saved: 0, ignored: 0}
 
       CSV.foreach(Rails.root.join('db', 'new_companies.csv')) do |row|
@@ -20,7 +20,7 @@ namespace :db do
         end
       end
 
-      puts "\nDone! " + "#{count[:saved]} have been saved".green + " and " + "#{count[:ignored]} have been ignored".yellow + "."
+      puts "\n\n-----> Done! ".yellow.bold + "#{count[:saved]} have been saved".green.bold + " and ".yellow.bold + "#{count[:ignored]} have been ignored".red.bold + ".".yellow.bold
     end
   end
 end
