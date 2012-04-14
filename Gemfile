@@ -11,6 +11,7 @@ gem 'randumb'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'yui-compressor'
+gem 'colored'
 
 group :assets do
 	gem 'therubyracer'
@@ -19,7 +20,6 @@ end
 
 group :development do
 	gem 'heroku'
-	gem 'colored'
 end
 
 group :development, :test do
