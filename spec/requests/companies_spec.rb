@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe "Home Page" do
 	before do
-		FactoryGirl.create(:company, segment_list: 'Movies', product_list: 'dvds')
+		FactoryGirl.create(:company, segments: 'Movies', products: 'dvds')
 		visit root_path
 	end
 

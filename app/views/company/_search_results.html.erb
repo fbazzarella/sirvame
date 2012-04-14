@@ -3,12 +3,12 @@
 		<% @companies.each do |company| %>
 			<li data-id="<%= company.id %>" class="result<%= ' plus' if company.plus %>">
 				<%= link_to(image_tag('layout/see_details.png'), :academia_equilibrio, class: 'see-details') if company.plus %>
-				<p class="name"><%= company.name_list %></p>
+				<p class="name"><%= company.name %></p>
 				<p class="phone"><%= company.phone %></p>
 				<p class="address"><%= company.address %></p>
 				<p class="tags">
-					<%= company.segment_list %>
-					<%= " [#{company.product_list}]" unless company.product_list.blank? %>
+					<%= company.segments %>
+					<%= " [#{company.products}]" unless company.products.blank? %>
 				</p>
 			</li>
 		<% end %>
