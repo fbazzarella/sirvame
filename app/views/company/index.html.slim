@@ -1,11 +1,9 @@
 header.body.search
     form.search-form.container action="/" method='get'
         h3 Encontre o que precisa em Valença:
-        div.input-prepend
-            span.add-on = image_tag 'zoom_tool.png', alt: 'Lupa'
+        div.input-append
             input id='search-field' type='text' name='encontrar' value="#{normalize_search_params(params[:encontrar])}" placeholder='Exemplos: pizza, lanche, bar do zé... e aperte ENTER!'
-            - if Rails.env.test?
-            		input id='submit-search' type='submit'
+            span.add-on = image_submit_tag 'zoom_tool.png', alt: 'Lupa', id: 'submit-search'
         == render partial: './addthis'
 div.container.main-content
     == render partial: 'search_results'

@@ -130,10 +130,19 @@ html, body {
                         width: 27px;
                         height: 30px; }
 
-                    input {
+                    input[type=text] {
                         padding: 10px;
                         width: 570px;
-                        font-size: 18px; }}
+                        font-size: 18px; }
+
+                    input#submit-search {
+                        border: none;
+                        .border-radius(0);
+                        .box-shadow(none);
+                        padding: 0;
+                        width: 27px;
+                        height: 29px;
+                    }}
 
                 &.company {
                     background: #FFF image-url('layout/background_content_header.png') repeat-x;

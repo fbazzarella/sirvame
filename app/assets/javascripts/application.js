@@ -40,25 +40,28 @@ $(function(){
     searchForm.submit(function(e){
         e.preventDefault();
 
-        var spinner = new Spinner({
-            lines: 15, length: 5, width: 2, radius: 6, color: '#000',
-            speed: 1, trail: 30, shadow: false }).spin(spinContainer.empty()[0]);
+        var searchField = $(this).find('input');
 
-        var sp = normalizeSearchParams($(this).find('input').val(), 'go');
-        var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
+        if(searchField.val() != searchField.attr('placeholder')){
+            var spinner = new Spinner({
+                lines: 15, length: 5, width: 2, radius: 6, color: '#000',
+                speed: 1, trail: 30, shadow: false }).spin(spinContainer.empty()[0]);
 
-        SirvaMeRouting.navigate('!' + searchUrl);
+            var sp = normalizeSearchParams(searchField.val(), 'go');
+            var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
-        if(typeof mixpanel != 'undefined' && sp){
-            mixpanel.track('Search', {'City': 'Valença'}) };
+            SirvaMeRouting.navigate('!' + searchUrl);
 
-        $.ajax({
-            url: encodeURI(searchUrl + '.js'),
-            type: 'GET',
-            dataType: 'html',
-            success: function(data){
-                $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
-                    spinContainer.html(zoomTool) }) } }) });
+            if(typeof mixpanel != 'undefined' && sp){
+                mixpanel.track('Search', {'City': 'Valença'}) };
+
+            $.ajax({
+                url: encodeURI(searchUrl + '.js'),
+                type: 'GET',
+                dataType: 'html',
+                success: function(data){
+                    $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
+                        spinContainer.html(zoomTool) }) } }) } });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
         routes: {
@@ -68,7 +71,7 @@ $(function(){
 
         search: function(searchParams){
             searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
-            if(searchParams){ searchForm.submit() };
+            searchForm.submit();
             checkPlaceHolders() } }) );
 
     checkPlaceHolders();
