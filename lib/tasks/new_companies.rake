@@ -15,7 +15,7 @@ namespace :db do
           print '.'.green
           count[:saved] += 1
         else
-          print '.'.yellow
+          print '.'.red
           count[:ignored] += 1
         end
       end
