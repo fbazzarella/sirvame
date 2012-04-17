@@ -6,6 +6,7 @@ class CompanyController < ApplicationController
   	respond_to do |f|
   		f.html
   		f.js { render partial: 'search_results' }
+  		f.json { render json: @companies.to_json }
   	end
   end
 end
