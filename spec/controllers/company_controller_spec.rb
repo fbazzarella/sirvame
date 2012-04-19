@@ -35,9 +35,28 @@ describe CompanyController do
 			end
 		end
 
-		it "should return success" do
-			get :index
-			response.should be_success
+		describe "rendering" do
+			it "should return success" do
+				get :index
+				response.should be_success
+			end
+
+			it "should render search results with layout" do
+				get :index, format: :html
+				response.should render_template('search_results')
+				response.should render_template('layouts/application')
+			end
+
+			it "should render search results without layout" do
+				get :index, format: :js
+				response.should render_template('search_results')
+				response.should_not render_template('layouts/application')
+			end
+
+			it "should render search results as json" do
+				get :index, format: :json
+				response.body.should =~ /\"address\"\:\"Company Address\, 11\, 111\"/
+			end
 		end
 	end
 end
