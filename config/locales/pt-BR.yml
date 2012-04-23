@@ -287,6 +287,7 @@
     models:
       company: Empresa
       search: Pesquisa
+      email: E-mails
     attributes:
       company:
         name: Nome
@@ -298,3 +299,7 @@
       search:
         terms: "Termos"
         created_at: "Quando"
+      email:
+        name: Nome
+        email: E-mail
+        sent_at: Último Envio
