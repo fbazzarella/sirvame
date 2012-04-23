@@ -10,7 +10,7 @@ namespace :db do
 
       CSV.foreach(Rails.root.join('db', 'new_emails.csv')) do |row|
         if Email.find_by_email(row[1]).nil?
-          Email.create({name: row[0].split(' ')[0].humanize, email: row[1]})
+          Email.create({name: row[0].split(' ')[0].humanize, email: row[1]}, as: :admin)
 
           print '.'.green
           count[:saved] += 1

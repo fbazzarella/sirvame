@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Email do
 	describe "mass assignment security" do
 		[:name, :email].each do |attr|
-			it { should allow_mass_assignment_of(attr) }
+			it { should allow_mass_assignment_of(attr).as(:admin) }
 		end
 	end
 
