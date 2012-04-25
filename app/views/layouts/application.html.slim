@@ -22,5 +22,5 @@ html
             footer
                 div.container
                     = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
-                    == render partial: './navigation'
+                    = link_to 'by me', 'http://bazzarella.com', target: '_blank', title: 'Felipe Bazzarella', class: 'powered-by'
         = javascript_include_tag 'application'
