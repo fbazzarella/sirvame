@@ -6,4 +6,6 @@ header.body.search
             span.add-on = image_submit_tag 'zoom_tool.png', alt: 'Lupa', id: 'submit-search'
         == render partial: './addthis'
 div.container.main-content
-    == render partial: 'search_results'
+		div.companies-count
+				== "Já temos um total de <strong>#{Company.count} empresas</strong> cadastradas. E este número vai continuar crescendo..."
+		== render partial: 'search_results'
