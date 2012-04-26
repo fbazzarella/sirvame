@@ -76,5 +76,6 @@ $(function(){
 
     checkPlaceHolders();
     Backbone.history.start();
+    $('.addthis').show();
 
 });
