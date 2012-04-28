@@ -8,6 +8,8 @@ gem 'exception_notification'
 gem 'typus'
 gem 'kaminari'
 gem 'randumb'
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'yui-compressor'
 gem 'colored'
@@ -15,8 +17,6 @@ gem 'colored'
 group :assets do
 	gem 'therubyracer'
 	gem 'uglifier'
-  gem 'jquery-rails'
-  gem 'twitter-bootstrap-rails'
 end
 
 group :development do
