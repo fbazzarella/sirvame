@@ -6,19 +6,19 @@ class Search < ActiveRecord::Base
 	class << self
 		def bring_me_results_for(term_list = nil)
 			if term_list = filter_terms(term_list)
-				create(terms: term_list)
+				create terms: term_list
 
-				where_clause = []
+				where = []
 				terms = []
 
 				term_list.split(', ').each do |t|
-					where_clause << "#{tra('name')} like #{tra("?")}"
-					where_clause << "#{tra('segments')} like #{tra("?")}"
-					where_clause << "#{tra('products')} like #{tra("?")}"
+					where << "#{tra('name')} like #{tra("?")}"
+					where << "#{tra('segments')} like #{tra("?")}"
+					where << "#{tra('products')} like #{tra("?")}"
 					3.times { terms << "%#{t.downcase}%" }
 				end
 
-				Company.where(where_clause.join(' or '), *terms).all
+				Company.where(where.join(' or '), *terms).all
 			else
 				Company.random(12)
 			end

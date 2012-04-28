@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: utf-8
 require 'spec_helper'
 
 describe Search do
@@ -18,7 +18,7 @@ describe Search do
 				end.to change(Search, :count).by(1)
 			end
 
-			let!(:company) { FactoryGirl.create(:company, name: 'Petit Marché') }
+			let!(:company)  { FactoryGirl.create(:company, name: 'Petit Marché') }
 			let!(:company1) { FactoryGirl.create(:company, segments: 'Motors', products: 'bike') }
 			let!(:company2) { FactoryGirl.create(:company, segments: 'Sports', products: 'ball') }
 

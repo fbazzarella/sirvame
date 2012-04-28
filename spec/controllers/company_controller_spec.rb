@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe CompanyController do
@@ -44,13 +43,13 @@ describe CompanyController do
 			it "should render search results with layout" do
 				get :index, format: :html
 				response.should render_template('search_results')
-				response.should render_template('layouts/application')
+				response.should render_with_layout('application')
 			end
 
 			it "should render search results without layout" do
 				get :index, format: :js
 				response.should render_template('search_results')
-				response.should_not render_template('layouts/application')
+				response.should_not render_with_layout('application')
 			end
 
 			it "should render search results as json" do
