@@ -9,4 +9,12 @@ class CompanyController < ApplicationController
   		f.json { render json:    @companies.to_json }
   	end
   end
+
+  def show
+  	begin
+  		render template: "company/#{params[:company]}/#{params[:page] || 'home'}"
+  	rescue ActionView::MissingTemplate
+  		render file: Rails.root.join('public/404.html'), layout: false, status: 404
+  	end
+  end
 end
