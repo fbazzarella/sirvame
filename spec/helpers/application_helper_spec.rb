@@ -35,6 +35,11 @@ describe ApplicationHelper do
 			account_token_for(:mixpanel).should_not be_blank
 		end
 
+		it "should return a token string for addthis" do
+			account_token_for(:addthis).should be_a(String)
+			account_token_for(:addthis).should_not be_blank
+		end
+
 		it "should return nil if service token don't exists" do
 			account_token_for(:other).should be_nil
 		end

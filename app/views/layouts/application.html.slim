@@ -8,7 +8,6 @@ html
         = favicon_link_tag
         = stylesheet_link_tag 'fonts/open_sans'
         = stylesheet_link_tag 'application'
-        == render partial: './metrics'
         /[if lt IE 9]
             = javascript_include_tag 'html5'
     body
@@ -25,4 +24,5 @@ html
                 div.container
                     = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
                     = link_to 'who', 'http://bazzarella.com', target: '_blank', title: 'Felipe Bazzarella', class: 'who'
+        == render partial: './metrics'
         = javascript_include_tag 'application'
