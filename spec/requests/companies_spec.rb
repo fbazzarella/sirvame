@@ -21,7 +21,7 @@ describe "Home Page" do
 				click_button 'submit-search'
 
 				page.should have_no_selector(:xpath, './/li[@class="result"]')
-				page.should have_selector(:xpath, './/li[@class="none-companies"]')
+				page.should have_selector(:xpath, './/li[@id="none-companies"]')
 			end
 
 			it "should display search results if companies found" do
@@ -39,7 +39,7 @@ describe "Home Page" do
 				click_button 'submit-search'
 
 				page.should have_no_selector(:xpath, './/li[@class="result"]')
-				page.should have_selector(:xpath, './/li[@class="none-companies"]')
+				page.should have_selector(:xpath, './/li[@id="none-companies"]')
 			end
 
 			it "should display search results if companies found" do
