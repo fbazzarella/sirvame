@@ -18,7 +18,7 @@ html
                     h1.logo = link_to image_tag('layout/logo.png', alt: page_title), root_path, title: page_title
                     nav
                         ul
-                            li = link_to ENV['SMTP_ADDRESS'], 'mailto:fale-com@sirva.me', title: 'Envie-nos um E-mail. Ficaremos Felizes!'
+                            li = link_to ENV['SMTP_ADDRESS'], 'mailto:fale-com@sirva.me', title: 'Envie-nos um e-mail. Ficaremos felizes!'
             section.body
                 == yield
             footer
