@@ -11,8 +11,7 @@ gem 'randumb'
 gem 'colored'
 
 group :assets do
-	gem 'therubyracer'
-	gem 'uglifier'
+  gem 'yui-compressor'
   gem 'jquery-rails'
 end
 
