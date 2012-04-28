@@ -166,6 +166,10 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.0.6)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.0)
+      railties (>= 3.1)
     typus (3.1.10)
       bcrypt-ruby (~> 3.0.0)
       jquery-rails
@@ -202,6 +206,7 @@ DEPENDENCIES
   spork
   therubyracer
   thin
+  twitter-bootstrap-rails
   typus
   uglifier
   yui-compressor

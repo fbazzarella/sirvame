@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'less-rails'
 gem 'yui-compressor'
 gem 'colored'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
 	gem 'therubyracer'
