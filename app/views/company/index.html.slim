@@ -3,7 +3,7 @@ header.body.search
         h3 Encontre o que precisa em Valença:
         div.input-append
             input id='search-field' type='text' name='encontrar' value="#{normalize_search_params(params[:encontrar])}" placeholder='Exemplos: água, pizza, lanchonete, academia... e clique na lupa »'
-            span.add-on = image_submit_tag 'zoom_tool.png', alt: 'Lupa', id: 'submit-search'
+            span.add-on = image_submit_tag 'layout/zoom_tool.png', alt: 'Encontrar', id: 'submit-search'
         == render partial: './addthis'
 div.container.main-content
 		div.companies-count
