@@ -1,7 +1,0 @@
-# Use the README file as a reference to customize settings.
-
-Company:
-  fields:
-    default: name, phone, address, segments, products, plus
-    csv: name, phone, segments, products
-  application: Sirva.me

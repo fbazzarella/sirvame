@@ -23,11 +23,24 @@ Typus.setup do |config|
 
   # Authentication: +:none+, +:http_basic+
   # Run `rails g typus:migration` if you need an advanced authentication system.
-  config.authentication = :http_basic
+  # Define authentication: +:none+, +:http_basic+, +:session+
+  config.authentication = :session
+
+  # Define master_role.
+  # config.master_role = "admin"
+
+  # Define relationship.
+  # config.relationship = "typus_users"
+
+  # Define user_class_name.
+  config.user_class_name = "AdminUser"
+
+  # Define user_foreign_key.
+  config.user_foreign_key = "admin_user_id"
 
   # Define username and password for +:http_basic+ authentication.
-  config.username = "sirvame"
-  config.password = "jSaEWi4$2k@"
+  # config.username = "username"
+  # config.password = "password"
 
   # Define subdomain to use instead of additional path
   # config.subdomain = "admin"
