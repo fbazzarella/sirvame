@@ -1,4 +1,3 @@
-# encoding: utf-8
 task :integrate do
 	require 'colored'
 	APP = 'sirvame-staging'
@@ -14,7 +13,7 @@ task :integrate do
 	puts '-----> Migrating'.green.bold
 	run "heroku run rake db:migrate --app #{APP}"
 
-	run "heroku run rake db:seed --app #{APP}"
+	run "heroku run rake companies:push --app #{APP}"
 
 	puts '-----> Restarting'.green.bold
 	run "heroku restart --app #{APP}"

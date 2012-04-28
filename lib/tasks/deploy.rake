@@ -1,4 +1,3 @@
-# encoding: utf-8
 task :deploy do
 	require 'colored'
 	APP = 'sirvame-production'
@@ -18,6 +17,4 @@ task :deploy do
 
 	puts '-----> Restarting'.green.bold
 	run "heroku restart --app #{APP}"
-
-	puts '-----> Tá no ar! Reza pra essa joça funcionar!'.yellow.bold
 end
