@@ -1,8 +1,6 @@
-/*
- *= require reset
+/*= require reset
  *= require_self
- *= require company.index
- */
+ *= require company.index */
 
 html, body {
   height: 100%;
