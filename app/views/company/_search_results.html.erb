@@ -1,4 +1,4 @@
-<ul class="search-results">
+<ul id="search-results">
 	<% if @companies.any? %>
 		<% @companies.each do |company| %>
 			<li data-id="<%= company.id %>" class="result">
@@ -12,7 +12,7 @@
 			</li>
 		<% end %>
 	<% else %>
-		<li data-id="0" class="none-companies">
+		<li data-id="0" id="none-companies">
 				<p class="title">Nenhuma empresa foi encontrada.</p>
 				<p class="instructions">
 					Por favor, verifique os termos digitados e tente novamente. Caso a empresa que procura não esteja cadastrada, envie-nos um e-mail e iremos cadastrá-la para você:

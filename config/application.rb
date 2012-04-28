@@ -50,10 +50,5 @@ module SirvaMe
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery jquery_ujs)
-
-    # If using less-rails
-    config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
-    config.less.compress = true
-    config.app_generators.stylesheet_engine :less
   end
 end

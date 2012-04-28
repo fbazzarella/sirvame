@@ -60,7 +60,7 @@ $(function(){
                 type: 'GET',
                 dataType: 'html',
                 success: function(data){
-                    $('.search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
+                    $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
                         spinContainer.html(zoomTool) }) } }) } });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({

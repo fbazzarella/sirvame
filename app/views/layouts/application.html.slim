@@ -7,21 +7,22 @@ html
         = csrf_meta_tag
         = favicon_link_tag
         = stylesheet_link_tag 'fonts/open_sans'
-        = stylesheet_link_tag 'manifest'
+        = stylesheet_link_tag 'application'
         == render partial: './metrics'
         /[if lt IE 9]
             = javascript_include_tag 'html5'
     body
         div.main-container
-            header
+            header.main
                 div.container
-                    h1 = link_to image_tag('layout/logo.png', alt: page_title), root_path, title: page_title
-                    ul.navigation
-                        li = link_to ENV['SMTP_ADDRESS'], 'mailto:fale-com@sirva.me', title: 'Envie-nos um E-mail. Ficaremos Felizes!'
+                    h1.logo = link_to image_tag('layout/logo.png', alt: page_title), root_path, title: page_title
+                    nav
+                        ul
+                            li = link_to ENV['SMTP_ADDRESS'], 'mailto:fale-com@sirva.me', title: 'Envie-nos um E-mail. Ficaremos Felizes!'
             section.body
                 == yield
             footer
                 div.container
                     = link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo'
-                    = link_to 'who', 'http://bazzarella.com', target: '_blank', title: 'Felipe Bazzarella', class: 'powered-by'
+                    = link_to 'who', 'http://bazzarella.com', target: '_blank', title: 'Felipe Bazzarella', class: 'who'
         = javascript_include_tag 'application'
