@@ -2,12 +2,13 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'thin'
-gem 'slim'
 gem 'pg'
 gem 'exception_notification'
+
 gem 'typus'
 gem 'kaminari'
 gem 'randumb'
+
 gem 'colored'
 
 group :assets do
