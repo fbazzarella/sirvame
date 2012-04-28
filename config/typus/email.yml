@@ -1,8 +1,0 @@
-# Use the README file as a reference to customize settings.
-
-Email:
-  fields:
-    default: name, email, sent_at
-    form: name, email
-    csv: name, email, sent_at
-  application: Sirva.me
