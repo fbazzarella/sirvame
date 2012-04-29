@@ -1,7 +1,8 @@
 /*= require reset
  *= require_self
  *= require jquery-lionbars
- *= require company.index */
+ *= require company.index
+ *= require company.show */
 
 html, body {
   height: 100%;
