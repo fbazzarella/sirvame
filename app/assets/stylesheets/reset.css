@@ -29,7 +29,7 @@ strong,b,mark{
 	font-style:inherit;
 }
 em,i,cite,q,address,dfn,var{
-	font-style:italic;
+	font-style:normal;
 	font-weight:inherit;
 }
 abbr[title],dfn[title]{
