@@ -1,7 +1,11 @@
 //= require jquery
+//= require jquery-lionbars
 //= require_tree ./plugins/
 
 $(function(){
+
+    function checkLionbars(){
+        $('#search-results li').lionbars() }
 
     function checkPlaceHolders(){
         $('input[placeholder]').each(function(){
@@ -54,6 +58,7 @@ $(function(){
                 dataType: 'html',
                 success: function(data){
                     $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
+                        checkLionbars();
                         spinContainer.html(zoomTool) }) } }) } });
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
@@ -67,6 +72,7 @@ $(function(){
             searchForm.submit();
             checkPlaceHolders() } }) );
 
+    checkLionbars();
     checkPlaceHolders();
     Backbone.history.start();
     $('.addthis').show();

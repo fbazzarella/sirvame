@@ -1,5 +1,6 @@
 /*= require reset
  *= require_self
+ *= require jquery-lionbars
  *= require company.index */
 
 html, body {
