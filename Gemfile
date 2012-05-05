@@ -14,6 +14,7 @@ gem 'colored'
 group :assets do
   gem 'yui-compressor'
   gem 'jquery-rails'
+  gem 'jquery-lionbars'
 end
 
 group :development do
