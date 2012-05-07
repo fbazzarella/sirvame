@@ -1,9 +1,9 @@
-.company {
+header.company {
 	background: url('layout/background_body_header.png') repeat-x center -136px;
 	padding-top: 15px;
 }
 
-.company a {
+header.company a {
 	display: inline-block;
 	border-bottom: 1px dotted #333;
 	font-weight: normal;
@@ -11,15 +11,22 @@
 	color: #333;
 }
 
-.company a:hover {
+header.company a:hover {
 	border-bottom: none;
 	padding-bottom: 1px;
 	text-decoration: none;
 }
 
-.company a span {
+header.company a span {
 	font-size: 1.2em;
 	font-weight: bold;
+}
+
+header.company h2 {
+  width: 550px;
+  height: 45px;
+  font-size: 2.4em;
+  overflow: hidden;
 }
 
 aside {
@@ -48,11 +55,4 @@ dt:first-child {
 dd {
 	margin: 2px 0 0 5px;
 	font-size: .9em;
-}
-
-#company h2 {
-	width: 550px;
-	height: 45px;
-	font-size: 2.4em;
-	overflow: hidden;
 }
