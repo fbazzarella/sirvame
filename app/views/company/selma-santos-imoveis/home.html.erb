@@ -1,7 +1,8 @@
 <header class="company">
   <div class="container">
-    <a href="javascript:void(0)"><span>« Voltar</span> ao Catálogo</a>
+    <%= link_to '« Voltar ao Catálogo', 'javascript:void(0)', class: 'back-to-catalog' %>
     <h2>Selma Santos Imóveis</h2>
+    <%= render 'addthis' %>
   </div>
 </header>
 <div class="container company main-content">

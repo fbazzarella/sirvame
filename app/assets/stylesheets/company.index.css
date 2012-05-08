@@ -1,13 +1,13 @@
 header.search {
-  background: #FFF url('layout/background_body_header.png') repeat-x;
+  background: url('layout/background_header_search.png') repeat-x;
   height: 143px;
 }
 
 header.search h2 {
   padding: 27px 0 8px;
-  width: 690px;
+  width: 600px;
+  height: 29px;
   font-size: 1.8em;
-  color: #FFF;
 }
 
 /* Twitter Bootstrap */
@@ -37,7 +37,6 @@ header.search input[type=text] {
 header.search input[type=text]:focus {
   border-color: rgba(82,168,236,.8);
   outline: 0;
-  outline: thin dotted \9; /* IE6-9 */
   -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
      -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
           box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
@@ -59,30 +58,16 @@ header.search .add-on {
 }
 /* End */
 
-.addthis {
-    display: none;
-    position: absolute;
-    right: 10px;
-    top: 40px;
-}
-
-.addthis p {
-    margin-left: 2px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #FFF;
-}
-
 #companies-count {
   background: #F9F9F9 url('layout/background_body.png');
   margin: -5px 2px 20px 0;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   padding: 15px;
   -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.5);
-  -moz-box-shadow: inset 0 0 10px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 10px rgba(0,0,0,.5);
+     -moz-box-shadow: inset 0 0 10px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 10px rgba(0,0,0,.5);
   font-size: 1.2em;
 }
 
@@ -103,40 +88,40 @@ header.search .add-on {
   background-color: #FFF;
   border: 2px solid #999;
   -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   padding: 7px 6px;
   width: 290px;
   height: 110px;
   -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
-  -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
-  box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
+     -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
+          box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
   color: #666;
   overflow: hidden;
 }
 
 .result p {
   margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .result p.name {
   margin-bottom: 8px;
   font-size: 1.3em;
-  font-weight: bold;
   text-shadow: 1px 1px 1px #ccc;
 }
 
 .result p.phone, .result p.address {
   font-size: 1em;
-  font-weight: bold
 }
 
 .result p.tags {
-  font-size: .9em
+  font-size: .9em;
+  font-weight: normal;
 }
 
 #none-companies {
-  background: url('icons/not_found.png') no-repeat;
+  background: url('icons/not_found.png') no-repeat left 7px;
   margin: 30px 10px;
   padding-left: 150px;
   color: #333;
@@ -153,4 +138,14 @@ header.search .add-on {
   width: 600px;
   font-size: 1.3em;
   line-height: 1.7em;
+}
+
+#none-companies a {
+  border-bottom: 1px dotted;
+  padding-bottom: 0;
+}
+
+#none-companies a:hover {
+  border-bottom: none;
+  padding-bottom: 1px;
 }
