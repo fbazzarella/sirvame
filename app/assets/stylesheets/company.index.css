@@ -92,9 +92,15 @@
 }
 
 .result {
-  background-color: #FFF;
+  position: relative;
   float: left;
   margin: 10px;
+  width: 306px;
+  height: 128px;
+}
+
+.result .data {
+  background-color: #FFF;
   border: 2px solid #999;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

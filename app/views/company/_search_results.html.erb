@@ -1,14 +1,16 @@
 <ul id="search-results">
 	<% if @companies.any? %>
 		<% @companies.each do |company| %>
-			<li data-id="<%= company.id %>" class="result">
-				<p class="name"><%= company.name %></p>
-				<p class="phone"><%= company.phone %></p>
-				<p class="address"><%= company.address %></p>
-				<p class="tags">
-					<%= company.segments %>
-					<%= " [#{company.products}]" unless company.products.blank? %>
-				</p>
+			<li data-id="<%= company.id %>" class="result<%= ' plus' if company.plus %>">
+				<div class="data">
+					<p class="name"><%= company.name %></p>
+					<p class="phone"><%= company.phone %></p>
+					<p class="address"><%= company.address %></p>
+					<p class="tags">
+						<%= company.segments %>
+						<%= " [#{company.products}]" unless company.products.blank? %>
+					</p>
+				</div>
 			</li>
 		<% end %>
 	<% else %>

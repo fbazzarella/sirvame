@@ -5,7 +5,7 @@
 $(function(){
 
     function checkLionbars(){
-        $('#search-results li').lionbars() }
+        $('#search-results .data').lionbars() }
 
     function checkPlaceHolders(){
         $('input[placeholder]').each(function(){
