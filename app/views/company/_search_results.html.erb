@@ -1,8 +1,8 @@
 <ul id="search-results">
 	<% if @companies.any? %>
 		<% @companies.each do |company| %>
-			<li data-id="<%= company.id %>" class="result<%= ' plus' if company.plus %>">
-				<%= link_to image_tag('layout/see_details.png', alt: 'Ver detalhes'), company_path(company.username), title: "Ver detalhes de #{company.name}", class: 'see-details' if company.plus %>
+			<li data-id="<%= company.id %>" class="<%= company.plan %> result">
+				<%= link_to image_tag('layout/see_details.png', alt: 'Ver detalhes'), company_path(company.username), title: "Ver detalhes de #{company.name}", class: 'see-details' if company.paying? %>
 				<div class="data">
 					<p class="name"><%= company.name %></p>
 					<p class="phone"><%= company.phone %></p>
