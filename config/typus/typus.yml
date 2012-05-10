@@ -1,8 +1,9 @@
 Company:
   fields:
-    default: name, phone, address, segments, products, username, plus
-    csv: name, phone, segments, products, username, plus
+    default: name, phone, address, segments, products, username, plus, plan
+    csv: name, phone, segments, products, username, plus, plan
     options:
+      selectors: plan
       booleans:
         plus: Active, Inactive
   search: name, segments, products
