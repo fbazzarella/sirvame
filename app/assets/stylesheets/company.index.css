@@ -18,7 +18,7 @@ header.search input[type=text] {
   height: 18px;
   font-family: inherit;
   font-size: 1.3em;
-  color: inherit;
+  color: #333;
 
   border: 1px solid #CCC;
   -webkit-border-radius: 3px 0 0 3px;
@@ -100,6 +100,22 @@ header.search .add-on {
   overflow: hidden;
 }
 
+.plus .data {
+  background: #FFF url('layout/background_search_result.png') no-repeat center -50px;
+  border-color: #333;
+  -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
+  -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
+  box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
+}
+
+.see-details {
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: 8px;
+  z-index: 1;
+}
+
 .result p {
   margin-bottom: 4px;
   font-weight: bold;
@@ -141,11 +157,9 @@ header.search .add-on {
 }
 
 #none-companies a {
-  border-bottom: 1px dotted;
-  padding-bottom: 0;
+  text-decoration: underline;
 }
 
 #none-companies a:hover {
-  border-bottom: none;
-  padding-bottom: 1px;
+  text-decoration: none;
 }

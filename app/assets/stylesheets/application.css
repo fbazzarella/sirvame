@@ -17,20 +17,12 @@ body {
 
 a, a:active, a:visited, a:hover {
   display: inline-block;
-  padding-bottom: 1px;
   color: #FFF;
   text-decoration: none;
 }
 
 a:hover {
-  border-bottom: 1px dotted;
-  padding-bottom: 0;
-}
-
-.logo a:hover,
-.logo:hover,
-.addthis a:hover {
-  border-bottom: none;
+  text-decoration: underline;
 }
 
 .main-container {
