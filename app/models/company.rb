@@ -7,8 +7,8 @@ class Company < ActiveRecord::Base
   validates :username, format: {with: /\A[-_\.a-z0-9]+\Z/}, allow_blank: true
   validates :plan, inclusion: {in: PLANS}
 
-  def paying?
-    plan == 'none' ? false : true
+  def have_page?
+    plan != 'none' && !username.blank?
   end
 
   def self.plans # Just for Typus

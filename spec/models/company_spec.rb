@@ -22,16 +22,18 @@ describe Company do
 		it { should_not allow_value('other').for(:plan) }
 	end
 
-	describe "paying" do
-		let!(:not_paying) { FactoryGirl.create(:company, plan: 'none') }
-		let!(:paying) { FactoryGirl.create(:company, plan: 'plus') }
+	describe "have page" do
+		let!(:has_no_page) { FactoryGirl.create(:company, plan: 'none') }
+		let!(:has_no_page_too) { FactoryGirl.create(:company, plan: 'plus', username: '') }
+		let!(:has_page) { FactoryGirl.create(:company, plan: 'plus', username: 'company-name') }
 
 		it "should return false if company is not a paying" do
-			not_paying.paying?.should be_false
+			has_no_page.have_page?.should be_false
+			has_no_page_too.have_page?.should be_false
 		end
 
 		it "should return true if company is a paying" do
-			paying.paying?.should be_true
+			has_page.have_page?.should be_true
 		end
 	end
 end
