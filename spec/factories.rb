@@ -5,7 +5,6 @@ FactoryGirl.define do
     address  'Company Address, 11, 111'
     segments 'Segment, List'
     products 'product, tags'
-    plus     false
     plan     'none'
   end
 end

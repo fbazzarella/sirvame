@@ -1,7 +1,7 @@
 Company:
   fields:
-    default: name, phone, address, segments, products, username, plus, plan
-    csv: name, phone, segments, products, username, plus, plan
+    default: name, phone, address, segments, products, username, plan
+    csv: name, phone, segments, products, username, plan
     options:
       selectors: plan
       booleans:
