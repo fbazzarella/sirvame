@@ -9,7 +9,13 @@ namespace :companies do
 
     CSV.foreach(Rails.root.join('db', 'new_companies.csv')) do |row|
       if Company.find_by_name(row[0]).nil?
-        Company.create({name: row[0], phone: row[1], segments: row[2], products: row[3]}, as: :admin)
+        Company.create({
+          name:     row[0],
+          phone:    row[1],
+          segments: row[2],
+          products: row[3],
+          plan:     'none'
+        }, as: :admin)
 
         print '.'.green
         count[:saved] += 1
