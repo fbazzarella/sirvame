@@ -2,11 +2,11 @@
 module ApplicationHelper
   
   def page_title(title = '')
-    title.blank? ? 'Encontre o que precisa em Valença - Sirva.me' : title
+    (title.blank? ? 'Encontre o que precisa em Valença' : title) + ' - Sirva.me'
   end
 
   def page_description(description = '')
-    description.blank? ? 'Somos um catálogo comercial visual que reúne as empresas e profissionais de Valença em um único local, de forma prática e elegante. ' : description
+    description.blank? ? 'Somos um catálogo comercial visual que reúne as empresas e profissionais de Valença em um único local, de forma prática e elegante.' : description
   end
 
   def og_image(og_image = '')

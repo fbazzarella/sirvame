@@ -6,12 +6,20 @@ describe ApplicationHelper do
 			page_title.should be_a(String)
 			page_title.should_not be_blank
 		end
+
+		it "should render a custom title" do
+			page_title('Custom Title').should == 'Custom Title - Sirva.me'
+		end
 	end
 
 	describe "page description" do
 		it "should return anything" do
 			page_description.should be_a(String)
 			page_description.should_not be_blank
+		end
+
+		it "should render a custom description" do
+			page_description('Custom Description').should == 'Custom Description'
 		end
 
 		it "should have less than 155 chars" do
@@ -23,6 +31,10 @@ describe ApplicationHelper do
 		it "should return anything" do
 			og_image.should be_a(String)
 			og_image.should_not be_blank
+		end
+
+		it "should render a custom og image" do
+			og_image('custom_image.png').should =~ /custom_image.png/
 		end
 	end
 
