@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CompanyController do
+describe CompaniesController do
 	render_views
 
 	describe "GET index" do
@@ -60,7 +60,7 @@ describe CompanyController do
 	end
 
 	describe "GET show" do
-		dir    = Rails.root.join('app/views/company/company_name')
+		dir    = Rails.root.join('app/views/companies/company_name')
 		before { FileUtils.touch(FileUtils.mkdir_p(dir).join + '/home.html.erb') }
 		after  { FileUtils.rm_r(dir) }
 
