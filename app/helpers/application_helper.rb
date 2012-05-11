@@ -1,15 +1,15 @@
 # encoding: utf-8
 module ApplicationHelper
   
-  def default_title(title = '')
+  def page_title(title = '')
     title.blank? ? 'Encontre o que precisa em Valença - Sirva.me' : title
   end
 
-  def default_description(description = '')
+  def page_description(description = '')
     description.blank? ? 'Somos um catálogo comercial visual que reúne as empresas e profissionais de Valença em um único local, de forma prática e elegante. ' : description
   end
 
-  def default_og_image(og_image = '')
+  def og_image(og_image = '')
     root_url[0..-2] + image_path(og_image.blank? ? 'layout/logo2.png' : og_image)
   end
 

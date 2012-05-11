@@ -1,28 +1,28 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-	describe "default title" do
+	describe "page title" do
 		it "should return anything" do
-			default_title.should be_a(String)
-			default_title.should_not be_blank
+			page_title.should be_a(String)
+			page_title.should_not be_blank
 		end
 	end
 
-	describe "default description" do
+	describe "page description" do
 		it "should return anything" do
-			default_description.should be_a(String)
-			default_description.should_not be_blank
+			page_description.should be_a(String)
+			page_description.should_not be_blank
 		end
 
 		it "should have less than 155 chars" do
-			default_description.length.should <= 155
+			page_description.length.should <= 155
 		end
 	end
 
-	describe "default og image" do
+	describe "og image" do
 		it "should return anything" do
-			default_og_image.should be_a(String)
-			default_og_image.should_not be_blank
+			og_image.should be_a(String)
+			og_image.should_not be_blank
 		end
 	end
 

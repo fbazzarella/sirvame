@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR" dir="ltr">
   <head>
-    <title><%= default_title yield(:title) %></title>
+    <title><%= page_title yield(:title) %></title>
     <meta charset="utf-8" />
-    <meta name="description" content="<%= default_description yield(:description) %>" />
-    <meta property="og:image" content="<%= default_og_image yield(:og_image) %>" />
+    <meta name="description" content="<%= page_description yield(:description) %>" />
+    <meta property="og:image" content="<%= og_image yield(:og_image) %>" />
     <%= csrf_meta_tag %>
     <%= favicon_link_tag %>
     <%= stylesheet_link_tag 'fonts/open_sans' %>
@@ -16,7 +16,7 @@
       <header class="main">
         <div class="container">
           <h1 class="logo">
-            <%= link_to image_tag('layout/logo.png', alt: default_title), root_path, title: default_title %>
+            <%= link_to image_tag('layout/logo.png', alt: page_title), root_path, title: page_title %>
           </h1>
           <nav>
             <ul>
@@ -30,7 +30,7 @@
       </section>
       <footer>
         <div class="container">
-          <%= link_to image_tag('layout/logo1.png', alt: default_title), root_path, title: default_title, class: 'logo' %>
+          <%= link_to image_tag('layout/logo1.png', alt: page_title), root_path, title: page_title, class: 'logo' %>
           <%= link_to 'who', 'http://bazzarella.com', target: '_blank', title: 'Felipe Bazzarella', class: 'who' %>
         </div>
       </footer>
