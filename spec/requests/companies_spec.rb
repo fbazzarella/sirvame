@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Home Page" do
 	before do
-		FactoryGirl.create(:company, segments: 'Movies', products: 'dvds')
+		FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus')
 		visit root_path
 	end
 
@@ -10,6 +10,10 @@ describe "Home Page" do
 		it "should display search results if exist some company" do
 			page.should have_content('Company Name')
 			page.should have_content('Movies [dvds]')
+		end
+
+		it "should display result as paying" do
+			page.find('.plus.result').should be
 		end
 	end
 
@@ -19,8 +23,7 @@ describe "Home Page" do
 				fill_in 'search-field', with: 'coffee, fruit'
 				click_button 'submit-search'
 
-				page.should have_no_selector(:xpath, './/li[@class="result"]')
-				page.should have_selector(:xpath, './/li[@id="none-companies"]')
+				page.find('#none-companies').should be
 			end
 
 			it "should display search results if companies found" do
@@ -37,8 +40,7 @@ describe "Home Page" do
 				fill_in 'search-field', with: 'coffee, fruit'
 				click_button 'submit-search'
 
-				page.should have_no_selector(:xpath, './/li[@class="result"]')
-				page.should have_selector(:xpath, './/li[@id="none-companies"]')
+				page.find('#none-companies').should be
 			end
 
 			it "should display search results if companies found" do
@@ -48,6 +50,13 @@ describe "Home Page" do
 				page.should have_content('Company Name')
 				page.should have_content('Movies [dvds]')
 			end
+		end
+	end
+
+	describe "visit company page" do
+		it "should display company page" do
+			click_link 'Ver detalhes de Company Name'
+			current_path.should == company_path('company-name')
 		end
 	end
 end
