@@ -8,6 +8,17 @@ describe ApplicationHelper do
 		end
 	end
 
+	describe "default description" do
+		it "should return anything" do
+			default_description.should be_a(String)
+			default_description.should_not be_blank
+		end
+
+		it "should have less than 155 chars" do
+			default_description.length.should <= 155
+		end
+	end
+
 	describe "normalize search params" do
 		it "should return with comma separator" do
 			normalize_search_params('first+second').should == 'first, second'

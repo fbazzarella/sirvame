@@ -4,6 +4,10 @@ module ApplicationHelper
     'Encontre o que precisa em Valença - Sirva.me'
   end
 
+  def default_description
+    'Somos um catálogo comercial visual que reúne as empresas e profissionais de Valença em um único local, de forma prática e elegante. '
+  end
+
   def normalize_search_params(params = nil)
   	return nil if params.nil?
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
