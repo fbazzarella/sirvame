@@ -46,8 +46,9 @@ $(function(){
 
             var sp = normalizeSearchParams(searchField.val(), 'go');
             var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
+            var routerUrl = sp ? '!/encontrar/' + sp : '';
 
-            SirvaMeRouting.navigate('!' + searchUrl);
+            SirvaMeRouting.navigate(routerUrl);
 
             if(typeof mixpanel != 'undefined' && sp){
                 mixpanel.track('Search', {'City': 'Valença'}) };
@@ -63,9 +64,14 @@ $(function(){
 
     window.SirvaMeRouting = new (Backbone.Router.extend({
         routes: {
-            '':                       'search',
+            '':                       'home',
             '!/encontrar':            'search',
             '!/encontrar/:encontrar': 'search' },
+
+        home: function(){
+            searchForm.find('input').blur().val('');
+            searchForm.submit();
+            checkPlaceHolders() },
 
         search: function(searchParams){
             searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
