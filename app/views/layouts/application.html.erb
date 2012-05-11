@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <meta property="og:image" content="<%= root_url[0..-2] + image_path('layout/logo2.png') %>" />
     <title><%= default_title %></title>
+    <meta charset="utf-8" />
+    <meta name="description" content="<%= default_description %>" />
+    <meta property="og:image" content="<%= default_og_image %>" />
     <%= csrf_meta_tag %>
     <%= favicon_link_tag %>
     <%= stylesheet_link_tag 'fonts/open_sans' %>

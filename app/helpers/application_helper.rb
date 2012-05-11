@@ -8,6 +8,10 @@ module ApplicationHelper
     'Somos um catálogo comercial visual que reúne as empresas e profissionais de Valença em um único local, de forma prática e elegante. '
   end
 
+  def default_og_image
+    root_url[0..-2] + image_path('layout/logo2.png')
+  end
+
   def normalize_search_params(params = nil)
   	return nil if params.nil?
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']

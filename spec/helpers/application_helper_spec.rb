@@ -19,6 +19,13 @@ describe ApplicationHelper do
 		end
 	end
 
+	describe "default og image" do
+		it "should return anything" do
+			default_og_image.should be_a(String)
+			default_og_image.should_not be_blank
+		end
+	end
+
 	describe "normalize search params" do
 		it "should return with comma separator" do
 			normalize_search_params('first+second').should == 'first, second'
