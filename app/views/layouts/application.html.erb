@@ -20,7 +20,7 @@
           </h1>
           <nav>
             <ul>
-              <li><%= link_to ENV['SMTP_ADDRESS'], 'mailto:fale-com@sirva.me', title: 'Envie-nos um e-mail. Ficaremos felizes!' %></li>
+              <li><%= mail_to ENV['SMTP_ADDRESS'], ENV['SMTP_ADDRESS'], title: 'Envie-nos um e-mail. Ficaremos felizes!' %></li>
             </ul>
           </nav>
         </div>
