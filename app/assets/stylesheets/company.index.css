@@ -100,7 +100,7 @@ header.search .add-on {
   overflow: hidden;
 }
 
-.plus .data {
+.highlight .data {
   background: #FFF url('layout/background_search_result.png') no-repeat center -50px;
   border-color: #333;
   -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);

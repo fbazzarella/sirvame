@@ -13,7 +13,7 @@ describe "Home Page" do
 		end
 
 		it "should display result as paying" do
-			page.find('.plus.result').should be
+			page.find('.highlight.result').should be
 		end
 	end
 
