@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-	describe "page title" do
+	describe "default title" do
 		it "should return anything" do
-			page_title.should be_a(String)
-			page_title.should_not be_blank
+			default_title.should be_a(String)
+			default_title.should_not be_blank
 		end
 	end
 

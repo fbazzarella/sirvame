@@ -1,6 +1,6 @@
 # encoding: utf-8
 module ApplicationHelper
-  def page_title
+  def default_title
     'Encontre o que precisa em Valença - Sirva.me'
   end
 
