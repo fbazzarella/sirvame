@@ -35,4 +35,29 @@ describe PagesController do
       end
     end
   end
+
+  describe "GET robots" do
+    describe "rendering" do
+      before { get :robots, format: :txt }
+
+      it "should return success" do
+        response.should be_success
+      end
+
+      it "should render robots without layout" do
+        response.should render_template('robots')
+        response.should_not render_with_layout('application')
+      end
+
+      it "should render robots as text" do
+        response.body.should =~ /User-Agent/
+      end
+
+      it "should raise missing template if invalid format is passed" do
+        expect do
+          get :robots, format: :html
+        end.to raise_error(ActionView::MissingTemplate)
+      end
+    end
+  end
 end
