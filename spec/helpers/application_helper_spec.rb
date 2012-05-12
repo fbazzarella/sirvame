@@ -22,7 +22,7 @@ describe ApplicationHelper do
 			page_description('Custom Description').should == 'Custom Description'
 		end
 
-		it "should have less than 155 chars" do
+		it "should have maximum 155 chars" do
 			page_description.length.should <= 155
 		end
 	end
@@ -35,6 +35,20 @@ describe ApplicationHelper do
 
 		it "should render a custom og image" do
 			og_image('custom_image.png').should =~ /custom_image.png/
+		end
+	end
+
+	describe "back to catalog url" do
+		it "should return javascript to back the browser history" do
+			back_to_catalog_url('http://localhost:3000').should == 'javascript:history.back()'
+			back_to_catalog_url('http://127.0.0.1:3000').should == 'javascript:history.back()'
+			back_to_catalog_url('http://sirva.me').should == 'javascript:history.back()'
+		end
+
+		it "should return root path" do
+			back_to_catalog_url('http://facebook.com').should == root_path
+			back_to_catalog_url('http://gmail.com').should == root_path
+			back_to_catalog_url('').should == root_path
 		end
 	end
 

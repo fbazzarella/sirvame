@@ -1,6 +1,5 @@
 # encoding: utf-8
 module ApplicationHelper
-  
   def page_title(title = '')
     (title.blank? ? 'Encontre o que precisa em Valença' : title) + ' - Sirva.me'
   end
@@ -11,6 +10,10 @@ module ApplicationHelper
 
   def og_image(og_image = '')
     root_url[0..-2] + image_path(og_image.blank? ? 'layout/logo2.png' : og_image)
+  end
+
+  def back_to_catalog_url(referrer = request.referrer)
+    referrer =~ /\:3000|sirva\.me/ ? 'javascript:history.back()' : root_path
   end
 
   def normalize_search_params(params = nil)
