@@ -4,5 +4,6 @@ SirvaMe::Application.routes.draw do
   get '/encontrar(/:encontrar)',     to: 'companies#index'
   get '/encontrei/:company(/:page)', to: 'companies#show', as: :company
   
-  get '/sitemap',                    to: 'pages#sitemap'
+  get '/sitemap',                    to: 'pages#sitemap',  as: :sitemap
+  get '/robots',                     to: 'pages#robots',   as: :robots
 end

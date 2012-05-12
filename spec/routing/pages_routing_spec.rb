@@ -6,5 +6,10 @@ describe PagesController do
       get('/sitemap.xml').should route_to('pages#sitemap', format: 'xml')
       sitemap_path(format: :xml).should == '/sitemap.xml'
     end
+
+    it "should robots path routes to robots" do
+      get('/robots.txt').should route_to('pages#robots', format: 'txt')
+      robots_path(format: :txt).should == '/robots.txt'
+    end
   end
 end
