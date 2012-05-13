@@ -15,6 +15,7 @@ group :assets do
   gem 'yui-compressor'
   gem 'jquery-rails'
   gem 'jquery-lionbars'
+  gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
 end
 
 group :development do
