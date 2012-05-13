@@ -9,7 +9,12 @@
 	<%= render 'companies/selma-santos-imoveis/sidebar' %>
   <section>
     <article class="cover">
-      <%= image_tag 'companies/selma-santos-imoveis/cover-1.png', alt: 'Bem vindo à Selma Santos Imóveis' %>
+
+      <% # excluir %>
+      <% image = 'companies/selma-santos-imoveis/cover-1.png' %>
+
+      
+      <%= link_to image_tag(image, alt: 'Bem vindo à Selma Santos Imóveis'), image_path(image), title: 'Bem vindo à Selma Santos Imóveis', rel: 'cover' %>
     </article>
     <article class="text">
       <h3>Sobre Nós</h3>
@@ -20,18 +25,18 @@
     <article class="gallery">
       <h3>Nossa Loja</h3>
       <ul>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
-        <li><%= image_tag 'companies/selma-santos-imoveis/gallery-1-1.png', alt: 'Nossa Loja' %></li>
+
+        <% # excluir %>
+        <% image = 'companies/selma-santos-imoveis/gallery-1-1.png' %>
+
+
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 1', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 2', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 3', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 4', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 5', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 6', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 7', rel: 'gallery-1' %></li>
       </ul>
     </article>
     <article class="text">
@@ -42,6 +47,26 @@
       <p>
         Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento.
       </p>
+    </article>
+    <article class="cover">
+
+      <% # excluir %>
+      <% image = 'companies/selma-santos-imoveis/cover-1.png' %>
+
+      
+      <%= link_to image_tag(image, alt: 'Bem vindo à Selma Santos Imóveis'), image_path(image), title: 'Bem vindo à Selma Santos Imóveis', rel: 'cover' %>
+    </article>
+    <article class="gallery">
+      <h3>Nossa Loja 2</h3>
+      <ul>
+
+        <% # excluir %>
+        <% image = 'companies/selma-santos-imoveis/gallery-1-1.png' %>
+
+
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 8', rel: 'gallery-2' %></li>
+        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 9', rel: 'gallery-2' %></li>
+      </ul>
     </article>
   </section>
 </div>
