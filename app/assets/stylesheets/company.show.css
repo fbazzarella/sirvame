@@ -49,7 +49,8 @@ dd {
   width: 690px;
 }
 
-.company section:after {
+.company section:after,
+.company .gallery:after {
   content: '.';
   display: block;
   height: 0;
@@ -66,18 +67,7 @@ dd {
   margin-bottom: 0;
 }
 
-.company .image {
-  background-color: #FFF;
-  border: 1px solid #999;
-  padding: 2px;
-}
-
-.company .cover {
-  width: 684px;
-  height: 224px;
-}
-
-.company .text h3 {
+.company h3 {
   font-size: 1.6em;
 }
 
@@ -85,4 +75,33 @@ dd {
   margin: 10px 0;
   line-height: 1.5em;
   text-indent: 2em;
+}
+
+.company .cover {
+  width: 684px;
+  height: 224px;
+}
+
+.company .cover,
+.company .gallery li {
+  background-color: #FFF;
+  border: 1px solid #999;
+  padding: 2px;
+}
+
+.company .cover:hover,
+.company .gallery li:hover {
+  border-color: #000;
+}
+
+.company .gallery ul {
+  list-style: none;
+  margin: 10px -5px;
+}
+
+.company .gallery li {
+  float: left;
+  margin: 5px;
+  width: 124px;
+  height: 114px;
 }
