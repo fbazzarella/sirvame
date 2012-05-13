@@ -81,10 +81,10 @@ $(function(){
 
     checkLionbars();
     checkPlaceHolders();
-
     Backbone.history.start();
-
     $('.addthis').show();
-    $('.cover a, .gallery a').fancybox();
 
+    $('.cover a, .gallery a').fancybox({
+        openEffect: 'elastic', closeEffect: 'fade', prevEffect: 'fade', nextEffect: 'fade',
+        padding: 2, helpers: {title: {type: 'over'}} });
 });
