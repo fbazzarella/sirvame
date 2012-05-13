@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery-lionbars
+//= require fancybox
 //= require_tree ./plugins/
 
 $(function(){
@@ -80,7 +81,10 @@ $(function(){
 
     checkLionbars();
     checkPlaceHolders();
+
     Backbone.history.start();
+
     $('.addthis').show();
+    $('.cover a, .gallery a').fancybox();
 
 });
