@@ -28,7 +28,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '3.3.0'
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
