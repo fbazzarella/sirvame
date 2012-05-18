@@ -10,3 +10,7 @@ development:
 test:
   <<: *commom
   database: sirvame_test
+
+production:
+  <<: *commom
+  database: sirvame_production
