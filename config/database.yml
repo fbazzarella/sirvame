@@ -14,3 +14,7 @@ test:
 production:
   <<: *commom
   database: sirvame_production
+
+staging:
+  <<: *commom
+  database: sirvame_staging
