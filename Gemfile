@@ -18,10 +18,6 @@ group :assets do
   gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
 end
 
-group :development do
-	gem 'heroku'
-end
-
 group :development, :test do
   gem 'rspec-rails'
 end
