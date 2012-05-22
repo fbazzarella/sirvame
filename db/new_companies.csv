@@ -39,7 +39,6 @@ Bruna Silvestre Kopke da Silva,24 2452 5315,"Advocacia, Advogados",""
 Bruno da Silva Duboc,24 2453 3278,"Advocacia, Advogados",""
 Camilo Romualdo Bazzarella,24 2452 1879,"Advocacia, Advogados",""
 Carlos Alberto Magalhães,24 2453 2894,"Advocacia, Advogados",""
-Carlos Cesar F. Machado,208144 2452 ,"Advocacia, Advogados",""
 Celso Barbosa Pinheiro,24 2453 2143,"Advocacia, Advogados, Imobiliária","imóveis, casas, apartamentos, terrenos"
 Chorislaus J. T. Coelho,24 2453 4131,"Advocacia, Advogados, Imobiliária, Contabilidade","imóveis, casas, apartamentos, terrenos, contador"
 Claudio José M. Simões,24 2453 2094,"Advocacia, Advogados",""
@@ -155,9 +154,9 @@ Valecom,24 2453 6580,"Alarmes, Antenas","alarmes, antenas, receptores, telefones
 Águas do Vale,24 2452 3864,"Água, Gás","água, gás, galão, galões, garrafas, fardos"
 Dinei Água e Gás,24 2453 1510 ,"Água, Gás","água, gás, cervejas, refrigerantes, garrafas, latas"
 Fazendinha,24 2453 1432,"Água, Agropecuária","água, ração, rações, veterinária, ferramentas, adubos"
-Luiz Belini,24 2452 3538,Andaimes
-Aluguel de Andaimes,24 2453 3765,Andaimes
-Aluguel  de Andaimes Makitas,24 2453 4750,Andaimes
+Luiz Belini,24 2452 3538,Andaimes,
+Aluguel de Andaimes,24 2453 3765,Andaimes,
+Aluguel  de Andaimes Makitas,24 2453 4750,Andaimes,
 Comel,24 2453 4225,"Antenas, Eletrônicos","antenas, componentes, fios, cabos, lâmpadas"
 Eletro Cruz,24 2453 3487,"Antenas, Eletricidade, Eletrônica","antenas, componentes, cabos, computadores, manutenção"
 Peixelim,24 2453 3941,Aquariofilia,"peixes, ração, rações, aquários, "
@@ -176,7 +175,7 @@ César de Souza,24 2453 1548,Arquitetos,"arquitetura, projetos"
 Auto Escola Viena,24 2453 4050,"Auto escola, Moto escola","auto escola, moto escola, habilitação, renovação"
 Auto Escola Sta. Tereza D'avila,24 2453 2910,"Auto escola, Moto escola","auto escola, moto escola, habilitação, renovação"
 Auto Escola Cesinha,24 2453 3193,"Auto escola, Moto escola","auto escola, moto escola, habilitação, renovação"
-Barbosa Auto Socorro,24 2452 2402,Auto socorro
+Barbosa Auto Socorro,24 2452 2402,Auto socorro,
 Lia Ateliê Noivas,24 2453 7785,"Ateliê, Modista, Costureira","roupas, confecção, locação, vendas, casamentos, formaturas"
 Ieda Noivas,24 2452 3597,"Ateliê, Modista, Costureira","roupas, confecção, locação, vendas, casamentos, formaturas"
 Atelier Maria José Marchioro  ,24 2452 4431,Artes Plásticas,"pinturas, telas, aquarela, quadros, decoração"
@@ -187,11 +186,11 @@ Maguinho,24 2452 6338,"Automóveis, Agências","automóveis, venda, compra"
 Auto Center Valença,24 2453 3072,"Automóveis, Peças","automóveis, peças, mecânica, elétrica"
 Auto Peças Porto Real  ,24 2453 3102,"Automóveis, Peças","automóveis, peças, mecânica, elétrica"
 Auto Elétrica Meio Kilo,24 2453 3572,"Automóveis, Peças","automóveis, peças, mecânica, elétrica"
-Banco Santander,24 2453 9800,Bancos
-Banco Itaú,24 2453 1633,Bancos
-Banco Bradesco,24 2453 4104,Bancos
-Banco do Brasil,24 2453 1982,Bancos
-Caixa Econômica Federal,24 2453 1590,Bancos
+Banco Santander,24 2453 9800,Bancos,
+Banco Itaú,24 2453 1633,Bancos,
+Banco Bradesco,24 2453 4104,Bancos,
+Banco do Brasil,24 2453 1982,Bancos,
+Caixa Econômica Federal,24 2453 1590,Bancos,
 Bar e Mercearia Skyna,24 2453 3053,"Bar, Mercearia","bebidas, lanches, balas, doces, cereais, enlatados"
 Bar da Galinha,24 2453 4696,Bar,"bebidas, petiscos, porções, cigarros"
 Bar do Dimas,24 2453 2158,Bar,"bebidas, petiscos, porções, cigarros"
@@ -210,10 +209,10 @@ Borracharia do Adilson,24 2452 5702,Borracharia,"pneus, novos, recauchutados, tr
 Aroma Buffet e Ornamentação,24 2452 4843,Buffet,"festas, casamentos, aniversários, formaturas, batizados"
 Bel Festas ,24 2453 2612,Buffet,"festas, casamentos, aniversários, formaturas, batizados"
 Jaine Festas,24 2453 2636,Buffet,"festas, casamentos, aniversários, formaturas, batizados"
-Cartório do 1º Ofício,24 2453 4990,Cartórios
-Cartório do 2º Ofício,24 2453 4995,Cartórios
-Cartório do 3º Ofício,24 2453 1137,Cartórios
-Cartório do Registro Civil,24 2453 2182,Cartórios
+Cartório do 1º Ofício,24 2453 4990,Cartórios,
+Cartório do 2º Ofício,24 2453 4995,Cartórios,
+Cartório do 3º Ofício,24 2453 1137,Cartórios,
+Cartório do Registro Civil,24 2453 2182,Cartórios,
 Alexandre Cabeleireiro,24 2453 3590,Cabeleireiros,"corte, penteados, relaxamento, luzes, hidratação, balaiagem"
 Ana Guimarães,24 2453 3406,Cabeleireiros,"corte, penteados, relaxamento, luzes, hidratação, balaiagem"
 Angélica Beauty Hair,24 2453 4544,Cabeleireiros,"mechas, penteados, relaxamento, plástica, luzes, maquilagem, manicure"
@@ -223,13 +222,13 @@ Bahall Calçados,24 2453 2000,Sapataria,"calçados, bolsas, malas, cintos, meias
 Casa Verde,24 2453 3857,"Sapataria, Roupas","calçados, acessórios, roupas, bijuterias"
 Central Sapataria,24 2453 4091,Sapataria,"calçados, bolsas, malas, cintos, meias, material esportivo"
 Sport e Cia ,24 2453 4780,Magazine,"roupas, calçados, acessórios, cama, mesa, banho, material esportivo"
-Chaveiro e Cutelaria Luciano,24 2453 7048,Chaveiros
-Chaveiro e Cutelaria Via Veneto,24 9261 8514,Chaveiros
-Chaveiro Fufu,24 2453 3552,Chaveiros
-Chaveiro Avenida,24 8824 7165,Chaveiros
+Chaveiro e Cutelaria Luciano,24 2453 7048,Chaveiros,
+Chaveiro e Cutelaria Via Veneto,24 9261 8514,Chaveiros,
+Chaveiro Fufu,24 2453 3552,Chaveiros,
+Chaveiro Avenida,24 8824 7165,Chaveiros,
 Doce Lar,24 2453 3533,"Cama, Mesa, Banho","cobertores, edredons, lençóis, toalhas, tapetes, cortinas, objetos decorativos"
 Unibrás,24 2452 42 45,"Cama, Mesa, Banho","cobertores, edredons, lençóis, toalhas, tapetes, cortinas"
-Centro de Nefrologia e Diálise,24 2453 4446,Clínicas
+Centro de Nefrologia e Diálise,24 2453 4446,Clínicas,
 Centermed,24 2453 4314,Clínicas,"consultas, exames"
 Odonto Center,24 2452 4057 ,Clínicas,"periodontia, endodontia, implantodontia, cirurgia, prótese, estética"
 Engrácia,24 2452 0691,Eventos,"buffet, festas, ornamentação"
@@ -243,29 +242,28 @@ Bioflora,24 2453 4002,"Farmácia, Manipulação","medicamentos, fitoterapia, alo
 Drogamais,24 2453 4268,Drogaria,"medicamentos, cosméticos, perfumaria, higiene"
 Drogaria Moderna,24 2453 4606,Drogaria,"medicamentos, cosméticos, perfumaria, higiene"
 Gaia Farmácia de Manipulação,24 2453 8740,"Farmácia, Manipulação","fórmulas, alopatia, homeopatia"
-Drogaria Benfica,24 2453 4351,Drogaria,"medicamentos, cosméticos, perfumaria, higiene"
-Fund. Educ. André Arcoverde,24 2453 1888,Faculdades
-Casa do Fotógrafo,24 2453 1717,Fotógrafos
-Color Foto,24 2453 4779,Fotógrafos
-Revelar Digital Foto Studio ,24 2453 1378,Fotógrafos
-Alceu Ferreira Souza,24 2453 1666,Ferragens
-Valefer,24 2453 4243,Ferragens
-Memorial Agência de Luto,24 2453 7873,Funerárias
-Serviço Funerário de Valença,24 2453 7712,Funerárias
-Bio Brasil GNV,24 2452 6207,Gás
-Ligeirinho,24 2452 1802,Gás
-Ultragás - Gás do Moacyr,24 2452 7767,Gás
-Gelo Filt,24 2453 3168,Gelo
+Fund. Educ. André Arcoverde,24 2453 1888,Faculdades,
+Casa do Fotógrafo,24 2453 1717,Fotógrafos,
+Color Foto,24 2453 4779,Fotógrafos,
+Revelar Digital Foto Studio ,24 2453 1378,Fotógrafos,
+Alceu Ferreira Souza,24 2453 1666,Ferragens,
+Valefer,24 2453 4243,Ferragens,
+Memorial Agência de Luto,24 2453 7873,Funerárias,
+Serviço Funerário de Valença,24 2453 7712,Funerárias,
+Bio Brasil GNV,24 2452 6207,Gás,
+Ligeirinho,24 2452 1802,Gás,
+Ultragás - Gás do Moacyr,24 2452 7767,Gás,
+Gelo Filt,24 2453 3168,Gelo,
 Gráfica P. C. Duboc,24 2453 1222,Gráfica,"cartazes, panfletos, talões, cartões, embalagens, livros"
 Mafa Gráfica,24 2453 3511,Gráfica,"cartazes, panfletos, talões, cartões, embalagens, caixas"
-Hospital Unimed,24 2453 9700,Hospital
-Hospital Escola Luiz G. Jannuzzi,24 2453 1333,Hospital
-Irmandade Sta. Casa Misericórdia,24 2453 1460,Hospital
-Hotel Aconchego,24 2452 4319,Hotel
-Center Hotel,24 2453 4823,Hotel
-Hotel Palmeira Imperial,24 2453 4019,Hotel
-Rio Hotel,24 2453 3549,Hotel
-Hotel Vista Alegre,24 2453 6432,Hotel
+Hospital Unimed,24 2453 9700,Hospital,
+Hospital Escola Luiz G. Jannuzzi,24 2453 1333,Hospital,
+Irmandade Sta. Casa Misericórdia,24 2453 1460,Hospital,
+Hotel Aconchego,24 2452 4319,Hotel,
+Center Hotel,24 2453 4823,Hotel,
+Hotel Palmeira Imperial,24 2453 4019,Hotel,
+Rio Hotel,24 2453 3549,Hotel,
+Hotel Vista Alegre,24 2453 6432,Hotel,
 Conecta,24 2453 4046,Informática,"cursos, informática, secretariado, maquiagem, cabeleireiro, manicure"
 Trustec,24 2453 1827,Informática,"computadores, impressoras, acessórios, cartuchos, manutenção"
 Digicopy,24 2452 0689,Informática,"papelaria, presentes, cartuchos, pincéis, telas, tintas, gravuras"
@@ -283,11 +281,10 @@ Café do Shopping,24 2453 4382,Lanchonete,"café, sucos, salgados, doces, tortas
 De Bem com a Vida,24 2452 5761,"Lanchonete, Natural","sanduíches, sucos, barras, tortas, refrigerantes"
 Ki-Fome,24 2452 1112,Lanchonete,"sanduíches, refrigerantes, entregas"
 Lanchonete do Baixinho,24 2453 1983,Lanchonete,"sanduíches, salgados, sucos, refrigerantes"
-Roger Gut's,24 2453 3040,"Lanchonete, Restaurante","sanduíches, refrigerantes, sorvetes, refeições, self service, entregas"
 Suco Line,24 2453 2919,Lanchonete,"café, sucos, salgados, doces, tortas, refrigerantes, vitaminas"
-7ª Arte Vídeo,24 2453 7587,Locadora
-Total Locadora,24 2452 4511,Locadora
-Word Vídeo Locadora,24 2452 5671,Locadora
+7ª Arte Vídeo,24 2453 7587,Locadora,
+Total Locadora,24 2452 4511,Locadora,
+Word Vídeo Locadora,24 2452 5671,Locadora,
 Acess,24 2453 7574,Lan House,
 Lanche House,24 2452 2740,Lan House,
 Langame,24 2453 1876,Lan House,
@@ -346,7 +343,6 @@ Dulce Maria I. Valladares,24 2453 3554,Médicos,dermatologia
 Saeko Miyazato Osuque,24 2453 6160,Médicos,dermatologia
 Samuel de Souza Costa ,24 2453 1566,Médicos,dermatologia
 Piu Bella,24 2453 2392,"Dermatologia, Estética, Holística","depilação, peeling, carboxiterapia, mesoterapia, drenagem, hidratação, reiki"
-Fisiobela Fisio Estética e Funcional,24 8135 0996,"Fisioterapia,  Estética","eletrolipoforese, drenagem, massagem, ionização, clareamento, argiloterapia"
 Fisio e Forma ,24 2452 3951,Fisioterapia,
 Ortovale,24 2453 4191,Fisioterapia,"consultas, fisioterapia"
 Ana Lúcia C. de Almeida,24 2453 2934,Fonoaudiologia,
@@ -477,6 +473,7 @@ Clínica Geral Orto e Endodontia,24 2452 3597,Dentistas,
 Produtos Paraíso,24 2458 5361,"Carnes, Indústria",linguiças
 Lutec Eletrôn. E Telecomunicações  ,24 2453 3395,"Eletrônica, Telecomunicações","telefone, interfone, câmeras, bina, alarmes, baterias, portão, automáticos"
 Silvestre Rações,24 2452 2531,Agropecuária,"ração, rações, vacinas, medicamentos"
+Drogaria Benfica,24 2453 4614,Drogaria,"medicamentos, cosméticos, perfumaria, higiene"
 Mão na massa,24 2453 1958,Salgados,"assados, fritos, congelados, encomendas"
 Massas Pertutina,24 2453 6460,Massas,"canelones, nhoques, espaguetes, ravioles, lazanhas, encomendas"
 Clau Car Seguros,24 2453 1733,Seguros,
@@ -546,7 +543,6 @@ Sérgio Mattos de Oliveira,24 2453 2239,Advogados,
 Hotel Valenciano,24 2453 4890,Hotel,"TV, frigobar, ventilador, café"
 Marquinho das Pedras,24 2453 1002,Construção,
 José Mauro R. de Moraes,24 2453 2911,Contabilidade,
-Empre$Fácil,24 2453 2847,Empréstimos,"aposentados, pensionistas, servidores, estaduais, federais, militares"
 Fabielli,24 9265 4749,Cabeleireiros,"cabelo, maquiagem"
 Casa do Pão,24 2453 3999,Padarias,"pão, bolos, tortas, salgados, encomendas"
 Jean Pierre Advocacia,24 9234 7024,Advogados,
@@ -591,6 +587,10 @@ José Otávio C. Soares,24 2453 4014,Dentistas,
 Marcelo Salgado Medeiros,24 2453 3474,Dentistas,
 Casa do Biscoito,24 2453 4685,Doces,"doces, balas, biscoitos, chocolates"
 Real Embalagens,24 2453 4359,Embalagens,"doces, balas, biscoitos, chocolates, artigos, festas"
+Carlos Cesar F. Machado,24 2452 0814,"Advocacia, Advogados",""
+Fisiobela Fisio Estética e Funcional,24 8135 0996,"Fisioterapia,  Estética","drenagem, massagem, ionização, clareamento, argiloterapia"
+Empres Fácil,24 2453 2847,Empréstimos,"aposentados, pensionistas, servidores, estaduais, federais, militares"
+Empre$Fácil,24 2453 2847,Empréstimos,"aposentados, pensionistas, servidores, estaduais, federais, militares"
 Sushi 99,24 2453 4246,Restaurantes,"comida, japonês, japonesa"
 Juarez Confecção de Jóias,24 9904 7438,Joalheiro,"jóias, confecção, consertos"
 Viscondessa,24 2438 3110,Restaurantes,"almoço, confeitaria, bolos, encomendas"
@@ -627,3 +627,55 @@ Drogaria Geral,24 2453 4556,Drogarias,"medicamentos, perfumaria, cosméticos"
 Selma Santos Corretora de Imóveis,24 2452 0525,Imobiliárias,"imóveis, compra, venda, avaliação, perícia, legalização"
 Édina de Oliveira,24 9253 9408,Cabeleireiros,"escovas, luzes, relaxamento, progressivas, hidratação"
 Pousada Mocambo,24 2453 7772,Pousadas,
+Roge Gut's,24 2453 3040,"Lanchonete, Restaurante","sanduíches, refrigerantes, sorvetes, refeições, self service, entregas, rg"
+Tabet Imobiliária,24 2452 1820,Imobiliárias,"imóveis, compra, venda, administração, consultoria"
+Jornal Local,24 2453 4060,Comunicação,"jornal, semanal, política, economia, serviços, educação, cultura, lazer"
+Ricardo Reis,24 2452 3482,Fotógrafos,"fotos, analógicas, digital, casamentos, aniversários, formaturas, eventos"
+Belo Sono,24 2453 2029,Móveis,"sofás, colchão, colchões, cama, mesa, banho"
+Açougue Landim,24 2453 2158,Açougue,"carnes, bovinos, suínos, embutidos, entrega"
+Ramiro Esteves de Oliveira Brinco,24 2452 0215,Psicopedagogos,"psicopedagogia, clínica, institucional"
+Fabiano Fernandes Salão de Beleza,24 9268 5994,Cabeleireiros,"cabelos, estética"
+Inspiração,24 2453 4457,"Perfumarias, Cosmética, Maquiagem","distribuidora, representação, perfumes, maquiagem, cosméticos"
+Atacadão das Fraldas,24 2452 3039,Roupas,"fraldas, descartável, bebês"
+Ney Fernandes,24 2453 2905,Contabilidade,
+ConstruserrA&Portobello,24 2437 0354,"Material, Construção","pisos, revestimentos, modulados, cerâmicas"
+A Princesinha,24 2452 8656,"Material, Construção","tijolos, areia, cimento, argamassa, madeiras"
+FAZ Terraplanagem Ltda,24 2452 0947,Terraplanagem,"areia, saibro, brita"
+Acácio Werneck e Rafael Farias,24 8865 1827,"Educação, Física","personal, consultoria, esportes"
+Bela e Chic Salão de Beleza,24 2452 5171,Cabeleireiros,"escovas, luzes, relaxamento, progressivas, hidratação"
+Ótica Mar & Terra,24 2438 3006,Óticas,"óculos, lentes, armação"
+Ballai,24 2453 3837,Roupas,"feminino, acessórios"
+Farmácia Sal da Terra,24 2453 6839,"Farmácia, Manipulação","fórmulas, alopatia, homeopatia"
+Preço Único Roupas e Acessórios,24 2452 0446,Roupas,"feminino, masculino, infantil, acessórios"
+Eliane dos Santos Jacinto,24 2453 4480,"Imobiliárias, Advocacia, Despachante","administração, imóveis, consultoria, legalização"
+SOGEL Investimentos,24 2452 2268,Financeiras,"promotora, crédito, consignados, aposentados, pensionistas, servidores"
+Copy Sul,24 2453 3342,Xerox,"cópias, plastificação, encadernação, fax"
+Revistaria Vamos Ler,24 2453 4578,"Revistaria, Jornaleiro","revistas, jornal, livros, tabloides, almanaques, "
+Mister Bife,24 2453 3020,Açougue,"carnes, bovinos, suínos, embutidos, carvão"
+Cachorrão,24 2453 4323,Lanches,"sanduíches, açaí"
+Pastelaria e Pizzaria Z.K.,24 2452 4694,"Lanches, Salgados","sanduíches, salgados, sucos, refrigerantes"
+Simbiose,24 2453 2828,Roupas,"feminino, acessórios"
+Mini Preço Utilidades,24 2453 4317,Utilidades,"utensílios, presentes, decoração, sandálias, papelaria"
+Cia do Papel,24 2453 1163,"Papelaria, Presentes","papel, cartões, jarras, abajures, canetas, lapiseiras"
+Gui Lanches,24 2453 1257,Lanches,hamburguers
+Farmácia Monte D'ouro,24 2453 4316,Farmácias,"medicamentos, perfumaria, cosméticos"
+Diva Supermercado,24 2438 3245,Supermercados,"mercearia, padaria, açougue, utensílios"
+Shopping Rural,24 2452 7544,Agropecuária,"ração, rações, vacinas, medicamentos, selas, equipamentos, ferramentas"
+Boutique das Carnes,24 2452 7357,Açougue,"carnes, bovinos, suínos, embutidos, carvão"
+Barbearia do Valdecy,24 9261 3765,Barbearia,
+G.E. Autopeças e Serviços,24 2453 3572,Oficinas,"injeção, elétrica, eletrônica, peças, mecânica"
+Borracheiro Amigo Peixe,24 9213 1555,Borracharia,
+DUM Despanchante,24 2453 1477,Despachantes,
+Queijaria Marquês de Valença,24 8818 1633,Laticínios,queijos
+Restaurante Thissaléia,24 2452 4516,"Restaurante, Lanchonete","refeição, quentinhas, lanches, entrega"
+Agropecuária Agrotrevo,24 9258 2010,Agropecuária,"ração, rações, vacinas, medicamentos"
+RUSSO Pisos e Revestimentos,24 2452 7397,"Material, Construção","pisos, revestimentos, cimento, argamassa, cerâmicas, armários"
+DWD Material de Construção,24 2452 7397,"Material, Construção","portas, janelas, esquadrias, tintas, pincel, rolos, bandejas, lixas"
+Werneck  Autopeças,24 2452 8956,Oficinas,"latarias, acessórios, mecânica"
+Oficina de Lanternagem Werneck,24 9826 4017,Oficinas,"lanternagem, pintura"
+Gráfica Paudrecá,24 2453 4982,Gráfica,"talão, cartão, panfletos, cartazes"
+Pizza House,24 2453 3881,Pizzaria,"pizzas, entrega"
+Super Gasbras,24 2453 4744,Gás,"gás, botijas, cilindros"
+Lorena Cabeleireira,24 9211 0385,Cabeleireiros,"luzes, relaxamento, tintura, hidratação, manicure"
+DMC - Dimensão Mat. Construção,24 2452 8968,"Material, Construção","portas, janelas, esquadrias, pisos, revestimentos, cimento, ferramentas"
+Valenciana Turismo e Fretamento,24 2452 9740,Transporte,"viagens, excursão"
