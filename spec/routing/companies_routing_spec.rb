@@ -12,13 +12,13 @@ describe CompaniesController do
     end
 
     it "should company path routes do show" do
-    	get('/encontrei/company').should route_to('companies#show', company: 'company')
-    	company_path(:company).should == '/encontrei/company'
+    	get('/company').should route_to('companies#show', company: 'company')
+    	company_path(:company).should == '/company'
     end
 
     it "should company page path routes do show" do
-    	get('/encontrei/company/page').should route_to('companies#show', company: 'company', page: 'page')
-    	company_path(:company, :page).should == '/encontrei/company/page'
+    	get('/company/page').should route_to('companies#show', company: 'company', page: 'page')
+    	company_path(:company, :page).should == '/company/page'
     end
   end
 end
