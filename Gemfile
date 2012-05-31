@@ -5,8 +5,6 @@ gem 'thin'
 gem 'pg'
 gem 'exception_notification'
 
-gem 'typus'
-gem 'kaminari'
 gem 'randumb'
 
 gem 'colored'
