@@ -1,7 +1,14 @@
+<%
+  title = 'Empresa especializada em desenvolver sites, portais de serviços e notícias, lojas virtuais, blogs, sistemas para web e imobiliárias. Confira nosso site!'
+
+  content_for :title,       'Guavas Webdesign'
+  content_for :description, title
+  content_for :og_image,    'companies/guavas/logo.png'
+%>
 <header class="company">
   <div class="container">
     <%= link_to '« Voltar ao Catálogo', back_to_catalog_url, title: 'Voltar ao catálogo', class: 'back-to-catalog' %>
-    <h2>Selma Santos Imóveis</h2>
+    <h2>Guavas Webdesign</h2>
     <%= render 'addthis' %>
   </div>
 </header>
@@ -9,37 +16,28 @@
 	<%= render 'companies/guavas/sidebar' %>
   <section>
     <article class="cover">
-
-      <% # excluir %>
-      <% image = 'companies/guavas/cover-1.png' %>
-
-
-      <%= link_to image_tag(image, alt: 'Vendemos e avaliamos seu imóvel'), image_path(image), title: 'Vendemos e avaliamos seu imóvel', rel: 'cover' %>
+      <%= image_tag('companies/guavas/cover-1.png', alt: title) %>
     </article>
     <article class="text">
-      <h3>Sobre Nós</h3>
+      <h3>A Empresa</h3>
       <p>
-        Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento.
+        No mercado desde 2010, a Guavas Webdesign visa atender seus clientes de forma rápida e simples, sempre trabalhando com responsabilidade para oferecer projetos personalizados e adequados à necessidade e ao desejo do cliente.
       </p>
       <p>
-        Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento. Um texto institucional ou sobre qualquer outro assunto pertinente ao estabelecimento.
+        Especializada no desenvolvimento de websites, portais, hotsites, lojas virtuais e blogs, também desenvolve sistemas para web, imobiliárias e outros projetos de acordo com a necessidade do cliente.
+      </p>
+      <p>
+        Trabalha com hospedagem e domínio de sites e criação de Identidade Visual (Cartão de Visita, Logotipo, Papel Timbrado). Desenvolvendo soluções focadas em conceitos de planejamento, arquitetura, usabilidade e informações estrategicamente definidas.
       </p>
     </article>
     <article class="gallery">
-      <h3>Nossa Loja</h3>
+      <h3>Trabalhos Recentes</h3>
       <ul>
-
-        <% # excluir %>
-        <% image = 'companies/guavas/gallery-1-1.png' %>
-
-
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 1', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 2', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 3', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 4', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 5', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 6', rel: 'gallery-1' %></li>
-        <li><%= link_to image_tag(image, alt: 'Nossa Loja'), image_path(image), title: 'Nossa Loja 7', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag('companies/guavas/thumb-gallery-1-1.png', alt: 'Site simples para empresa Andaimes Alfa (www.andaimesalfa.com.br)'), image_path('companies/guavas/big-gallery-1-1.png'), title: 'Site simples para empresa Andaimes Alfa (www.andaimesalfa.com.br)', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag('companies/guavas/thumb-gallery-1-2.png', alt: 'Site desenvolvido para empresa Barra Clear - Soluções Ambientais (www.barraclear.com.br)'), image_path('companies/guavas/big-gallery-1-2.png'), title: 'Site desenvolvido para empresa Barra Clear - Soluções Ambientais (www.barraclear.com.br)', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag('companies/guavas/thumb-gallery-1-3.png', alt: 'Loja virtual para marca de roupa de MMA Get Your Fight (GYF) (www.getyourfight.com)'), image_path('companies/guavas/big-gallery-1-3.png'), title: 'Loja virtual para marca de roupa de MMA Get Your Fight (GYF) (www.getyourfight.com)', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag('companies/guavas/thumb-gallery-1-4.png', alt: 'Site para imobiliária Pedro Pereira e Marcus Escrivani (www.imoveisvalenca.com.br)'), image_path('companies/guavas/big-gallery-1-4.png'), title: 'Site para imobiliária Pedro Pereira e Marcus Escrivani (www.imoveisvalenca.com.br)', rel: 'gallery-1' %></li>
+        <li><%= link_to image_tag('companies/guavas/thumb-gallery-1-5.png', alt: 'Blog desenvolvido para Tribos Urbanas (www.tribosurbanas.com)'), image_path('companies/guavas/big-gallery-1-5.png'), title: 'Blog desenvolvido para Tribos Urbanas (www.tribosurbanas.com)', rel: 'gallery-1' %></li>
       </ul>
     </article>
   </section>

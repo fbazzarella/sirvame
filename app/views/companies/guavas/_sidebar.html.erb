@@ -1,26 +1,20 @@
-<%
-  content_for :title,       'Selma Santos Imóveis'
-  content_for :description, 'Vendemos e avaliamos seu imóvel'
-  content_for :og_image,    'companies/guavas/logo.png'
-%>
 <aside>
-	<%= image_tag 'companies/guavas/logo.png', alt: 'Selma Santos Imóveis' %>
+	<%= image_tag 'companies/guavas/logo.png', alt: 'Guavas Webdesign' %>
 	<dl>
 		<dt>Telefones</dt>
-			<dd>24 2453 1489</dd>
-			<dd>24 2453 6370</dd>
+			<dd>24 2453 4090</dd>
+			<dd>24 8837 6652</dd>
 		<dt>Endereço</dt>
-			<dd><address>Rua Silveira Vargas, 119, Centro</address></dd>
+			<dd><address>Rua Lourenço Jannuzzi, 181 - São Cristóvão</address></dd>
 		<dt>E-mail</dt>
-			<dd>imoveis@selmasantos.com</dd>
+			<dd><%= mail_to 'contato@guavas.com.br', 'contato@guavas.com.br', title: 'Enviar e-mail' %></dd>
 		<dt>Website</dt>
-			<dd>http://selmasantos.com</dd>
+			<dd><%= link_to 'www.guavas.com.br', 'http://www.guavas.com.br', target: '_blank', title: 'Visitar website' %></dd>
 		<dt>Perfis</dt>
-			<dd>Facebook</dd>
-			<dd>Twitter</dd>
+			<dd><%= link_to 'Facebook', 'http://www.facebook.com/guavaswebdesign', target: '_blank', title: 'Visitar perfil no Facebook' %></dd>
 		<dt>Categorias</dt>
-			<dd>Imobiliárias</dd>
+			<dd>Internet, Sites</dd>
 		<dt>Tags de Produtos</dt>
-			<dd>imóveis, compra, venda, avaliação, perícia, legalização, casas, apartamentos</dd>
+			<dd>desenvolvimento, programação, designer, web</dd>
 	</dl>
 </aside>
