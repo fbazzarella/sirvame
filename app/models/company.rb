@@ -12,8 +12,4 @@ class Company < ActiveRecord::Base
   def have_page?
     plan != 'none' && !username.blank?
   end
-
-  def self.plans # Just for Typus
-    PLANS
-  end
 end
