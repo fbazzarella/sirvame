@@ -10,6 +10,6 @@ class Company < ActiveRecord::Base
   scope :all_to_sitemap, where("plan != 'none' and username != ''")
 
   def have_page?
-    plan != 'none' && !username.blank?
+    plan != 'none' && username != ''
   end
 end
