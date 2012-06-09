@@ -20,7 +20,8 @@ class Search < ActiveRecord::Base
 
 				Company.where(where.join(' or '), *terms).order('plan DESC', :name).all
 			else
-				[Company.find_by_name('Guavas Webdesign')] + Company.random(11)
+				companies = Company.where(plan: 'plus').order('plan DESC', :name).all
+				companies + Company.random(12 - companies.size)
 			end.compact.uniq
 		end
 
