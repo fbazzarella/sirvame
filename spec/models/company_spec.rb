@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Company do
 	describe "mass assignment security" do
-		[:name, :phone, :address, :segments, :products, :username, :plan].each do |attr|
-			it { should allow_mass_assignment_of(attr).as(:admin) }
+		[:name, :phone, :segments, :products, :plan].each do |attr|
+			it { should allow_mass_assignment_of(attr).as(:import) }
 		end
 	end
 

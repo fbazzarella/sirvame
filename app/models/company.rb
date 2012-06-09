@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   PLANS = %w(none plus)
 
-  attr_accessible :name, :phone, :address, :segments, :products, :username, :plan, as: :admin
+  attr_accessible :name, :phone, :segments, :products, :plan, as: :import
 
   validates :name, :phone, :segments, presence: true
   validates :username, format: {with: /\A[-_\.a-z0-9]+\Z/}, allow_blank: true

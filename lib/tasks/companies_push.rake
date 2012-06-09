@@ -15,7 +15,7 @@ namespace :companies do
           segments: row[2],
           products: row[3],
           plan:     'none'
-        }, as: :admin)
+        }, as: :import)
 
         print '.'.green
         count[:saved] += 1
