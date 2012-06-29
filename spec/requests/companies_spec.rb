@@ -1,12 +1,11 @@
 require 'spec_helper'
 
-describe "Home Page" do
-	before do
-		FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus')
-		visit root_path
-	end
+describe "Catalog" do
+	let!(:company) { FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus') }
+	
+	before { visit root_path }
 
-	describe "visit root path" do
+	describe "visit catalog" do
 		it "should display search results if exist some company" do
 			page.should have_content('Company Name')
 			page.should have_content('Movies [dvds]')
@@ -35,7 +34,7 @@ describe "Home Page" do
 			end
 		end
 
-		context "without using ajax" do
+		context "not using ajax" do
 			it "should display 'not found' message if none companies found" do
 				fill_in 'search-field', with: 'coffee, fruit'
 				click_button 'submit-search'
