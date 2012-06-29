@@ -5,6 +5,10 @@ describe Company do
 		[:name, :phone, :segments, :products, :plan].each do |attr|
 			it { should allow_mass_assignment_of(attr).as(:import) }
 		end
+
+		[:address, :username].each do |attr|
+			it { should_not allow_mass_assignment_of(attr) }
+		end
 	end
 
 	describe "validations" do
