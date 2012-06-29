@@ -4,9 +4,7 @@ gem 'rails', '3.2.6'
 gem 'thin'
 gem 'pg'
 gem 'exception_notification'
-
 gem 'randumb'
-
 gem 'colored'
 
 group :assets do
