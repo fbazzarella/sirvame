@@ -49,16 +49,6 @@ dd {
   width: 690px;
 }
 
-.company section:after,
-.company .gallery:after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  zoom: 1;
-}
-
 .company article {
   margin-bottom: 30px;
 }
@@ -67,41 +57,95 @@ dd {
   margin-bottom: 0;
 }
 
-.company h3 {
-  font-size: 1.6em;
+.company article h3 {
+  font-size: 1.8em;
 }
 
-.company .text p {
+.company article p {
   margin: 10px 0;
   line-height: 1.5em;
   text-indent: 2em;
 }
 
-.company .cover {
+.company article ul {
+  list-style: none;
+}
+
+.company article ul:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  zoom: 1;
+}
+
+.cover {
+  padding: 2px;
   width: 684px;
   height: 224px;
 }
 
-.company .cover,
-.company .gallery li {
-  background-color: #FFF;
-  border: 1px solid #999;
-  padding: 2px;
+.images li {
+  float: left;
 }
 
-.company .cover:hover,
-.company .gallery li:hover {
+.cover,
+.images li {
+  background-color: #FFF;
+  border: 1px solid #999;
+  overflow: hidden;
+}
+
+.cover:hover,
+.images li:hover {
   border-color: #000;
 }
 
-.company .gallery ul {
-  list-style: none;
+.gallery .images {
   margin: 10px -5px;
 }
 
-.company .gallery li {
-  float: left;
+.gallery .images li {
   margin: 5px;
+  padding: 2px;
   width: 124px;
   height: 114px;
+}
+
+.products .price {
+  float: right;
+}
+
+.products h4 {
+  font-size: 1.2em;
+}
+
+.list {
+  margin: 10px 0;
+}
+
+.list > li {
+  margin: 10px 0 20px;
+  border-bottom: 1px dotted #999;
+}
+
+.list > li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.list > li:last-child .images:last-child {
+  margin-bottom: 0;
+}
+
+.list .images {
+  margin: 10px -2px;
+}
+
+.list .images li {
+  margin: 2px;
+  padding: 1px;
+  width: 61px;
+  height: 57px;
 }
