@@ -16,7 +16,10 @@ body {
   color: #333;
 }
 
-a, a:active, a:visited, a:hover {
+a,
+a:active,
+a:visited,
+a:hover {
   display: inline-block;
   color: #FFF;
   text-decoration: none;

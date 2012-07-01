@@ -127,7 +127,8 @@ header.search .add-on {
   text-shadow: 1px 1px 1px #ccc;
 }
 
-.result p.phone, .result p.address {
+.result p.phone,
+.result p.address {
   font-size: 1em;
 }
 
