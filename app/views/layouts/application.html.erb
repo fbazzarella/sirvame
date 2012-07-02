@@ -20,7 +20,7 @@
           </h1>
           <nav>
             <ul>
-              <li><%= mail_to ENV['SMTP_ADDRESS'], ENV['SMTP_ADDRESS'], title: 'Envie-nos um e-mail. Ficaremos felizes!' %></li>
+              <li><%= default_contact_email %></li>
             </ul>
           </nav>
         </div>

@@ -18,7 +18,7 @@
 		<li data-id="0" id="none-companies">
 				<p class="title">Nenhuma empresa foi encontrada.</p>
 				<p class="instructions">
-					Por favor, verifique os termos digitados e tente novamente. Caso a empresa que procura não esteja cadastrada, <%= mail_to ENV['SMTP_ADDRESS'], 'entre em contato', title: 'Envie-nos um e-mail. Ficaremos felizes!', class: 'inverse' %> e iremos cadastrá-la para você.
+					Por favor, verifique os termos digitados e tente novamente. Caso a empresa que procura não esteja cadastrada, <%= default_contact_email 'entre em contato', :inverse %> e iremos cadastrá-la para você.
 				</p>
 		</li>
 	<% end %>
