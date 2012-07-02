@@ -29,6 +29,14 @@ a:hover {
   text-decoration: underline;
 }
 
+a.inverse {
+  text-decoration: underline;
+}
+
+a.inverse:hover {
+  text-decoration: none;
+}
+
 .main-container {
   position: relative;
   min-height: 100%;

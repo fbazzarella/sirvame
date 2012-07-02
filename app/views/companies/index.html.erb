@@ -13,7 +13,7 @@
 <div class="container search main-content">
 	<p id="companies-count">
 		Já temos um total de <strong><%= Company.count %></strong> empresas cadastradas.
-		E este número vai continuar crescendo...
+		Quer se destacar? <%= mail_to ENV['SMTP_ADDRESS'], 'Entre em contato', title: 'Envie-nos um e-mail. Ficaremos felizes!', class: 'inverse' %> e conheça as vantagens.
 	</p>
 	<%= render 'search_results' %>
 </div>
