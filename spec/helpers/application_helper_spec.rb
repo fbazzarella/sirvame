@@ -38,6 +38,16 @@ describe ApplicationHelper do
 		end
 	end
 
+	describe "default contact email" do
+		it "should return default email link tag" do
+			default_contact_email.should == "<a class=\"normal\" href=\"mailto:fale-com@sirva.me\" title=\"Envie-nos um e-mail. Ficaremos felizes!\">fale-com@sirva.me</a>"
+		end
+
+		it "should return email link tag with a custom label and css class" do
+			default_contact_email('Custom Label', :custom_class).should == "<a class=\"custom_class\" href=\"mailto:fale-com@sirva.me\" title=\"Envie-nos um e-mail. Ficaremos felizes!\">Custom Label</a>"
+		end
+	end
+
 	describe "back to catalog url" do
 		xit "should return javascript to back the browser history" do
 			back_to_catalog_url('http://localhost:3000').should == 'javascript:history.back()'

@@ -12,6 +12,10 @@ module ApplicationHelper
     root_url[0..-2] + image_path(og_image.blank? ? 'layout/logo2.png' : og_image)
   end
 
+  def default_contact_email(label = ENV['SMTP_ADDRESS'], underline = :normal)
+    mail_to ENV['SMTP_ADDRESS'], label, title: 'Envie-nos um e-mail. Ficaremos felizes!', class: underline
+  end
+
   def back_to_catalog_url(referrer = request.referrer)
     root_path
     # referrer =~ /\:3000|sirva\.me/ ? 'javascript:history.back()' : root_path
