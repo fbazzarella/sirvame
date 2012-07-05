@@ -13,20 +13,39 @@
   </div>
 </header>
 <div class="container company main-content">
-	<%= render 'companies/selmaimobiliaria/sidebar' %>
+  <%= render 'companies/selmaimobiliaria/sidebar' %>
   <section>
     <article class="cover">
       <%= image_tag('companies/selmaimobiliaria/cover-1.png', alt: title) %>
     </article>
     <article class="text">
-      <h3>A Empresa</h3>
+      <h3>Anuncie seu Imóvel</h3>
       <p>
-        Descrição da empresa...
+        Trabalhamos com compra, venda, perícia, avaliação e legalização de imóveis. Entre em contato e teremos o maior prazer em lhe atender.
+      </p>
+      <p>
+        CRECI/RJ: 052002 - CNAI: 06804
       </p>
     </article>
     <article class="products">
       <h3>Casas à Venda</h3>
       <ul class="list">
+        <li>
+          <strong class="price">R$ 350.000,00</strong>
+          <h4>Centro - Rua Getúlio Vargas</h4>
+          <p>
+            3 pavimentos contendo sala ampla, cozinha em estilo americano, 5 quartos com suíte em blindex, escritório, sala para TV, varanda no 3º pavimento e garagem. Construção nova.
+          </p>
+          <ul class="images">
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-1.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-1.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-2.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-2.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-3.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-3.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-4.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-4.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-5.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-5.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-6.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-6.jpg'), title: '', rel: 'products-1-3' %></li>
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-7.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-7.jpg'), title: '', rel: 'products-1-3' %></li>
+          </ul>
+        </li>
         <li>
           <strong class="price">R$ 140.000,00</strong>
           <h4>Laranjeiras - Travessa Joaquim Soares</h4>
@@ -51,22 +70,6 @@
           <ul class="images">
             <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-2-1.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-2-1.jpg'), title: '', rel: 'products-1-2' %></li>
             <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-2-2.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-2-2.jpg'), title: '', rel: 'products-1-2' %></li>
-          </ul>
-        </li>
-        <li>
-          <strong class="price">R$ 350.000,00</strong>
-          <h4>Centro - Rua Getúlio Vargas</h4>
-          <p>
-            3 pavimentos contendo sala ampla, cozinha em estilo americano, 5 quartos com suíte em blindex, escritório, sala para TV, varanda no 3º pavimento e garagem. Construção nova.
-          </p>
-          <ul class="images">
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-1.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-1.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-2.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-2.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-3.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-3.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-4.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-4.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-5.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-5.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-6.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-6.jpg'), title: '', rel: 'products-1-3' %></li>
-            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-7.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-7.jpg'), title: '', rel: 'products-1-3' %></li>
           </ul>
         </li>
       </ul>
