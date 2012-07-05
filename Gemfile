@@ -6,6 +6,8 @@ gem 'pg'
 gem 'exception_notification'
 gem 'randumb'
 gem 'colored'
+gem 'pry-rails'
+gem 'awesome_print'
 
 group :assets do
   gem 'yui-compressor'
@@ -16,8 +18,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'pry-rails'
-  gem 'awesome_print'
 end
 
 group :test do
