@@ -40,7 +40,7 @@ describe ApplicationHelper do
 
 	describe "default contact email" do
 		it "should return default email link tag" do
-			default_contact_email.should == "<a class=\"normal\" href=\"mailto:fale-com@sirva.me\" title=\"Envie-nos um e-mail. Ficaremos felizes!\">fale-com@sirva.me</a>"
+			default_contact_email.should == "<a href=\"mailto:fale-com@sirva.me\" title=\"Envie-nos um e-mail. Ficaremos felizes!\">fale-com@sirva.me</a>"
 		end
 
 		it "should return email link tag with a custom label and css class" do
