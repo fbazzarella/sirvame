@@ -4,7 +4,7 @@ describe CompaniesController do
 	render_views
 
 	describe "GET index" do
-		let!(:company) { FactoryGirl.create(:company, products: 'coffee') }
+		let!(:company)  { FactoryGirl.create(:company, products: 'coffee') }
 		let!(:company1) { FactoryGirl.create(:company, products: 'fruit, juice') }
 
 		context "with search params" do
@@ -74,24 +74,11 @@ describe CompaniesController do
 				response.should render_with_layout('application')
 				response.should be_success
 			end
-
-			it "should render right template with company name and page" do
-				get :show, company: "#{company.username}", page: 'home'
-				response.should render_template("#{company.username}/home")
-				response.should render_with_layout('application')
-				response.should be_success
-			end
 		end
 
 		context "invalid company params" do
 			it "should return not found error with bad company name" do
-				get :show, company: 'other-company', page: 'home'
-				response.should render_template(Rails.root.join('public/404.html'))
-				response.should be_not_found
-			end
-
-			it "should return not found error with bad page name" do
-				get :show, company: 'company', page: 'other-page'
+				get :show, company: 'other-company'
 				response.should render_template(Rails.root.join('public/404.html'))
 				response.should be_not_found
 			end
