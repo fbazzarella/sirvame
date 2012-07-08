@@ -19,6 +19,7 @@ RSpec.configure do |config|
   config.extend SpecHelpers, type: :controller
 
   config.use_transactional_fixtures = false
+
   config.before(:suite) { DatabaseCleaner.strategy = :truncation }
   config.before(:each)  { DatabaseCleaner.start }
   config.after(:each)   { DatabaseCleaner.clean }

@@ -57,7 +57,7 @@ describe Company do
 		describe "visit company page" do
 			it "should display company page" do
 				click_link 'Ver detalhes de Company Name'
-				page.should have_content('Company Name')
+				page.should have_content('« Voltar ao Catálogo')
 			end
 		end
 	end
@@ -68,7 +68,7 @@ describe Company do
 		describe "back to catalog" do
 			it "should back to catalog" do
 				click_link '« Voltar ao Catálogo'
-				page.should have_content('Encontre o que precisa em Valença')
+				page.should have_content('Encontre o que precisa')
 			end
 		end
 	end
