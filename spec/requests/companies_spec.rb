@@ -18,14 +18,14 @@ describe "Catalog" do
 
 	describe "perform company search" do
 		context "using ajax", js: true do
-			xit "should display 'not found' message if none companies found" do
+			it "should display 'not found' message if none companies found" do
 				fill_in 'search-field', with: 'coffee, fruit'
 				click_button 'submit-search'
 
 				page.find('#none-companies').should be
 			end
 
-			xit "should display search results if companies found" do
+			it "should display search results if companies found" do
 				fill_in 'search-field', with: 'movies, dvds'
 				click_button 'submit-search'
 
