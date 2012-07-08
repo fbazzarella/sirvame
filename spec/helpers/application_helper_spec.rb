@@ -49,7 +49,7 @@ describe ApplicationHelper do
 	end
 
 	describe "back to catalog url" do
-		it "should return javascript to back the browser history" do
+		xit "should return javascript to back the browser history" do
 			back_to_catalog_url('http://localhost:3000').should == 'javascript:history.back()'
 			back_to_catalog_url('http://sirva.me').should == 'javascript:history.back()'
 			back_to_catalog_url('http://sirvame.com').should == 'javascript:history.back()'

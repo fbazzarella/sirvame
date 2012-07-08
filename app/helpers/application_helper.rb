@@ -17,7 +17,8 @@ module ApplicationHelper
   end
 
   def back_to_catalog_url(referrer = request.referrer)
-    referrer =~ /\:3000|sirva\.me|sirvame\.com/ ? 'javascript:history.back()' : root_path
+    root_path
+    # referrer =~ /\:3000|sirva\.me|sirvame\.com/ ? 'javascript:history.back()' : root_path
   end
 
   def normalize_search_params(params = nil)
