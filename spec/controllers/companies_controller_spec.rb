@@ -66,6 +66,11 @@ describe CompaniesController do
 		after         { FileUtils.rm_r(dir) }
 
 		context "valid company params" do
+			it "should assign a company to company" do
+				get :show, company: "#{company.username}"
+				assigns(:company).should == company
+			end
+
 			it "should render right template with company name" do
 				get :show, company: "#{company.username}"
 				response.should render_template("#{company.username}/home")

@@ -12,8 +12,9 @@ class CompaniesController < ApplicationController
 
   def show
   	begin
+      @company = Company.find_by_username(params[:company])
   		render template: "companies/#{params[:company]}/#{params[:page] || 'home'}"
-  	rescue ActionView::MissingTemplate
+  	rescue ActiveRecord::RecordNotFound, ActionView::MissingTemplate
   		render file: Rails.root.join('public/404.html'), layout: false, status: 404
   	end
   end
