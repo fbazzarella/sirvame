@@ -60,21 +60,21 @@ describe CompaniesController do
 	end
 
 	describe "GET show" do
-		dir    = Rails.root.join('app/views/companies/company_name')
+		dir    = Rails.root.join('app/views/companies/company-name')
 		before { FileUtils.touch(FileUtils.mkdir_p(dir).join + '/home.html.erb') }
 		after  { FileUtils.rm_r(dir) }
 
 		context "valid company params" do
 			it "should render right template with company name" do
-				get :show, company: 'company_name'
-				response.should render_template('company_name/home')
+				get :show, company: 'company-name'
+				response.should render_template('company-name/home')
 				response.should render_with_layout('application')
 				response.should be_success
 			end
 
 			it "should render right template with company name and page" do
-				get :show, company: 'company_name', page: 'home'
-				response.should render_template('company_name/home')
+				get :show, company: 'company-name', page: 'home'
+				response.should render_template('company-name/home')
 				response.should render_with_layout('application')
 				response.should be_success
 			end
@@ -82,13 +82,13 @@ describe CompaniesController do
 
 		context "invalid company params" do
 			it "should return not found error with bad company name" do
-				get :show, company: 'other_company', page: 'home'
+				get :show, company: 'other-company', page: 'home'
 				response.should render_template(Rails.root.join('public/404.html'))
 				response.should be_not_found
 			end
 
 			it "should return not found error with bad page name" do
-				get :show, company: 'company', page: 'other_page'
+				get :show, company: 'company', page: 'other-page'
 				response.should render_template(Rails.root.join('public/404.html'))
 				response.should be_not_found
 			end
