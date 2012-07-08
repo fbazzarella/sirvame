@@ -60,21 +60,22 @@ describe CompaniesController do
 	end
 
 	describe "GET show" do
-		dir    = Rails.root.join('app/views/companies/company-name')
-		before { FileUtils.touch(FileUtils.mkdir_p(dir).join + '/home.html.erb') }
-		after  { FileUtils.rm_r(dir) }
+		let(:company) { FactoryGirl.create(:company) }
+		let(:dir)     { Rails.root.join("app/views/companies/#{company.username}") }
+		before        { FileUtils.touch(FileUtils.mkdir_p(dir).join + '/home.html.erb') }
+		after         { FileUtils.rm_r(dir) }
 
 		context "valid company params" do
 			it "should render right template with company name" do
-				get :show, company: 'company-name'
-				response.should render_template('company-name/home')
+				get :show, company: "#{company.username}"
+				response.should render_template("#{company.username}/home")
 				response.should render_with_layout('application')
 				response.should be_success
 			end
 
 			it "should render right template with company name and page" do
-				get :show, company: 'company-name', page: 'home'
-				response.should render_template('company-name/home')
+				get :show, company: "#{company.username}", page: 'home'
+				response.should render_template("#{company.username}/home")
 				response.should render_with_layout('application')
 				response.should be_success
 			end
