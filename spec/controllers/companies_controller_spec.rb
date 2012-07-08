@@ -60,10 +60,7 @@ describe CompaniesController do
 	end
 
 	describe "GET show" do
-		let(:company) { FactoryGirl.create(:company) }
-		let(:dir)     { Rails.root.join("app/views/companies/#{company.username}") }
-		before        { FileUtils.touch(FileUtils.mkdir_p(dir).join + '/home.html.erb') }
-		after         { FileUtils.rm_r(dir) }
+		simule_page_for_company!
 
 		context "valid company params" do
 			it "should assign a company to company" do
