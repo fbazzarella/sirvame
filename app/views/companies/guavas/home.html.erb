@@ -1,14 +1,14 @@
 <%
-  title = 'Empresa especializada em desenvolver sites, portais de serviços e notícias, lojas virtuais, blogs, sistemas para web e imobiliárias. Confira nosso site!'
+  description = 'Empresa especializada em desenvolver sites, portais de serviços e notícias, lojas virtuais, blogs, sistemas para web e imobiliárias. Confira nosso site!'
 
-  content_for :title,       'Guavas Webdesign'
-  content_for :description, title
+  content_for :title,       @company.name
+  content_for :description, description
   content_for :og_image,    'companies/guavas/logo.png'
 %>
 <header class="company">
   <div class="container">
     <%= link_to '« Voltar ao Catálogo', back_to_catalog_url, title: 'Voltar ao catálogo', class: 'back-to-catalog' %>
-    <h2>Guavas Webdesign</h2>
+    <h2><%= @company.name %></h2>
     <%= render 'addthis' %>
   </div>
 </header>
@@ -16,7 +16,7 @@
 	<%= render 'companies/guavas/sidebar' %>
   <section>
     <article class="cover">
-      <%= image_tag('companies/guavas/cover-1.png', alt: title) %>
+      <%= image_tag('companies/guavas/cover-1.png', alt: description) %>
     </article>
     <article class="text">
       <h3>A Empresa</h3>

@@ -1,14 +1,14 @@
 <%
-  title = 'Compra, venda, perícia, avaliação e legalização de imóveis.'
+  description = 'Compra, venda, perícia, avaliação e legalização de imóveis.'
 
-  content_for :title,       'Selma Santos Corretora de Imóveis'
-  content_for :description, title
+  content_for :title,       @company.name
+  content_for :description, description
   content_for :og_image,    'companies/selmaimobiliaria/logo.png'
 %>
 <header class="company">
   <div class="container">
     <%= link_to '« Voltar ao Catálogo', back_to_catalog_url, title: 'Voltar ao catálogo', class: 'back-to-catalog' %>
-    <h2>Selma Santos Corretora de Imóveis</h2>
+    <h2><%= @company.name %></h2>
     <%= render 'addthis' %>
   </div>
 </header>
@@ -16,7 +16,7 @@
   <%= render 'companies/selmaimobiliaria/sidebar' %>
   <section>
     <article class="cover">
-      <%= image_tag('companies/selmaimobiliaria/cover-1.png', alt: title) %>
+      <%= image_tag('companies/selmaimobiliaria/cover-1.png', alt: description) %>
     </article>
     <article class="text">
       <h3>Anuncie seu Imóvel</h3>
