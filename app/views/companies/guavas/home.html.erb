@@ -7,8 +7,7 @@
 %>
 <header class="company">
   <div class="container">
-    <%= link_to '« Voltar ao Catálogo', back_to_catalog_url, title: 'Voltar ao catálogo', class: 'back-to-catalog' %>
-    <h2><%= @company.name %></h2>
+    <%= render 'header' %>
     <%= render 'addthis' %>
   </div>
 </header>
