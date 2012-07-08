@@ -9,7 +9,7 @@
 					<p class="address"><%= company.address %></p>
 					<p class="tags">
 						<%= company.segments %>
-						<%= " [#{company.products}]" unless company.products.blank? %>
+						<%= " [#{company.products}]" if company.products.present? %>
 					</p>
 				</div>
 			</li>
