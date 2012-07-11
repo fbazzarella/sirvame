@@ -4,7 +4,7 @@ class Search < ActiveRecord::Base
 	validates :terms, presence: true
 
 	class << self
-		def bring_me_results_for(term_list = nil)
+		def perform_with(term_list = nil)
 			if term_list = filter_terms(term_list)
 				create terms: term_list
 
