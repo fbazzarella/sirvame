@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   def index
-    search_params = normalize_search_params params[:encontrar]
-    @companies    = Search.bring_me_results_for search_params
+    search_params = normalize_search_params(params[:encontrar], :go)
+    @companies = Search.bring_me_results_for(search_params)
 
   	respond_to do |f|
   		f.html

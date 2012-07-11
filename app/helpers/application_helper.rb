@@ -21,10 +21,10 @@ module ApplicationHelper
     # referrer =~ /\:3000|sirva\.me|sirvame\.com/ ? 'javascript:history.back()' : root_path
   end
 
-  def normalize_search_params(params = nil)
-  	return nil if params.nil?
+  def normalize_search_params(params = nil, direction = nil)
+  	return nil if params.nil? || direction.nil?
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
-		params.any? ? params.join(', ') : nil
+		params.any? ? params.join({go: ', ', back: '+'}[direction]) : nil
   end
 
   def account_token_for(service = nil)
