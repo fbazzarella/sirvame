@@ -68,25 +68,25 @@ describe ApplicationHelper do
 
 	describe "normalize search params" do
 		it "should return with comma separator" do
-			normalize_search_params('first+second', :go).should == 'first, second'
+			normalize_params('first+second', :go).should == 'first, second'
 		end
 
 		it "should return with plus separator" do
-			normalize_search_params('first, second', :back).should ==  'first+second'
+			normalize_params('first, second', :back).should ==  'first+second'
 		end
 
 		it "should remove unecessary comma separator" do
-			normalize_search_params('+first+second', :go).should == 'first, second'
-			normalize_search_params('+', :go).should be_nil
+			normalize_params('+first+second', :go).should == 'first, second'
+			normalize_params('+', :go).should be_nil
 		end
 
 		it "should remove unecessary plus separator" do
-			normalize_search_params(', first, second', :back).should == 'first+second'
-			normalize_search_params(', ', :back).should be_nil
+			normalize_params(', first, second', :back).should == 'first+second'
+			normalize_params(', ', :back).should be_nil
 		end
 
 		it "should return nothing if no param is passed" do
-			normalize_search_params.should be_nil
+			normalize_params.should be_nil
 		end
 	end
 
