@@ -11,7 +11,7 @@ describe Search do
 	end
 
 	describe "class methods" do
-		describe "bring me results for" do
+		describe "perform with" do
 			10.times        { FactoryGirl.create(:company) }
 
 			let!(:company)  { FactoryGirl.create(:company, name: 'Petit Marché') }
