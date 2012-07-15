@@ -19,7 +19,7 @@ $(function(){
             }).blur(function(){
                 if(!$(this).val()){ $(this).val(ph).css('color', '#666') } }) }) };
 
-    function normalizeSearchParams(params, direction){
+    function normalizeParams(params, direction){
         if(!params) return '';
 
         params = decodeURI(params.replace(/,|\s|\++/gi, '+')).split('+');
@@ -45,7 +45,7 @@ $(function(){
                 lines: 15, length: 5, width: 2, radius: 6, color: '#000',
                 speed: 1, trail: 30, shadow: false }).spin(spinContainer.empty()[0]);
 
-            var sp = normalizeSearchParams(searchField.val(), 'go');
+            var sp = normalizeParams(searchField.val(), 'go');
             var searchUrl = '/encontrar' + (sp ? '/' + sp : '');
             var routerUrl = sp ? '!/encontrar/' + sp : '';
 
@@ -75,7 +75,7 @@ $(function(){
             checkPlaceHolders() },
 
         search: function(searchParams){
-            searchForm.find('input').blur().val(normalizeSearchParams(searchParams, 'back'));
+            searchForm.find('input').blur().val(normalizeParams(searchParams, 'back'));
             searchForm.submit();
             checkPlaceHolders() } }) );
 
