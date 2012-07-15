@@ -18,7 +18,9 @@ module ApplicationHelper
 
   def back_to_catalog_path(params = {})
     if params[:encontrar].present?
-      root_path + (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') + params[:encontrar]
+      root_path +
+      (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') +
+      normalize_params(params[:encontrar], :back)
     else
       root_path
     end
