@@ -11,7 +11,7 @@ class Search < ActiveRecord::Base
 				where = []
 				terms = []
 
-				term_list.split(', ').each do |t|
+				term_list.split(' ').each do |t|
 					where << "#{tra('name')} like #{tra("?")}"
 					where << "#{tra('segments')} like #{tra("?")}"
 					where << "#{tra('products')} like #{tra("?")}"
@@ -27,7 +27,7 @@ class Search < ActiveRecord::Base
 
 		private
 			def filter_terms(terms = nil)
-				(terms = terms.try(:split, ', ')) ? (terms - %w(e da das de do dos)).join(', ') : nil
+				(terms = terms.try(:split, ' ')) ? (terms - %w(e da das de do dos)).join(' ') : nil
 			end
 
 		  def tra(value)

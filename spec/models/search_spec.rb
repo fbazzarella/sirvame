@@ -27,13 +27,13 @@ describe Search do
 			context "with term list" do
 				it "should save a search information" do
 					expect do
-						Search.perform_with('term, list')
+						Search.perform_with('term list')
 					end.to change(Search, :count).by(1)
 				end
 
 				it "should return companies filtered by term list" do
-					Search.perform_with('bike, ball').should include(company1, company2)
-					Search.perform_with('bike, ball').should_not include(company)
+					Search.perform_with('bike ball').should include(company1, company2)
+					Search.perform_with('bike ball').should_not include(company)
 				end
 
 				it "should return companies filtered by term list ignoring accents" do
@@ -42,8 +42,8 @@ describe Search do
 				end
 
 				xit "should return companies ordered by relevance" do
-					Search.perform_with('motors, bike, ball').should == [company1, company2]
-					Search.perform_with('sports, bike, ball').should == [company2, company1]
+					Search.perform_with('motors bike ball').should == [company1, company2]
+					Search.perform_with('sports bike ball').should == [company2, company1]
 				end
 
 				it "should return empty array if not found any company with term list" do
@@ -55,7 +55,7 @@ describe Search do
 
 		describe "filter terms" do
 			it "should remove blacklist's words from search terms" do
-				Search.send(:filter_terms, 'should, not, include, do').should == 'should, not, include'
+				Search.send(:filter_terms, 'should not include do').should == 'should not include'
 			end
 
 			it "should return nil if none terms passed" do

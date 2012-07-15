@@ -29,7 +29,7 @@ $(function(){
 
         switch(direction){
             case 'go':   return params.join('+');
-            case 'back': return params.join(', ') } };
+            case 'back': return params.join(' ') } };
 
     var searchForm = $('.search form');
     var spinContainer = searchForm.find('.add-on');
