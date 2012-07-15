@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
   def index
+    session[:back_to_catalog_path] = back_to_catalog_path(params)
+    
     @companies = Search.perform_with(normalize_params(params[:encontrar], :go))
 
   	respond_to do |f|

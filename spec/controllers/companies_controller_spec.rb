@@ -7,6 +7,11 @@ describe CompaniesController do
 		let!(:company)  { FactoryGirl.create(:company, products: 'coffee') }
 		let!(:company1) { FactoryGirl.create(:company, products: 'fruit, juice') }
 
+		it "should set a session to back to catalog path" do
+			get :index
+			session[:back_to_catalog_path].should_not be_nil
+		end
+
 		context "with search params" do
 			it "should assign a array on companies with results" do
 				get :index, encontrar: 'coffee'
