@@ -16,9 +16,12 @@ module ApplicationHelper
     mail_to ENV['SMTP_ADDRESS'], label, title: 'Envie-nos um e-mail. Ficaremos felizes!', class: css_class
   end
 
-  def back_to_catalog_url(referrer = request.referrer)
-    root_path
-    # referrer =~ /\:3000|sirva\.me|sirvame\.com/ ? 'javascript:history.back()' : root_path
+  def back_to_catalog_path(params = {})
+    if params[:encontrar].present?
+      root_path + (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') + params[:encontrar]
+    else
+      root_path
+    end
   end
 
   def normalize_params(params = nil, direction = nil)
