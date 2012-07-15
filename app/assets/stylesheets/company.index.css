@@ -76,6 +76,15 @@ header.search .add-on {
   margin: -10px;
 }
 
+#search-results:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  zoom: 1;
+}
+
 .result {
   position: relative;
   float: left;
