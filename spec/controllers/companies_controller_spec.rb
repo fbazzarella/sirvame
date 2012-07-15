@@ -14,11 +14,6 @@ describe CompaniesController do
 				assigns(:companies).first.should be_a(Company)
 			end
 
-			xit "should return companies ordered by relevance" do
-				get :index, encontrar: 'coffee+fruit+juice'
-				assigns(:companies).should == [company1, company]
-			end
-
 			it "should assign a array on companies without results" do
 				get :index, encontrar: 'icecream'
 				assigns(:companies).should be_a(Array)
