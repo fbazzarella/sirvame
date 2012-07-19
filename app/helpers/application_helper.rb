@@ -17,17 +17,16 @@ module ApplicationHelper
   end
 
   def back_to_catalog_path(params = {})
-    if params[:encontrar].present?
-      root_path +
-      (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') +
-      normalize_params(params[:encontrar], :back)
-    else
-      root_path
-    end
+    return root_path if params[:encontrar].nil?
+
+    root_path +
+    (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') +
+    normalize_params(params[:encontrar], :back)
   end
 
   def normalize_params(params = nil, direction = nil)
   	return nil if params.nil? || direction.nil?
+
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
 		params.any? ? params.join({go: ' ', back: '+'}[direction]) : nil
   end
