@@ -10,4 +10,7 @@ namespace :deploy do
 	task staging: before_run do
 		system "git push fbazzarella@sirvame.com:apps/sirvame-staging.git HEAD:master -f"
 	end
+
+  desc "Deploy Sirva.me to all environments"
+  task all: [:staging, :production]
 end
