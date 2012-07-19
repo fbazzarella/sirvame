@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def og_image(og_image = '')
-    root_url[0..-2] + image_path(og_image.blank? ? 'icons/logo.png' : og_image)
+    root_url[0..-2] + image_path(og_image.blank? ? 'layout/logo_og.png' : og_image)
   end
 
   def default_contact_email(label = ENV['SMTP_ADDRESS'], css_class = nil)
