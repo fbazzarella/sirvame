@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Company do
+	describe "associations" do
+		it { should have_and_belong_to_many(:searches) }
+	end
+
 	describe "mass assignment security" do
 		[:name, :phone, :segments, :products, :plan].each do |attr|
 			it { should allow_mass_assignment_of(attr).as(:import) }

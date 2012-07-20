@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
 
   PLANS = %w(none plus)
 
+  has_and_belongs_to_many :searches
+
   attr_accessible :name, :phone, :segments, :products, :plan, as: :import
 
   validates :name, :phone, :segments, presence: true

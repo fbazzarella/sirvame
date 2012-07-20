@@ -2,6 +2,10 @@
 require 'spec_helper'
 
 describe Search do
+	describe "associations" do
+		it { should have_and_belong_to_many(:companies) }
+	end
+
 	describe "mass assignment security" do
 		it { should allow_mass_assignment_of(:word_list) }
 	end

@@ -1,5 +1,8 @@
 class Search < ActiveRecord::Base
+	has_and_belongs_to_many :companies
+	
 	attr_accessible :word_list
+
 	validates :word_list, presence: true
 
 	acts_as_taggable_on :words
