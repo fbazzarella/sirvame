@@ -3,11 +3,11 @@ require 'spec_helper'
 
 describe Search do
 	describe "mass assignment security" do
-		it { should allow_mass_assignment_of(:terms) }
+		it { should allow_mass_assignment_of(:word_list) }
 	end
 
 	describe "validations" do
-		it { should validate_presence_of(:terms) }
+		it { should validate_presence_of(:word_list) }
 	end
 
 	describe "perform with" do
@@ -31,6 +31,15 @@ describe Search do
 				expect do
 					Search.perform_with('term list')
 				end.to change(Search, :count).by(1)
+			end
+
+			it "should save word list as tags" do
+				Search.perform_with('word')
+
+				search_tag = Search.first.words.first
+
+				search_tag.should be_a(ActsAsTaggableOn::Tag)
+				search_tag.name.should == 'word'
 			end
 
 			it "should return companies filtered by term list" do
