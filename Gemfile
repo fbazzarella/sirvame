@@ -6,6 +6,8 @@ gem 'exception_notification'
 gem 'pg'
 gem 'pg_search'
 gem 'randumb'
+gem 'acts-as-taggable-on'
+
 gem 'colored'
 gem 'pry-rails'
 gem 'awesome_print'
