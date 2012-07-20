@@ -7,7 +7,9 @@ describe Search do
 	end
 
 	describe "mass assignment security" do
-		it { should allow_mass_assignment_of(:word_list) }
+		[:word_list, :companies].each do |attr|
+			it { should allow_mass_assignment_of(attr).as(:search) }
+		end
 	end
 
 	describe "validations" do
@@ -44,6 +46,11 @@ describe Search do
 
 				search_tag.should be_a(ActsAsTaggableOn::Tag)
 				search_tag.name.should == 'word'
+			end
+
+			it "should save founded companies as search results" do
+				Search.perform_with('bike ball')
+				Search.first.companies.should include(company1, company2)
 			end
 
 			it "should return companies filtered by word list" do
