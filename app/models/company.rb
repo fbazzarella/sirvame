@@ -3,7 +3,7 @@ class Company < ActiveRecord::Base
 
   PgSearch::ScopeOptions.class_eval do
     def to_relation
-      @model.select("#{quoted_table_name}.*, (#{rank}) AS tsrank").where(conditions)
+      @model.select("#{quoted_table_name}.*, (#{rank}) AS relevance").where(conditions)
     end
   end
 
@@ -17,7 +17,8 @@ class Company < ActiveRecord::Base
   validates :username, format: {with: /\A[-_\.a-z0-9]+\Z/}, allow_blank: true
   validates :plan, inclusion: {in: PLANS}
 
-  scope :all_to_sitemap, where("plan != 'none' and username != ''")
+  scope :all_to_sitemap,
+    where("plan != 'none' and username != ''")
 
   pg_search_scope :search,
     ignoring: :accents,
