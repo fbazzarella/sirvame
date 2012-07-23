@@ -1,3 +1,4 @@
+coverage/
 db/backup/*.pgsql
 db/schema.rb
 log/
