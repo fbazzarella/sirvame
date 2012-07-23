@@ -30,29 +30,29 @@ describe Company do
 		it { should_not allow_value('other').for(:plan) }
 	end
 
-	let(:has_no_page)     { FactoryGirl.create(:company, plan: 'none') }
-	let(:has_no_page_too) { FactoryGirl.create(:company, plan: 'plus', username: '') }
-	let(:has_page)        { FactoryGirl.create(:company, plan: 'plus', username: 'company-name') }
+	let(:company)  { FactoryGirl.create(:company, plan: 'none') }
+	let(:company1) { FactoryGirl.create(:company, plan: 'plus', username: '') }
+	let(:company2) { FactoryGirl.create(:company, plan: 'plus', username: 'company-name') }
 
 	describe "scopes" do
 		describe "all to sitemap" do
 			subject { Company.all_to_sitemap }
 
-			it { should_not include(has_no_page) }
-			it { should_not include(has_no_page_too) }
-			it { should include(has_page) }
+			it { should_not include(company) }
+			it { should_not include(company1) }
+			it { should include(company2) }
 		end
 	end
 
 	describe "instance methods" do
 		describe "have page" do
 			it "should return false if company is not a paying" do
-				has_no_page.have_page?.should be_false
-				has_no_page_too.have_page?.should be_false
+				company.have_page?.should be_false
+				company1.have_page?.should be_false
 			end
 
 			it "should return true if company is a paying" do
-				has_page.have_page?.should be_true
+				company2.have_page?.should be_true
 			end
 		end
 	end
