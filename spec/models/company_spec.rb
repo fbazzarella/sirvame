@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 
 describe Company do
@@ -30,29 +31,39 @@ describe Company do
 		it { should_not allow_value('other').for(:plan) }
 	end
 
-	let(:company)  { FactoryGirl.create(:company, plan: 'none') }
-	let(:company1) { FactoryGirl.create(:company, plan: 'plus', username: '') }
-	let(:company2) { FactoryGirl.create(:company, plan: 'plus', username: 'company-name') }
+	let!(:company1) { FactoryGirl.create(:company, segments: 'Motórs', products: 'bike', plan: 'none') }
+	let!(:company2) { FactoryGirl.create(:company, segments: 'Sports', products: 'ball', plan: 'plus', username: '') }
+	let!(:company3) { FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus', username: 'company-name') }
 
 	describe "scopes" do
 		describe "all to sitemap" do
 			subject { Company.all_to_sitemap }
 
-			it { should_not include(company) }
-			it { should_not include(company1) }
-			it { should include(company2) }
+			it { should_not include(company1, company2) }
+			it { should include(company3) }
+		end
+
+		describe "search" do
+			it "should return companies filtered by word list ignoring accents" do
+				Company.search('Motors').should include(company1)
+				Company.search('Motors').should_not include(company2, company3)
+			end
+
+			it "should return nothing if none company is founded" do
+				Company.search('icecream').should be_empty
+			end
 		end
 	end
 
 	describe "instance methods" do
 		describe "have page" do
 			it "should return false if company is not a paying" do
-				company.have_page?.should be_false
 				company1.have_page?.should be_false
+				company2.have_page?.should be_false
 			end
 
 			it "should return true if company is a paying" do
-				company2.have_page?.should be_true
+				company3.have_page?.should be_true
 			end
 		end
 	end

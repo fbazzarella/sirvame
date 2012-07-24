@@ -1,4 +1,3 @@
-# encoding: utf-8
 require 'spec_helper'
 
 describe Search do
@@ -17,14 +16,11 @@ describe Search do
 	end
 
 	describe "perform with" do
-		8.times         { FactoryGirl.create(:company) }
+		10.times        { FactoryGirl.create(:company) }
 
-		let!(:company)  { FactoryGirl.create(:company, name: 'Petit Marché') }
-		let!(:company1) { FactoryGirl.create(:company, segments: 'Motors', products: 'bike') }
-		let!(:company2) { FactoryGirl.create(:company, segments: 'Sports', products: 'ball') }
-
-		let!(:company3) { FactoryGirl.create(:company, products: 'toys') }
-		let!(:company4) { FactoryGirl.create(:company, segments: 'Movies', plan: 'plus') }
+		let!(:company1) { FactoryGirl.create(:company, segments: 'Motors', products: 'bike', plan: 'none') }
+		let!(:company2) { FactoryGirl.create(:company, segments: 'Sports', products: 'ball', plan: 'plus') }
+		let!(:company3) { FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus') }
 
 		context "without word list" do
 			it "should return maximum 12 random companies" do
@@ -33,19 +29,9 @@ describe Search do
 		end
 
 		context "with word list" do
-			it "should save a search information" do
-				expect do
-					Search.perform_with('word list')
-				end.to change(Search, :count).by(1)
-			end
-
-			it "should save word list as tags" do
+			it "should save a search information and words list as tags" do
 				Search.perform_with('word')
-
-				search_tag = Search.first.words.first
-
-				search_tag.should be_a(ActsAsTaggableOn::Tag)
-				search_tag.name.should == 'word'
+				Search.first.words.first.should be_a(ActsAsTaggableOn::Tag)
 			end
 
 			it "should save founded companies as search results" do
@@ -53,27 +39,12 @@ describe Search do
 				Search.first.companies.should include(company1, company2)
 			end
 
-			it "should return companies filtered by word list" do
-				Search.perform_with('bike ball').should include(company1, company2)
-				Search.perform_with('bike ball').should_not include(company)
-			end
-
-			it "should return companies filtered by word list ignoring accents" do
-				Search.perform_with('petít').should include(company)
-				Search.perform_with('marche').should include(company)
-			end
-
 			it "should return companies ordered by relevance" do
-				Search.perform_with('motors bike ball').should == [company1, company2]
-				Search.perform_with('sports bike ball').should == [company2, company1]
+				Search.perform_with('motors bike sports dvds').should == [company3, company2, company1]
+				Search.perform_with('motors bike ball movies').should == [company2, company3, company1]
 			end
 
-			it "should return paying companies before others" do
-				Search.perform_with('movies toys').should == [company4, company3]
-			end
-
-			it "should return empty array if not found any company with word list" do
-				Search.perform_with('icecream').should be_a(Array)
+			it "should return nothing if none company is founded" do
 				Search.perform_with('icecream').should be_empty
 			end
 		end

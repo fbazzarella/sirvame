@@ -4,8 +4,10 @@ describe CompaniesController do
 	render_views
 
 	describe "GET index" do
-		let!(:company)  { FactoryGirl.create(:company, products: 'coffee') }
-		let!(:company1) { FactoryGirl.create(:company, products: 'fruit, juice') }
+		before do
+			FactoryGirl.create(:company, products: 'coffee')
+			FactoryGirl.create(:company, products: 'fruit, juice')
+		end
 
 		it "should set a session to back to catalog path" do
 			get :index
