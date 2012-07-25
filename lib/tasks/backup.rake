@@ -6,7 +6,7 @@ namespace :db do
 		print "Backing up your #{Rails.env} database... ".green.bold
 
 		config    = ActiveRecord::Base.configurations[Rails.env]
-		version   = Time.now.to_s.parameterize.split('-').join[0..-5]
+		version   = Time.now.strftime('%Y%m%d%H%M%S')
 		file_name = "#{config['database']}_#{version}.pgsql"
 		file      = Rails.root.join('db/backup', file_name).to_s
 
@@ -27,8 +27,6 @@ namespace :db do
 
 		system "psql -h localhost -U #{config['username']} -d #{config['database']} -W < #{file}"
 
-		Rake::Task['db:test:prepare'].execute if Rails.env.development?
-	
 		puts "Done!".green.bold
 	end
 end
