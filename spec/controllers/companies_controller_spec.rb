@@ -4,9 +4,9 @@ describe CompaniesController do
 	render_views
 
 	describe "GET index" do
-		before do
-			FactoryGirl.create(:company, products: 'coffee')
-			FactoryGirl.create(:company, products: 'fruit, juice')
+		it "should call back to catalog path once time" do
+			subject.should_receive(:back_to_catalog_path).once
+			get :index
 		end
 
 		it "should set a session to back to catalog path" do
@@ -14,26 +14,14 @@ describe CompaniesController do
 			session[:back_to_catalog_path].should_not be_nil
 		end
 
-		context "with search params" do
-			it "should assign a array on companies with results" do
-				get :index, encontrar: 'coffee'
-				assigns(:companies).should be_a(Array)
-				assigns(:companies).first.should be_a(Company)
-			end
-
-			it "should assign a array on companies without results" do
-				get :index, encontrar: 'icecream'
-				assigns(:companies).should be_a(Array)
-				assigns(:companies).should be_empty
-			end
+		it "should call normalize params once time" do
+			subject.should_receive(:normalize_params).once
+			get :index
 		end
 
-		context "without search params" do
-			it "should assign a array on companies with random results" do
-				get :index
-				assigns(:companies).should be_a(Array)
-				assigns(:companies).first.should be_a(Company)
-			end
+		it "should call search perform with once time" do
+			Search.should_receive(:perform_with).once.with('coffee').and_return([])
+			get :index, encontrar: 'coffee'
 		end
 
 		describe "rendering" do
@@ -56,7 +44,7 @@ describe CompaniesController do
 
 			it "should render search results as json" do
 				get :index, format: :json
-				response.body.should =~ /\"address\"\:\"Company Address\, 11\, 111\"/
+				response.body.should == '[]'
 			end
 		end
 	end
