@@ -51,9 +51,6 @@ $(function(){
 
             SirvaMeRouting.navigate(routerUrl);
 
-            if(typeof mixpanel != 'undefined' && sp){
-                mixpanel.track('Search', {'City': 'Valença'}) };
-
             $.ajax({
                 url: encodeURI(searchUrl + '.js'),
                 type: 'GET',

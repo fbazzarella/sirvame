@@ -34,7 +34,6 @@ module ApplicationHelper
   def account_token_for(service = nil)
   	{
   		analytics: 'UA-30669028-2',
-  		mixpanel:  '6d5bc5a92a2b3d1600f2757133b6ae80',
       addthis:   'ra-4e8a7fd659dbd41c'
   	}[service]
   end
