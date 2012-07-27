@@ -5,12 +5,13 @@ namespace :db do
 	task backup: :environment do
 		print "Backing up your #{Rails.env} database... ".green.bold
 
-		config    = ActiveRecord::Base.configurations[Rails.env]
-		version   = Time.now.strftime('%Y%m%d%H%M%S')
-		file_name = "#{config['database']}_#{version}.pgsql"
-		file      = Rails.root.join('db/backup', file_name).to_s
+		config      = ActiveRecord::Base.configurations[Rails.env]
+		dropbox_dir = '~/Dropbox/sirvame-apps/'
+		backup_dir  = Rails.root.join('db/backup').to_s
+		file        = "#{config['database']}_#{Time.now.strftime('%Y%m%d%H%M%S')}.pgsql"
 
-		system "PGPASSWORD=#{config['password']} pg_dump -h localhost -U #{config['username']} #{config['database']} > #{file}"
+		system "PGPASSWORD=#{config['password']} pg_dump -h localhost -U #{config['username']} #{config['database']} > #{backup_dir}/#{file}"
+		system "rsync -av --update --delete #{backup_dir} #{dropbox_dir}" if Rails.env.production?
 
 		puts "Done!".green.bold
 	end
