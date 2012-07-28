@@ -6,6 +6,7 @@ gem 'exception_notification'
 gem 'pg'
 gem 'pg_search'
 gem 'acts-as-taggable-on'
+gem 'kaminari'
 
 gem 'colored'
 gem 'pry-rails'
