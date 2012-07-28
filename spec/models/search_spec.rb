@@ -16,17 +16,9 @@ describe Search do
 	end
 
 	describe "perform with" do
-		10.times        { FactoryGirl.create(:company) }
-
 		let!(:company1) { FactoryGirl.create(:company, segments: 'Motors', products: 'bike', plan: 'none') }
 		let!(:company2) { FactoryGirl.create(:company, segments: 'Sports', products: 'ball', plan: 'plus') }
 		let!(:company3) { FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus') }
-
-		context "without word list" do
-			it "should return maximum 12 random companies" do
-				Search.perform_with.count.should <= 12
-			end
-		end
 
 		context "with word list" do
 			it "should save a search information and words list as tags" do
@@ -46,6 +38,14 @@ describe Search do
 
 			it "should return nothing if none company is founded" do
 				Search.perform_with('icecream').should be_empty
+			end
+		end
+
+		context "without word list" do
+			it "should return all companies ordered by plan and popularity" do
+				['bike dvds', 'sports movies'].each { |words| Search.perform_with(words) }
+
+				Search.perform_with.should == [company3, company2, company1]
 			end
 		end
 	end
