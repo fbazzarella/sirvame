@@ -24,6 +24,14 @@ describe CompaniesController do
 			get :index, encontrar: 'coffee'
 		end
 
+		it "should assign paginated search results" do
+			13.times { FactoryGirl.create(:company) }
+
+			get :index
+			assigns(:companies).first.should be_a(Company)
+			assigns(:companies).all.count.should == 12
+		end
+
 		describe "rendering" do
 			it "should return success" do
 				get :index

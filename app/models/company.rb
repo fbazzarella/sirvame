@@ -17,6 +17,8 @@ class Company < ActiveRecord::Base
   validates :username, format: {with: /\A[-_\.a-z0-9]+\Z/}, allow_blank: true
   validates :plan, inclusion: {in: PLANS}
 
+  paginates_per 12
+
   scope :all_to_sitemap,
     where("plan != 'none' and username != ''")
 
