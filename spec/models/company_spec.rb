@@ -43,6 +43,19 @@ describe Company do
 			it { should include(company3) }
 		end
 
+		describe "all to home" do
+			subject { Company.all_to_home }
+
+			it "should include all companies" do
+				subject.all.should include(company1, company2, company3)
+			end
+
+			it "should have calculated popularity to specific company" do
+				Search.perform_with('bike')
+				subject.where(id: company1.id).first.popularity.should == '1'
+			end
+		end
+
 		describe "search" do
 			it "should return companies filtered by word list ignoring accents" do
 				Company.search('Motors').should include(company1)

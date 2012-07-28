@@ -20,6 +20,11 @@ class Company < ActiveRecord::Base
   scope :all_to_sitemap,
     where("plan != 'none' and username != ''")
 
+  scope :all_to_home,
+    select('companies.*, COUNT(companies_searches.company_id) AS popularity')
+    .joins('LEFT OUTER JOIN companies_searches ON companies_searches.company_id = id')
+    .group(:id)
+
   pg_search_scope :search,
     ignoring: :accents,
     against:  {name: 'A', segments: 'C', products: 'B'},
