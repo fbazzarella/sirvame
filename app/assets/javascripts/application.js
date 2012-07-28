@@ -86,6 +86,7 @@ $(function(){
   Backbone.history.start();
 
   $('.addthis').show();
+  $('.pagination').remove();
 
   $('.cover a, .images a').fancybox({
     openEffect: 'elastic', closeEffect: 'fade', prevEffect: 'fade', nextEffect: 'fade',
