@@ -20,7 +20,7 @@ describe CompaniesController do
 		end
 
 		it "should call search perform with once time" do
-			Search.should_receive(:perform_with).once.with('coffee').and_return([])
+			Search.should_receive(:perform_with).once.with('coffee').and_return(Company.order)
 			get :index, encontrar: 'coffee'
 		end
 
