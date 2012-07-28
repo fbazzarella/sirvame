@@ -38,6 +38,8 @@ $(function(){
     searchForm.submit(function(e){
         e.preventDefault();
 
+        firstLoad = false;
+
         var searchField = $(this).find('input');
 
         if(searchField.val() != searchField.attr('placeholder')){
@@ -68,7 +70,7 @@ $(function(){
 
         home: function(){
             searchForm.find('input').blur().val('');
-            searchForm.submit();
+            if(!firstLoad){ searchForm.submit() }
             checkPlaceHolders() },
 
         search: function(searchParams){
@@ -76,12 +78,17 @@ $(function(){
             searchForm.submit();
             checkPlaceHolders() } }) );
 
+    window.firstLoad = true;
+
     checkLionbars();
     checkPlaceHolders();
+
     Backbone.history.start();
+
     $('.addthis').show();
 
     $('.cover a, .images a').fancybox({
         openEffect: 'elastic', closeEffect: 'fade', prevEffect: 'fade', nextEffect: 'fade',
         padding: 2, helpers: {title: {type: 'over'}} });
+
 });
