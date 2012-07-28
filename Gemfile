@@ -5,7 +5,6 @@ gem 'thin'
 gem 'exception_notification'
 gem 'pg'
 gem 'pg_search'
-gem 'randumb'
 gem 'acts-as-taggable-on'
 
 gem 'colored'
