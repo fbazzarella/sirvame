@@ -14,7 +14,7 @@
 				</div>
 			</li>
 		<% end %>
-	<% else %>
+	<% elsif params[:page].nil? %>
 		<li data-id="0" id="none-companies">
 			<p class="title">Nenhuma empresa foi encontrada.</p>
 			<p class="instructions">

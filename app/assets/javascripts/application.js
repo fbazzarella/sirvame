@@ -7,6 +7,7 @@
 $(function(){
 
   firstLoad     = true;
+  pageScrolling = true;
   searchForm    = $('.search form');
   searchField   = searchForm.find('input');
   spinContainer = searchForm.find('.add-on');
@@ -37,6 +38,22 @@ $(function(){
           $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
             checkLionbars();
             spinContainer.html(zoomTool) }) } }) } });
+
+  $(window).scroll(function(){
+    var nextPage = $('#search-results').data('page');
+
+    if(pageScrolling && nextPage <= 5 && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
+      pageScrolling = false;
+
+      $.ajax({
+        url: encodeURI(searchUrl + '.js?page=' + nextPage),
+        type: 'GET',
+        dataType: 'html',
+        success: function(data){
+          $('#search-results').data('page', ++nextPage).append($(data).find('li').hide()).find('li').slideDown();
+          checkLionbars() },
+        complete: function(){
+          pageScrolling = true } }) } });
 
   SirvaMeRouting = new (Backbone.Router.extend({
     routes: {
