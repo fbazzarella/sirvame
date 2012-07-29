@@ -27,6 +27,7 @@ $(function(){
       var sp      = normalizeParams(searchField.val(), 'go');
 
       SirvaMeRouting.navigate(sp ? '!/encontrar/' + sp : '');
+      $('#search-results').data('page', 2);
 
       searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
@@ -42,7 +43,7 @@ $(function(){
   $(window).scroll(function(){
     var nextPage = $('#search-results').data('page');
 
-    if(pageScrolling && nextPage <= 5 && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
+    if(pageScrolling && nextPage <= 10 && $('.result').length % 3 == 0 && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
       pageScrolling = false;
 
       $.ajax({
@@ -50,7 +51,7 @@ $(function(){
         type: 'GET',
         dataType: 'html',
         success: function(data){
-          $('#search-results').data('page', ++nextPage).append($(data).find('li').hide()).find('li').slideDown();
+          $('#search-results').css('height', '').data('page', ++nextPage).append($(data).find('li').hide()).find('li').slideDown();
           checkLionbars() },
         complete: function(){
           pageScrolling = true } }) } });
