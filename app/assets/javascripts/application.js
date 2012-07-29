@@ -9,6 +9,7 @@ $(function(){
   firstLoad     = true;
   pageScrolling = true;
   nextPage      = 2;
+  maxPages      = 10;
 
   searchUrl     = '/encontrar';
   searchForm    = $('.search form');
@@ -44,7 +45,7 @@ $(function(){
             spinContainer.html(zoomTool) }) } }) } });
 
   $(window).scroll(function(){
-    if(pageScrolling && nextPage <= 10 && $('.result').length % 3 == 0 && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
+    if(ableToScroll()){
       pageScrolling = false;
 
       $.ajax({
