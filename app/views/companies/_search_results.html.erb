@@ -1,4 +1,4 @@
-<ul id="search-results">
+<ul id="search-results" data-page="<%= @companies.current_page + 1 %>">
 	<% if @companies.all.any? %>
 		<% @companies.each do |company| %>
 			<li data-id="<%= company.id %>" class="<%= 'highlight ' if company.have_page? %>result">
@@ -16,10 +16,10 @@
 		<% end %>
 	<% else %>
 		<li data-id="0" id="none-companies">
-				<p class="title">Nenhuma empresa foi encontrada.</p>
-				<p class="instructions">
-					Por favor, verifique os termos digitados e tente novamente. Caso a empresa que procura não esteja cadastrada, <%= default_contact_email 'entre em contato', :inverse %> e iremos cadastrá-la para você.
-				</p>
+			<p class="title">Nenhuma empresa foi encontrada.</p>
+			<p class="instructions">
+				Por favor, verifique os termos digitados e tente novamente. Caso a empresa que procura não esteja cadastrada, <%= default_contact_email 'entre em contato', :inverse %> e iremos cadastrá-la para você.
+			</p>
 		</li>
 	<% end %>
 </ul>
