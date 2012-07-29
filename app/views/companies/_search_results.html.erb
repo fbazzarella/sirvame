@@ -1,4 +1,4 @@
-<ul id="search-results" data-page="<%= @companies.current_page + 1 %>">
+<ul id="search-results">
 	<% if @companies.all.any? %>
 		<% @companies.each do |company| %>
 			<li data-id="<%= company.id %>" class="<%= 'highlight ' if company.have_page? %>result">

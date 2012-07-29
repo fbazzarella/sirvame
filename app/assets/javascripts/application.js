@@ -8,11 +8,14 @@ $(function(){
 
   firstLoad     = true;
   pageScrolling = true;
+  nextPage      = 2;
+
+  searchUrl     = '/encontrar';
   searchForm    = $('.search form');
   searchField   = searchForm.find('input');
+
   spinContainer = searchForm.find('.add-on');
   zoomTool      = spinContainer.html();
-  searchUrl     = '/encontrar';
   spinOptions   = {
     lines: 15, length: 5, width: 2, radius: 6, color: '#000',
     speed: 1, trail: 30, shadow: false };
@@ -27,7 +30,7 @@ $(function(){
       var sp      = normalizeParams(searchField.val(), 'go');
 
       SirvaMeRouting.navigate(sp ? '!/encontrar/' + sp : '');
-      $('#search-results').data('page', 2);
+      nextPage = 2;
 
       searchUrl = '/encontrar' + (sp ? '/' + sp : '');
 
@@ -41,8 +44,6 @@ $(function(){
             spinContainer.html(zoomTool) }) } }) } });
 
   $(window).scroll(function(){
-    var nextPage = $('#search-results').data('page');
-
     if(pageScrolling && nextPage <= 10 && $('.result').length % 3 == 0 && $(window).scrollTop() > $(document).height() - $(window).height() - 50){
       pageScrolling = false;
 
@@ -51,8 +52,9 @@ $(function(){
         type: 'GET',
         dataType: 'html',
         success: function(data){
-          $('#search-results').css('height', '').data('page', ++nextPage).append($(data).find('li').hide()).find('li').slideDown();
-          checkLionbars() },
+          $('#search-results').css('height', '').append($(data).find('li').hide()).find('li').slideDown();
+          checkLionbars();
+          nextPage++ },
         complete: function(){
           pageScrolling = true } }) } });
 
