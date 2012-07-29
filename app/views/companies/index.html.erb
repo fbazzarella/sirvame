@@ -15,7 +15,6 @@
 		Já temos um total de <strong><%= Company.count %></strong> empresas cadastradas.
 		Quer se destacar? <%= default_contact_email 'Entre em contato', :inverse %> e conheça as vantagens.
 	</p>
-	<%= paginate @companies, window: 2 %>
 	<%= render 'search_results' %>
 	<%= paginate @companies, window: 2 %>
 </div>
