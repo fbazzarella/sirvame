@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.8'
 gem 'thin'
 gem 'exception_notification'
 gem 'pg'
