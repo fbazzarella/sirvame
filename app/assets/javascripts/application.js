@@ -66,12 +66,12 @@ $(function(){
       '!/encontrar/:encontrar': 'search' },
 
     home: function(){
-      searchForm.find('input').blur().val('');
+      searchField.blur().val('');
       if(!firstLoad){ searchForm.submit() }
       checkPlaceHolders() },
 
     search: function(searchParams){
-      searchForm.find('input').blur().val(normalizeParams(searchParams, 'back'));
+      searchField.blur().val(normalizeParams(searchParams, 'back'));
       searchForm.submit();
       checkPlaceHolders() } }) );
 
