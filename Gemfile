@@ -12,6 +12,8 @@ gem 'colored'
 gem 'pry-rails'
 gem 'awesome_print'
 
+gem 'paperclip'
+
 group :assets do
   gem 'yui-compressor'
   gem 'jquery-rails'
