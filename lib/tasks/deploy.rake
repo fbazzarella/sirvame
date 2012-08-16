@@ -3,10 +3,14 @@ namespace :deploy do
 
   def push_and_deploy_to!(environment = nil)
     if environment.present?
-      server = 'fbazzarella@sirvame.com'
+      ssh = {
+        host:     'sirvame.com',
+        username: 'fbazzarella',
+        sudopass: ENV['SMTP_PASSWORD']
+      }
 
-      system "git push #{server}:apps/sirvame-#{environment.to_s}.git HEAD:master -f"
-      system "ssh #{server} 'cd apps && ./sirvame-#{environment.to_s}.sh'"
+      system "git push #{ssh[:username]}@#{ssh[:host]}:apps/sirvame-#{environment.to_s}.git HEAD:master -f"
+      system "ssh #{ssh[:username]}@#{ssh[:host]} \"cd apps && echo '#{ssh[:sudopass]}' | sudo -S ./sirvame-#{environment.to_s}.sh\""
     end
   end
 
