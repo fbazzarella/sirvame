@@ -7,7 +7,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 
-module SpecHelpers
+module SpecHelper
   def simule_page_for_company!
     let(:company) { FactoryGirl.create(:company) }
     let(:fixture) { Rails.root.join('spec/fixtures', 'home.html.erb') }
@@ -19,7 +19,7 @@ module SpecHelpers
 end
 
 RSpec.configure do |config|
-  config.extend SpecHelpers, type: :controller
+  config.extend SpecHelper, type: :controller
 
   config.use_transactional_fixtures = false
 

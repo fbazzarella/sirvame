@@ -63,11 +63,11 @@ describe Company do
 	end
 
 	describe "Company Page" do
-		before { visit company_path('company-name') }
-
 		describe "back to catalog" do
 			it "should back to catalog" do
+				visit company_path('company-name')
 				click_link '« Voltar ao Catálogo'
+
 				page.should have_content('Encontre o que precisa')
 			end
 		end
