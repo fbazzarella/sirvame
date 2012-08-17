@@ -68,7 +68,7 @@ describe ApplicationHelper do
 		end
 
 		it "should return with plus separator" do
-			normalize_params('first, second third', :back).should ==  'first+second+third'
+			normalize_params('first, second third', :back).should == 'first+second+third'
 		end
 
 		it "should remove unecessary separators" do
