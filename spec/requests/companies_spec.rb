@@ -57,6 +57,7 @@ describe Company do
 		describe "visit company page" do
 			it "should display company page" do
 				click_link 'Ver detalhes de Company Name'
+				
 				page.should have_content('« Voltar ao Catálogo')
 			end
 		end
