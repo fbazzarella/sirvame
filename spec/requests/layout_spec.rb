@@ -13,6 +13,6 @@ describe "Main Navigation" do
     visit root_path
     click_link 'Anuncie Grátis'
 
-    page.should have_content('As pessoas querem te ver.')
+    page.should have_content('Em qualquer lugar. A qualquer hora.')
   end
 end

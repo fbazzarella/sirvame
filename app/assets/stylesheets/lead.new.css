@@ -1,8 +1,28 @@
-body.new-leads {
+body.new-lead {
   background: #FFF url('layout/background_new_lead.jpg') no-repeat left 60px;
 }
 
 .header-lead {
   background: url('layout/background_header_lead.png') repeat-x;
   height: 6px;
+}
+
+.lead hgroup {
+  margin-left: -500px;
+  border: 1px dashed;
+}
+
+.lead h2,
+.lead h3,
+.lead h4 {
+  text-align: right;
+}
+
+.lead div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.lead input {
+  display: block;
 }
