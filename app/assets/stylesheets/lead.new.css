@@ -59,16 +59,26 @@ body.new-lead {
 
 .lead input {
   display: block;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .lead input:first-child {
   margin-top: 4px;
 }
 
+.lead input:last-child {
+  margin-bottom: 30px;
+}
+
 .lead input[type=text] {
   margin-left: 1px;
   width: 268px;
+}
+
+.lead small {
+  position: absolute;
+  font-weight: bold;
+  color: #F66;
 }
 
 .lead input[type=submit] {
