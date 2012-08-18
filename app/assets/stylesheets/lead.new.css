@@ -1,5 +1,5 @@
 body.new-lead {
-  background: #FFF url('layout/background_new_lead.jpg') no-repeat left 60px;
+  background: url('layout/background_new_lead.jpg') no-repeat left 60px;
 }
 
 .header-lead {
@@ -8,14 +8,33 @@ body.new-lead {
 }
 
 .lead hgroup {
+  background: url('layout/background_transparent_000_35.png');
   margin-left: -500px;
-  border: 1px dashed;
+  padding: 15px;
+  color: #FFF;
 }
 
 .lead h2,
 .lead h3,
 .lead h4 {
   text-align: right;
+}
+
+.lead h4 {
+  padding: 15px;
+}
+
+.lead fieldset {
+  background: url('layout/background_transparent_000_70.png');
+  margin-left: 80px;
+  border: none;
+  color: #FFF;
+}
+
+.lead legend {
+  position: relative;
+  top: -20px;
+  left: -80px;
 }
 
 .lead div {
