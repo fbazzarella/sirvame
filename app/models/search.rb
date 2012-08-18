@@ -11,7 +11,7 @@ class Search < ActiveRecord::Base
 		if word_list
 	    results = Company.search(word_list).order('plan DESC', 'relevance DESC', :name)
 
-			create({word_list: word_list.gsub(/\s/, ', '), companies: results}, as: :search)
+			create({word_list: word_list.gsub(/\s/, ', '), companies: results}, as: :search) if page.nil?
 
 			results
 		else

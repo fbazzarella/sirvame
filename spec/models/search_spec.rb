@@ -21,14 +21,24 @@ describe Search do
 		let!(:company3) { FactoryGirl.create(:company, segments: 'Movies', products: 'dvds', plan: 'plus') }
 
 		context "with word list" do
-			it "should save a search information and words list as tags" do
-				Search.perform_with('word')
-				Search.first.words.first.should be_a(ActsAsTaggableOn::Tag)
-			end
+			context "first page" do
+				it "should save a search information and words list as tags" do
+					Search.perform_with('word')
+					Search.first.words.first.should be_a(ActsAsTaggableOn::Tag)
+				end
 
-			it "should save founded companies as search results" do
-				Search.perform_with('bike ball')
-				Search.first.companies.should include(company1, company2)
+				it "should save founded companies as search results" do
+					Search.perform_with('bike ball')
+					Search.first.companies.should include(company1, company2)
+				end
+			end
+			
+			context "other pages" do
+				it "should not save a search information" do
+					expect do
+						Search.perform_with('word', 2)
+					end.to_not change(Search, :count)
+				end
 			end
 
 			it "should return companies ordered by relevance" do
