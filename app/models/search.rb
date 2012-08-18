@@ -7,7 +7,7 @@ class Search < ActiveRecord::Base
 
 	acts_as_taggable_on :words
 
-	def self.perform_with(word_list = nil)
+	def self.perform_with(word_list = nil, page = nil)
 		if word_list
 	    results = Company.search(word_list).order('plan DESC', 'relevance DESC', :name)
 
@@ -16,6 +16,6 @@ class Search < ActiveRecord::Base
 			results
 		else
 			Company.all_to_home.order('plan DESC', 'popularity DESC', :name)
-		end
+		end.page(page)
 	end
 end

@@ -20,16 +20,13 @@ describe CompaniesController do
 		end
 
 		it "should call search perform with once time" do
-			Search.should_receive(:perform_with).once.with('coffee').and_return(Company.order)
+			Search.should_receive(:perform_with).once.with('coffee', nil).and_return(Company.page)
 			get :index, encontrar: 'coffee'
 		end
 
-		it "should assign paginated search results" do
-			13.times { FactoryGirl.create(:company) }
-
+		it "should assign search results" do
 			get :index
-			assigns(:companies).first.should be_a(Company)
-			assigns(:companies).all.count.should == 12
+			assigns(:companies).should be_a(ActiveRecord::Relation)
 		end
 
 		describe "rendering" do

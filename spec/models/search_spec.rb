@@ -48,5 +48,11 @@ describe Search do
 				Search.perform_with.should == [company3, company2, company1]
 			end
 		end
+
+		it "should return paginated search results" do
+			13.times { FactoryGirl.create(:company) }
+
+			Search.perform_with.all.count.should == 12
+		end
 	end
 end
