@@ -60,10 +60,15 @@ body.new-lead {
 }
 
 .lead input[type=submit] {
+  position: relative;
   background: transparent url('layout/new_lead_call_to_action.png');
   border: none;
   width: 285px;
   height: 50px;
+  color: #FFF;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
   text-transform: uppercase;
 }
 
@@ -74,10 +79,14 @@ body.new-lead {
 
 .lead input[type=submit]:active {
   background-position: left -100px;
+  outline: none;
+  top: 1px;
+  left: 1px;
+  text-shadow: none;
 }
 
 .disclaimer {
-  width: 450px;
+  width: 490px;
 }
 
 .disclaimer h5 {
