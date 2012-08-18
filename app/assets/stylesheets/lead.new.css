@@ -26,26 +26,32 @@ body.new-lead {
 
 .lead fieldset {
   background: url('layout/background_transparent_000_70.png');
-  margin-left: 80px;
+  margin-left: 13px;
   border: none;
   color: #FFF;
 }
 
 .lead legend {
   position: relative;
-  top: -20px;
-  left: -80px;
+  left: -20px;
 }
 
 .lead div {
   display: inline-block;
   vertical-align: top;
-  margin: 20px;
+}
+
+.fields {
+  margin: 0 50px;
 }
 
 .lead input {
   display: block;
-  margin: 15px 0;
+  margin: 30px 0;
+}
+
+.lead input:first-child {
+  margin-top: 4px;
 }
 
 .lead input[type=text] {
@@ -68,4 +74,24 @@ body.new-lead {
 
 .lead input[type=submit]:active {
   background-position: left -100px;
+}
+
+.disclaimer {
+  width: 450px;
+}
+
+.disclaimer h5 {
+  font-size: 1.5em;
+}
+
+.disclaimer p {
+  margin: 15px 0;
+  line-height: 1.6em;
+}
+
+.disclaimer a,
+.disclaimer a:active,
+.disclaimer a:visited,
+.disclaimer a:hover {
+  color: #FFF;
 }
