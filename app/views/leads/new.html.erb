@@ -4,11 +4,11 @@
   <hgroup>
     <h2>As pessoas<br />querem te ver.</h2>
     <h3>Em qualquer lugar. A qualquer hora.</h3>
+    <h4>Anuncie em nosso catálogo e seja encontrado pelo seu<br />público, inclusive através do Google e do Facebook.</h4>
   </hgroup>
-  <h4>Anuncie em nosso catálogo e seja encontrado pelo seu<br />público, inclusive através do Google e do Facebook.</h4>
+  <h5><%= image_tag('layout/new_lead_form_legend.png', alt: 'Apenas R$49,00 por mês! Experimente grátis sem compromisso por 30 dias.') %></h5>
   <form action="#">
     <fieldset>
-      <legend><%= image_tag('layout/new_lead_form_legend.png', alt: 'Apenas R$49,00 por mês! Experimente grátis sem compromisso por 30 dias.') %></legend>
       <div class="fields">
         <input type="text" placeholder="Nome da Sua Empresa" />
         <input type="text" placeholder="Seu Nome" />
@@ -16,7 +16,7 @@
         <input type="submit" value="Quero Experimentar »" />
       </div>
       <div class="disclaimer">
-        <h5>Está com dúvidas?</h5>
+        <h6>Está com dúvidas?</h6>
         <p>Neste momento, tudo que precisamos são seus dados básicos para que possamos lhe enviar mais informações e esclarecer todas as suas dúvidas.</p>
         <p>Lembre-se que você não terá nenhum compromisso ao enviar tais informações. Você pode desistir de anunciar conosco a qualquer momento sem nenhum tipo de taxa extra ou multa.</p>
         <p>Se preferir, você pode visitar nossa <%= link_to 'seção de ajuda', 'javascript:void(0)', title: 'Visitar seção de ajuda', class: 'inverse' %> ou navegar pelo <%= link_to 'catálogo', root_path, title: 'Navegar pelo catálogo', class: 'inverse' %>. Queremos que você se sinta à vontade e seguro.</p>
