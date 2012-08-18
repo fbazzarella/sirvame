@@ -3,7 +3,8 @@
  *= require jquery-lionbars
  *= require fancybox
  *= require company.index
- *= require company.show */
+ *= require company.show
+ *= require lead.new */
 
 html, body {
   height: 100%;
