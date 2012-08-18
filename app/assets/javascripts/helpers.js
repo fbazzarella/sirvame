@@ -34,4 +34,4 @@ function ableToScroll(){
     pageScrolling &&
     nextPage <= maxPages &&
     $('.result').length % 3 == 0 &&
-    $(window).scrollTop() > $(document).height() - $(window).height() - 50 };
+    $(window).scrollTop() > $(document).height() - $(window).height() - 20 };

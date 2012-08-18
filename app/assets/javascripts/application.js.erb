@@ -44,7 +44,7 @@ $(function(){
             checkLionbars();
             spinContainer.html(zoomTool) }) } }) } });
 
-  $(window).scroll(function(){
+  $(window).bind('load scroll', function(){
     if(ableToScroll()){
       pageScrolling = false;
 
