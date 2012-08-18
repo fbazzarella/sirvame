@@ -10,6 +10,18 @@ header.search h2 {
   font-size: 1.8em;
 }
 
+header.search input[type=text] {
+  float: left;
+  padding: 10px;
+  width: 570px;
+  height: 18px;
+  font-size: 1.3em;
+
+  -webkit-border-radius: 3px 0 0 3px;
+     -moz-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
+}
+
 #companies-count {
   background: #F9F9F9 url('layout/background_body.png');
   margin: -5px 2px 20px 0;

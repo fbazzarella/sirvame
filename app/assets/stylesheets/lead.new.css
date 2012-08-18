@@ -40,8 +40,10 @@ body.new-lead {
 .lead div {
   display: inline-block;
   vertical-align: top;
+  margin: 20px;
 }
 
 .lead input {
   display: block;
+  margin: 5px 0;
 }
