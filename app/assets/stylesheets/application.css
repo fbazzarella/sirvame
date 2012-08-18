@@ -1,8 +1,9 @@
 /*= require reset
  *= require_self
- *= require bootstrap
  *= require jquery-lionbars
  *= require fancybox
+ *= require bootstrap
+ *= require jquery.uitotop
  *= require company.index
  *= require company.show
  *= require lead.new */
