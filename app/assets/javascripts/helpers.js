@@ -35,3 +35,43 @@ function ableToScroll(){
     nextPage <= maxPages &&
     $('.result').length % 3 == 0 &&
     $(window).scrollTop() > $(document).height() - $(window).height() - 20 };
+
+
+function paginate(){
+  if(ableToScroll()){
+    pageScrolling = false;
+
+    $.ajax({
+      url: encodeURI(searchUrl + '.js?page=' + nextPage),
+      type: 'GET',
+      dataType: 'html',
+      success: function(data){
+        $('#search-results').css('height', '').append($(data).find('li').hide()).find('li').slideDown();
+        checkLionbars();
+        nextPage++ },
+      complete: function(){
+        pageScrolling = true } }) } };
+
+function search(){
+  if(searchField.val() != searchField.attr('placeholder')){
+    pageScrolling = false;
+
+    var spinner = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
+    var sp      = normalizeParams(searchField.val(), 'go');
+
+    SirvaMeRouting.navigate(sp ? '!/encontrar/' + sp : '');
+    nextPage = 2;
+
+    searchUrl = '/encontrar' + (sp ? '/' + sp : '');
+
+    $.ajax({
+      url: encodeURI(searchUrl + '.js'),
+      type: 'GET',
+      dataType: 'html',
+      success: function(data){
+        $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
+          pageScrolling = true;
+          paginate();
+
+          checkLionbars();
+          spinContainer.html(zoomTool) }) } }) } };

@@ -45,19 +45,7 @@ $(function(){
             spinContainer.html(zoomTool) }) } }) } });
 
   $(window).bind('load scroll', function(){
-    if(ableToScroll()){
-      pageScrolling = false;
-
-      $.ajax({
-        url: encodeURI(searchUrl + '.js?page=' + nextPage),
-        type: 'GET',
-        dataType: 'html',
-        success: function(data){
-          $('#search-results').css('height', '').append($(data).find('li').hide()).find('li').slideDown();
-          checkLionbars();
-          nextPage++ },
-        complete: function(){
-          pageScrolling = true } }) } });
+    paginate() });
 
   SirvaMeRouting = new (Backbone.Router.extend({
     routes: {
