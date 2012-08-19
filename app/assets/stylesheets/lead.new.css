@@ -94,7 +94,7 @@ body.new-lead {
 }
 
 .fields label:first-child {
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .fields input[type=text] {
