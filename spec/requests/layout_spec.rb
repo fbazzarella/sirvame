@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe "Main Navigation" do
   it "should display catalog" do
-    visit new_leads_path
+    visit new_lead_path
     click_link 'Página Inicial'
 
     page.should have_content('Encontre o que precisa')
