@@ -7,7 +7,7 @@
     <h4>Anuncie em nosso catálogo e seja encontrado pelo seu<br />público, inclusive através do Google e do Facebook.</h4>
   </hgroup>
   <h5><%= image_tag('layout/new_lead_form_legend.png', alt: 'Apenas R$49,00 por mês! Experimente grátis sem compromisso por 30 dias.') %></h5>
-  <form action="">
+  <%= form_for @lead do |f| %>
     <fieldset>
       <div class="fields">
         <input type="text" placeholder="Nome da Sua Empresa" maxlength="64" />
@@ -25,5 +25,5 @@
         <p>Se preferir, você pode visitar nossa <%= link_to 'seção de ajuda', 'javascript:void(0)', title: 'Visitar seção de ajuda', class: 'inverse' %> ou navegar pelo <%= link_to 'catálogo', root_path, title: 'Navegar pelo catálogo', class: 'inverse' %>. Queremos que você se sinta à vontade e seguro.</p>
       </div>
     </fieldset>
-  </form>
+  <% end %>
 </div>

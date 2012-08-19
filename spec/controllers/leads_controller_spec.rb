@@ -6,6 +6,13 @@ describe LeadsController do
   describe "GET new" do
     before { get :new }
 
+    it "should assign a new lead" do
+      FactoryGirl.build(:lead)
+
+      assigns(:lead).should be_a(Lead)
+      assigns(:lead).should_not be_persisted
+    end
+
     describe "rendering" do
       it "should return success" do
         response.should be_success
