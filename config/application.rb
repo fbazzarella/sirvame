@@ -72,5 +72,9 @@ module SirvaMe
       address: 'smtp.gmail.com', port: 587,
       user_name: ENV['SMTP_ADDRESS'], password: ENV['SMTP_PASSWORD'],
       authentication: 'plain', enable_starttls_auto: true }
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      %(#{html_tag}<small>#{instance.error_message.join(', ').humanize}.</small>).html_safe
+    end
   end
 end

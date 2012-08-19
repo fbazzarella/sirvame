@@ -7,6 +7,33 @@ body.new-lead {
   height: 6px;
 }
 
+.lead .call-to-action {
+  position: relative;
+  background: transparent url('layout/new_lead_call_to_action.png');
+  margin-bottom: 0;
+  border: none;
+  width: 285px;
+  height: 50px;
+  color: #FFF;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  text-transform: uppercase;
+}
+
+.lead .call-to-action:hover {
+  background-position: left -50px;
+  cursor: pointer;
+}
+
+.lead .call-to-action:active {
+  background-position: left -100px;
+  outline: none;
+  top: 1px;
+  left: 1px;
+  text-shadow: none;
+}
+
 .lead hgroup {
   background: url('layout/background_transparent_000_35.png');
   margin: 50px 0 30px -500px;
@@ -57,68 +84,31 @@ body.new-lead {
   margin: 0 60px 40px;
 }
 
-.lead input {
+.fields label,
+.fields input {
   display: block;
-  margin-top: 30px;
 }
 
-.lead input:first-child {
+.fields label {
+  margin-top: 20px;
+}
+
+.fields label:first-child {
   margin-top: 4px;
 }
 
-.lead input[type=text] {
+.fields input[type=text] {
   margin-left: 1px;
   width: 268px;
 }
 
-.lead small {
+.fields small {
   position: absolute;
   font-weight: bold;
   color: #F66;
 }
-
-.lead .call-to-action {
-  position: relative;
-  background: transparent url('layout/new_lead_call_to_action.png');
-  margin-bottom: 0;
-  border: none;
-  width: 285px;
-  height: 50px;
-  color: #FFF;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px #000;
-  text-transform: uppercase;
-}
-
-.lead .call-to-action:hover {
-  background-position: left -50px;
-  cursor: pointer;
-}
-
-.lead .call-to-action:active {
-  background-position: left -100px;
-  outline: none;
-  top: 1px;
-  left: 1px;
-  text-shadow: none;
-}
-
-.lead a.call-to-action {
+.fields .call-to-action {
   margin-top: 25px;
-  padding-top: 12px;
-  height: 38px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  text-align: center;
-}
-
-.lead a.call-to-action,
-.lead a.call-to-action:active,
-.lead a.call-to-action:visited,
-.lead a.call-to-action:hover {
-  color: #FFF;
-  text-decoration: none;
 }
 
 .disclaimer {
@@ -139,4 +129,21 @@ body.new-lead {
 .disclaimer a:visited,
 .disclaimer a:hover {
   color: #FFF;
+}
+
+.lead a.call-to-action {
+  margin-top: 25px;
+  padding-top: 12px;
+  height: 38px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.lead a.call-to-action,
+.lead a.call-to-action:active,
+.lead a.call-to-action:visited,
+.lead a.call-to-action:hover {
+  color: #FFF;
+  text-decoration: none;
 }

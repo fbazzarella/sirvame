@@ -10,10 +10,10 @@
   <%= form_for @lead do |f| %>
     <fieldset>
       <div class="fields">
-        <%= f.text_field :company_name, placeholder: 'Nome da Sua Empresa', maxlength: '64' %>
-        <%= f.text_field :contact_name, placeholder: 'Seu Nome', maxlength: '64' %>
-        <%= f.text_field :email, placeholder: 'seu@email.com', maxlength: '64' %>
-        <%= f.submit value: 'Quero Experimentar ', class: 'call-to-action' %>
+        <label>Nome da sua Empresa:<%= f.text_field :company_name, maxlength: '64' %></label>
+        <label>Seu Nome:<%= f.text_field :contact_name, maxlength: '64' %></label>
+        <label>Seu E-mail:<%= f.text_field :email, maxlength: '64' %></label>
+        <%= f.submit value: 'Quero Experimentar »', class: 'call-to-action' %>
       </div>
       <div class="disclaimer">
         <h6>Está com dúvidas?</h6>
