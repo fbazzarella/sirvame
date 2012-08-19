@@ -10,13 +10,10 @@
   <%= form_for @lead do |f| %>
     <fieldset>
       <div class="fields">
-        <input type="text" placeholder="Nome da Sua Empresa" maxlength="64" />
-        <small>Este campo deve ser preenchido</small>
-        <input type="text" placeholder="Seu Nome" maxlength="64" />
-        <small>Este campo deve ser preenchido</small>
-        <input type="text" placeholder="seu@email.com" maxlength="64" />
-        <small>Utilize este formato: seu@email.com</small>
-        <input type="submit" value="Quero Experimentar »" class="call-to-action" />
+        <%= f.text_field :company_name, placeholder: 'Nome da Sua Empresa', maxlength: '64' %>
+        <%= f.text_field :contact_name, placeholder: 'Seu Nome', maxlength: '64' %>
+        <%= f.text_field :email, placeholder: 'seu@email.com', maxlength: '64' %>
+        <%= f.submit value: 'Quero Experimentar ', class: 'call-to-action' %>
       </div>
       <div class="disclaimer">
         <h6>Está com dúvidas?</h6>
