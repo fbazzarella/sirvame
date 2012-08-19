@@ -10,4 +10,5 @@
   activerecord:
     errors:
       messages:
-        blank: 'deve ser preenchido'
+        blank: 'este campo deve ser preenchido'
+        invalid: 'utilize este formato: seu@email.com'

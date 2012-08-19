@@ -8,4 +8,10 @@ FactoryGirl.define do
     username 'company-name'
     plan     'none'
   end
+
+  factory :lead do
+    company_name 'Company Name'
+    contact_name 'Contact Name'
+    email        'email@example.com'
+  end
 end
