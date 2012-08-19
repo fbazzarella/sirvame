@@ -23,4 +23,25 @@ describe LeadsController do
       end
     end
   end
+
+  describe "GET effectived" do
+    before { get :effectived }
+
+    describe "rendering" do
+      it "should return success" do
+        response.should be_success
+      end
+
+      it "should render with layout" do
+        response.should render_template('effectived')
+        response.should render_with_layout('application')
+      end
+
+      it "should raise missing template if invalid format is passed" do
+        expect do
+          get :effectived, format: :xml
+        end.to raise_error(ActionView::MissingTemplate)
+      end
+    end
+  end
 end

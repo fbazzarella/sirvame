@@ -2,27 +2,19 @@
 <div class="header-lead"></div>
 <div class="container lead main-content">
   <hgroup>
-    <% if request.path.split('/').last != 'sabia-decisao' -%>
     <h2>As pessoas<br />querem te ver.</h2>
     <h3>Em qualquer lugar. A qualquer hora.</h3>
     <h4>Anuncie em nosso catálogo e seja encontrado pelo seu<br />público, inclusive através do Google e do Facebook.</h4>
-    <% else -%>
-    <h2>Sábia decisão :D</h2>
-    <h3>Iremos entrar em contato com você para tirar<br />todas as suas dúvidas sobre nosso catálogo.</h3>
-    <h4>Enquanto isso, assista ao vídeo<br />incrível que separamos para você.</h4>
-    <%= link_to 'Quero assistir agora!', 'http://www.youtube.com/watch?v=XRCIzZHpFtY', title: 'Assistir ao vídeo no Youtube', class: 'call-to-action' %>
-    <% end -%>
   </hgroup>
-  <% if request.path.split('/').last != 'sabia-decisao' -%>
   <h5><%= image_tag('layout/new_lead_form_legend.png', alt: 'Apenas R$49,00 por mês! Experimente grátis sem compromisso por 30 dias.') %></h5>
   <form action="">
     <fieldset>
       <div class="fields">
-        <input type="text" placeholder="Nome da Sua Empresa" />
+        <input type="text" placeholder="Nome da Sua Empresa" maxlength="64" />
         <small>Este campo deve ser preenchido</small>
-        <input type="text" placeholder="Seu Nome" />
+        <input type="text" placeholder="Seu Nome" maxlength="64" />
         <small>Este campo deve ser preenchido</small>
-        <input type="text" placeholder="seu@email.com" />
+        <input type="text" placeholder="seu@email.com" maxlength="64" />
         <small>Utilize este formato: seu@email.com</small>
         <input type="submit" value="Quero Experimentar »" class="call-to-action" />
       </div>
@@ -34,5 +26,4 @@
       </div>
     </fieldset>
   </form>
-  <% end -%>
 </div>
