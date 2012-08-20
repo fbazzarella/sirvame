@@ -2,7 +2,7 @@ body.new-lead {
   background: url('layout/background_new_lead.jpg') no-repeat left 60px;
 }
 
-.header-lead {
+header.lead {
   background: url('layout/background_header_lead.png') repeat-x;
   height: 6px;
 }
