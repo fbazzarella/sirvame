@@ -19,15 +19,13 @@ describe Company do
 		end
 
 		describe "perform company search" do
-			context "using ajax", js: true do
-				it "should display 'not found' message if none companies found" do
+			shared_examples "company search" do
+				it "should display 'not found' and than display a founded result" do
 					fill_in 'search-field', with: 'coffee fruit'
 					click_button 'submit-search'
 
 					page.find('#none-companies').should be
-				end
 
-				it "should display search results if companies found" do
 					fill_in 'search-field', with: 'movies dvds'
 					click_button 'submit-search'
 
@@ -35,22 +33,13 @@ describe Company do
 					page.should have_content('Movies [dvds]')
 				end
 			end
+			
+			context "with ajax", js: true do
+				it_behaves_like "company search"
+			end
 
-			context "not using ajax" do
-				it "should display 'not found' message if none companies found" do
-					fill_in 'search-field', with: 'coffee fruit'
-					click_button 'submit-search'
-
-					page.find('#none-companies').should be
-				end
-
-				it "should display search results if companies found" do
-					fill_in 'search-field', with: 'movies dvds'
-					click_button 'submit-search'
-
-					page.should have_content('Company Name')
-					page.should have_content('Movies [dvds]')
-				end
+			context "without ajax" do
+				it_behaves_like "company search"
 			end
 		end
 
