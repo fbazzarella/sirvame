@@ -30,7 +30,8 @@ function normalizeParams(params, direction){
     case 'back': return params.join(' ') } };
 
 function ableToScroll(){
-  return pageScrolling &&
+  return !$('#none-companies')[0] &&
+    pageScrolling &&
     nextPage <= maxPages &&
     $('.result').length % 3 == 0 &&
     $(window).scrollTop() > $(document).height() - $(window).height() - 50 };
