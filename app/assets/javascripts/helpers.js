@@ -57,7 +57,7 @@ function search(){
     pageScrolling = false;
 
     var spinner = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
-    var sp      = normalizeParams(searchField.val(), 'go');
+    var sp      = sanitize(searchField.val(), 'go');
 
     SirvaMeRouting.navigate(sp ? '!/encontrar/' + sp : '');
     nextPage = 2;
