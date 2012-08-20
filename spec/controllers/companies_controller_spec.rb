@@ -15,7 +15,7 @@ describe CompaniesController do
 		end
 
 		it "should call normalize params once time" do
-			subject.should_receive(:normalize_params).once
+			subject.should_receive(:sanitize).once
 			get :index
 		end
 

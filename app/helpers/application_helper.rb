@@ -21,10 +21,10 @@ module ApplicationHelper
 
     root_path +
     (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') +
-    normalize_params(params[:encontrar], :back)
+    sanitize(params[:encontrar], :back)
   end
 
-  def normalize_params(params = nil, direction = nil)
+  def sanitize(params = nil, direction = nil)
   	return nil if params.nil? || direction.nil?
 
 		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']

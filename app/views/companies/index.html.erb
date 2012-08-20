@@ -2,7 +2,7 @@
 	<form action="/" method="get" class="container">
 		<h2>Encontre o que precisa em Valença</h2>
 		<div>
-			<input id="search-field" type="text" name="encontrar" value="<%= normalize_params(params[:encontrar], :go) %>" placeholder="Exemplos: água, pizza, lanchonete, academia... e clique na lupa »" />
+			<input id="search-field" type="text" name="encontrar" value="<%= sanitize(params[:encontrar], :go) %>" placeholder="Exemplos: água, pizza, lanchonete, academia... e clique na lupa »" />
 			<span class="add-on">
 				<%= image_submit_tag 'layout/zoom_tool.png', alt: 'Encontrar', id: 'submit-search' %>
 			</span>

@@ -64,23 +64,23 @@ describe ApplicationHelper do
 
 	describe "normalize search params" do
 		it "should return with space separator" do
-			normalize_params('first+second', :go).should == 'first second'
+			sanitize('first+second', :go).should == 'first second'
 		end
 
 		it "should return with plus separator" do
-			normalize_params('first, second third', :back).should == 'first+second+third'
+			sanitize('first, second third', :back).should == 'first+second+third'
 		end
 
 		it "should remove unecessary separators" do
-			normalize_params('+first+second', :go).should == 'first second'
-			normalize_params(', first, second third', :back).should == 'first+second+third'
+			sanitize('+first+second', :go).should == 'first second'
+			sanitize(', first, second third', :back).should == 'first+second+third'
 
-			normalize_params('+', :go).should be_nil
-			normalize_params(', ', :back).should be_nil
+			sanitize('+', :go).should be_nil
+			sanitize(', ', :back).should be_nil
 		end
 
 		it "should return nothing if no param is passed" do
-			normalize_params.should be_nil
+			sanitize.should be_nil
 		end
 	end
 

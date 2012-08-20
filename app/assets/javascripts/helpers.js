@@ -17,7 +17,7 @@ function loadFancyBox(){
     openEffect: 'elastic', closeEffect: 'fade', prevEffect: 'fade', nextEffect: 'fade',
     padding: 2, helpers: {title: {type: 'over'}} }) };
 
-function normalizeParams(params, direction){
+function sanitize(params, direction){
   if(!params) return '';
 
   params = decodeURI(params.replace(/,|\s|\++/gi, '+')).split('+');
