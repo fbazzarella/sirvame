@@ -91,6 +91,7 @@ header.lead {
 
 .fields label {
   margin-top: 20px;
+  font-size: 1.1em;
 }
 
 .fields label:first-child {
@@ -120,7 +121,8 @@ header.lead {
 }
 
 .disclaimer p {
-  margin: 15px 0;
+  margin: 10px 0;
+  font-size: 1.1em;
   line-height: 1.6em;
 }
 
