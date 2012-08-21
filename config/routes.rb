@@ -5,6 +5,7 @@ SirvaMe::Application.routes.draw do
   post '/anunciar-gratis-por-30-dias',               to: 'leads#create',     as: :leads
   get  '/anunciar-gratis-por-30-dias/sabia-decisao', to: 'leads#effectived', as: :effectived_lead
   
+  get '/tire-suas-duvidas',      to: 'pages#questions', as: :questions
   get '/sitemap',                to: 'pages#sitemap',   as: :sitemap
   get '/robots',                 to: 'pages#robots',    as: :robots
 
