@@ -1,4 +1,44 @@
 <%
   content_for :title, 'Tire suas dúvidas'
 %>
-Tire Suas Dúvidas
+<header class="company">
+  <div class="container">
+  <%= link_to '« Voltar ao Catálogo', session[:back_to_catalog_path], title: 'Voltar ao catálogo', class: 'back-to-catalog' %>
+  <h2>Tire Suas Dúvidas</h2>
+    <%= render './addthis' %>
+  </div>
+</header>
+<div class="container company main-content">
+  <aside>
+    Nosso atendimento
+    <dl>
+      <dt>Telefone</dt>
+        <dd>00 0000 0000</dd>
+    </dl>
+  </aside>
+  <section>
+    <article class="cover">
+      Capa da Página
+    </article>
+    <article class="text">
+      <h3>Lol</h3>
+      <p>
+        Aqui você encontra blá blá blá...
+      </p>
+    </article>
+    <article class="products">
+      <h3>Pagamento</h3>
+      <ul class="list">
+        <li>
+          <h4>Quanto custa?</h4>
+          <p>
+            1 milhão por mês
+          </p>
+          <ul class="images">
+            <li><%= link_to image_tag('companies/selmaimobiliaria/thumb-products-1-3-1.png', alt: ''), image_path('companies/selmaimobiliaria/big-products-1-3-1.jpg'), title: '', rel: 'products-1-3' %></li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </section>
+</div>
