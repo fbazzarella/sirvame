@@ -3,6 +3,25 @@ require 'spec_helper'
 describe PagesController do
   render_views
 
+  describe "GET questions" do
+    before { get :questions }
+
+    it "should return success" do
+      response.should be_success
+    end
+
+    it "should render questions with layout" do
+      response.should render_template('questions')
+      response.should render_with_layout('application')
+    end
+
+    it "should raise missing template if invalid format is passed" do
+      expect do
+        get :questions, format: :xml
+      end.to raise_error(ActionView::MissingTemplate)
+    end
+  end
+
   describe "GET sitemap" do
     before do
       FactoryGirl.create(:company, plan: 'plus')
