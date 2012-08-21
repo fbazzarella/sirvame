@@ -22,7 +22,7 @@ header.search input[type=text] {
           border-radius: 3px 0 0 3px;
 }
 
-#companies-count {
+#display {
   background: #F9F9F9 url('layout/background_body.png');
   margin: -5px 2px 20px 0;
   -webkit-border-radius: 4px;

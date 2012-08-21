@@ -12,9 +12,8 @@
 	</form>
 </header>
 <div class="container search main-content">
-	<p id="companies-count">
-		Já temos um total de <strong><%= Company.count %></strong> empresas cadastradas.
-		Quer se destacar? <%= default_contact_email 'Entre em contato', :inverse %> e conheça as vantagens.
+	<p id="display">
+		<strong>Grátis por 30 dias!</strong> Tenha uma página em nosso catálogo e conquiste mais clientes para sua empresa. <%= link_to 'Saiba mais', new_lead_path, title: 'Saber mais sobre como anunciar', class: 'inverse' %>.
 	</p>
 	<%= render 'search_results' %>
 	<%= paginate @companies, window: 2 %>
