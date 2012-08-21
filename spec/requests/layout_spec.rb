@@ -16,7 +16,7 @@ describe "Main Navigation" do
     page.should have_content('Em qualquer lugar. A qualquer hora.')
   end
 
-  it "should display questions page" do
+  xit "should display questions page" do
     visit root_path
     click_link 'Ajuda'
 
