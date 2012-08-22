@@ -30,12 +30,12 @@ function sanitize(params, direction){
     case 'back': return params.join(' ') } };
 
 function ableToScroll(){
-  return !$('#none-companies')[0] &&
+  return $('body').hasClass('catalog') &&
+    !$('#none-companies')[0] &&
     pageScrolling &&
     nextPage <= maxPages &&
     $('.result').length % 3 == 0 &&
     $(window).scrollTop() > $(document).height() - $(window).height() - 20 };
-
 
 function paginate(){
   if(ableToScroll()){
