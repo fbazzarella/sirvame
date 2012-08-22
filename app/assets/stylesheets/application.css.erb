@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  background-image: url('layout/background_body.png');
+  background-image: url('<%= image_path('layout/background_body.png') %>');
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #333;
@@ -59,7 +59,7 @@ header, footer {
 }
 
 header.main {
-  background: #FFF url('layout/background_header.jpg') no-repeat center top;
+  background: #FFF url('<%= image_path('layout/background_header.jpg') %>') no-repeat center top;
   border-top: 5px solid #333;
 }
 
@@ -106,7 +106,7 @@ nav li {
 }
 
 footer {
-  background: url('layout/background_footer.png') repeat-x;
+  background: url('<%= image_path('layout/background_footer.png') %>') repeat-x;
   position: absolute;
   bottom: 0;
   padding: 0;

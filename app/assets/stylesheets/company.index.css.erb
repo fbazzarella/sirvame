@@ -1,5 +1,5 @@
 header.search {
-  background: url('layout/background_header_search.png') repeat-x;
+  background: url('<%= image_path('layout/background_header_search.png') %>') repeat-x;
   height: 143px;
 }
 
@@ -23,7 +23,7 @@ header.search input[type=text] {
 }
 
 #display {
-  background: #F9F9F9 url('layout/background_body.png');
+  background: #F9F9F9 url('<%= image_path('layout/background_body.png') %>');
   margin: -5px 2px 20px 0;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -96,7 +96,7 @@ header.search input[type=text] {
 }
 
 .highlight .data {
-  background: #FFF url('layout/background_search_result.png') no-repeat center -50px;
+  background: #FFF url('<%= image_path('layout/background_search_result.png') %>') no-repeat center -50px;
   border-color: #333;
   -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
      -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
@@ -134,7 +134,7 @@ header.search input[type=text] {
 }
 
 #none-companies {
-  background: url('icons/not_found.png') no-repeat left 7px;
+  background: url('<%= image_path('icons/not_found.png') %>') no-repeat left 7px;
   margin: 30px 10px;
   padding-left: 150px;
   color: #333;

@@ -1,15 +1,15 @@
 body.new-lead {
-  background: url('layout/background_new_lead.jpg') no-repeat left 60px;
+  background: url('<%= image_path('layout/background_new_lead.jpg') %>') no-repeat left 60px;
 }
 
 header.lead {
-  background: url('layout/background_header_lead.png') repeat-x;
+  background: url('<%= image_path('layout/background_header_lead.png') %>') repeat-x;
   height: 6px;
 }
 
 .lead .call-to-action {
   position: relative;
-  background: transparent url('layout/new_lead_call_to_action.png');
+  background: transparent url('<%= image_path('layout/new_lead_call_to_action.png') %>');
   margin-bottom: 0;
   border: none;
   width: 285px;
@@ -35,7 +35,7 @@ header.lead {
 }
 
 .lead hgroup {
-  background: url('layout/background_transparent_000_35.png');
+  background: url('<%= image_path('layout/background_transparent_000_35.png') %>');
   margin: 50px 0 30px -500px;
   padding: 20px;
   color: #FFF;
@@ -65,7 +65,7 @@ header.lead {
 }
 
 .lead form {
-  background: url('layout/background_transparent_000_70.png');
+  background: url('<%= image_path('layout/background_transparent_000_70.png') %>');
   margin: 100px 0 30px 20px;
   padding-top: 70px;
   color: #FFF;
