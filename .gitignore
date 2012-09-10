@@ -1,6 +1,6 @@
 coverage/
 db/backup/*.pgsql
-db/schema.rb
+db/structure.sql
 log/
 tmp/
 public/assets/
