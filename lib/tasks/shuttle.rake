@@ -1,4 +1,4 @@
-namespace :deploy do
+namespace :shuttle do
   def deploy_to!(environment = nil)
     if environment.present?
       sh "git push fbazzarella@sirvame.com:apps/sirvame-#{environment.to_s}.git HEAD:master -f"
