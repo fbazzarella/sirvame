@@ -32,7 +32,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', '3.3.0'
   gem 'capybara'
-  gem 'launchy'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'simplecov', require: false
 end
