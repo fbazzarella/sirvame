@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'shuttle'
   gem 'quiet_assets'
 end
 

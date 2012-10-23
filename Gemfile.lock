@@ -147,6 +147,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip
     shoulda-matchers (1.0.0)
+    shuttle (1.0.0)
+      colored
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -194,6 +196,7 @@ DEPENDENCIES
   rails (= 3.2.8)
   rspec-rails
   shoulda-matchers
+  shuttle
   simplecov
   thin
   yui-compressor
