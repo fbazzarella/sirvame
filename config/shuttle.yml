@@ -4,4 +4,4 @@ steps:
   3: 'db:migrate'
   4: 'shuttle:spec'
   5: 'shuttle:git:push'
-  6: 'deploy:staging'
+  6: 'shuttle:staging'
