@@ -10,8 +10,11 @@ Shuttle.setup do |s|
     'shuttle:git:push'
   ]
 
+  # TODO: Setup Stages Description
+
   s.stages = {
-    staging: 'fbazzarella@sirvame.com:apps/sirvame-staging.git'
+    staging:    'fbazzarella@sirvame.com:apps/sirvame-staging.git',
+    production: 'fbazzarella@sirvame.com:apps/sirvame-production.git'
   }
 
 end
