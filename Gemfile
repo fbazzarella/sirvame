@@ -11,7 +11,7 @@ gem 'kaminari'
 gem 'colored'
 gem 'pry-rails'
 gem 'awesome_print'
-gem 'shuttle', path: '../../OpenSource/shuttle'
+gem 'shuttle'
 
 group :assets do
   gem 'yui-compressor'
