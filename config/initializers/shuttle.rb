@@ -8,7 +8,7 @@ Shuttle.setup do |s|
     'db:migrate',
     'shuttle:spec',
     'shuttle:git:push',
-    'shuttle[staging]'
+    'shuttle(staging)'
   ]
 
   s.stages = {
