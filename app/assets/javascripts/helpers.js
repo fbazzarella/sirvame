@@ -18,14 +18,17 @@ function loadFancyBox(){
     padding: 2, helpers: {title: {type: 'over'}} }) };
 
 function loadPopovers(){
-  $('a[rel=popover]').show().click(function(e){
+  var popOvers = $('a[rel=popover]');
+
+  popOvers.show().click(function(e){
     $('a[rel=popover]').not(this).popover('hide');
-    e.preventDefault();
-  }).popover({
+    e.preventDefault() });
+
+  popOvers.popover({
+    html:      true,
     placement: 'bottom',
     title:     'Digite o Número Correto',
-    content:   'Formulário'
-  }) };
+    content:   $('templates #fix-phone').html() }) };
 
 function sanitize(params, direction){
   if(!params) return '';
