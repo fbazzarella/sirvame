@@ -1,7 +1,4 @@
 Shuttle.setup do |s|
-
-  # TODO: Setup Steps Description
-
   s.steps = [
     'shuttle:start',
     'shuttle:bundle',
@@ -10,11 +7,8 @@ Shuttle.setup do |s|
     'shuttle:git:push'
   ]
 
-  # TODO: Setup Stages Description
-
   s.stages = {
     staging:    'fbazzarella@sirvame.com:apps/sirvame-staging.git',
     production: 'fbazzarella@sirvame.com:apps/sirvame-production.git'
   }
-
 end
