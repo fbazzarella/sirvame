@@ -74,4 +74,10 @@ $(function(){
 
   $.imgpreload('<%= image_path('layout/background_new_lead.jpg') %>');
 
+  $('a[rel=popover]').show().popover({
+    placement: 'bottom',
+    title:     'Digite o Número Correto',
+    content:   'Formulário'
+  }).click(function(e){ e.preventDefault() });
+
 });
