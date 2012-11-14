@@ -51,27 +51,3 @@ function paginate(){
         nextPage++ },
       complete: function(){
         pageScrolling = true } }) } };
-
-function search(){
-  if(searchField.val() != searchField.attr('placeholder')){
-    pageScrolling = false;
-
-    var spinner = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
-    var sp      = sanitize(searchField.val(), 'go');
-
-    SirvaMeRouting.navigate(sp ? '!/encontrar/' + sp : '');
-    nextPage = 2;
-
-    searchUrl = '/encontrar' + (sp ? '/' + sp : '');
-
-    $.ajax({
-      url: encodeURI(searchUrl + '.js'),
-      type: 'GET',
-      dataType: 'html',
-      success: function(data){
-        $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
-          pageScrolling = true;
-          paginate();
-
-          checkLionbars();
-          spinContainer.html(zoomTool) }) } }) } };
