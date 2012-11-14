@@ -81,26 +81,24 @@ header.search input[type=text] {
 
 .result .data {
   background-color: #FFF;
-  border: 2px solid #999;
+  border-top: 3px solid #999;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
-  padding: 7px 6px;
+  padding: 7px;
   width: 290px;
   height: 110px;
-  -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
-     -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
-          box-shadow: 1px 1px 5px rgba(100, 100, 100, .5);
+  -webkit-box-shadow: 0px 1px 4px rgba(100, 100, 100, 1);
+     -moz-box-shadow: 0px 1px 4px rgba(100, 100, 100, 1);
+          box-shadow: 0px 1px 4px rgba(100, 100, 100, 1);
   color: #666;
   overflow: hidden;
 }
 
 .highlight .data {
-  background: #FFF url('<%= image_path('layout/background_search_result.png') %>') no-repeat center -50px;
+  background: #FFF url('<%= image_path('layout/background_search_result.png') %>') repeat-x center -50px;
   border-color: #333;
-  -webkit-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
-     -moz-box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
-          box-shadow: 1px 1px 5px rgba(100, 100, 100, 1);
+  color: #444;
 }
 
 .see-details {
