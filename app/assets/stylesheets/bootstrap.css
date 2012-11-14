@@ -184,6 +184,7 @@
 .popover-content ul,
 .popover-content ol {
   margin-bottom: 0;
+  font-weight: normal !important;
 }
 
 .popover .arrow,

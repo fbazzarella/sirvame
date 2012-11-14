@@ -42,6 +42,7 @@ $(function(){
         success: function(data){
           $('#search-results').quicksand($(data).find('li'), {adjustHeight: 'dynamic'}, function(){
             checkLionbars();
+            loadPopovers();
             spinContainer.html(zoomTool) }) } }) } });
 
   $(window).bind('load scroll', function(){
@@ -66,6 +67,7 @@ $(function(){
   checkLionbars();
   checkPlaceHolders();
   loadFancyBox();
+  loadPopovers();
   Backbone.history.start();
 
   $().UItoTop({easingType: 'easeOutQuart'});
@@ -73,11 +75,5 @@ $(function(){
   $('.pagination').remove();
 
   $.imgpreload('<%= image_path('layout/background_new_lead.jpg') %>');
-
-  $('a[rel=popover]').show().popover({
-    placement: 'bottom',
-    title:     'Digite o Número Correto',
-    content:   'Formulário'
-  }).click(function(e){ e.preventDefault() });
 
 });

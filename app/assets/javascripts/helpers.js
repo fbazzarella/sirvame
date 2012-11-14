@@ -17,6 +17,16 @@ function loadFancyBox(){
     openEffect: 'elastic', closeEffect: 'fade', prevEffect: 'fade', nextEffect: 'fade',
     padding: 2, helpers: {title: {type: 'over'}} }) };
 
+function loadPopovers(){
+  $('a[rel=popover]').show().click(function(e){
+    $('a[rel=popover]').not(this).popover('hide');
+    e.preventDefault();
+  }).popover({
+    placement: 'bottom',
+    title:     'Digite o Número Correto',
+    content:   'Formulário'
+  }) };
+
 function sanitize(params, direction){
   if(!params) return '';
 
@@ -48,6 +58,7 @@ function paginate(){
       success: function(data){
         $('#search-results').css('height', '').append($(data).find('li').hide()).find('li').slideDown();
         checkLionbars();
+        loadPopovers();
         nextPage++ },
       complete: function(){
         pageScrolling = true } }) } };
