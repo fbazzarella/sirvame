@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def back_to_catalog_path(params = {})
-    return root_path if params[:encontrar].nil?
+    return root_path if params[:encontrar].blank?
 
     root_path +
     (params[:format] == 'js' ? '#!/encontrar/' : '?encontrar=') +

@@ -59,6 +59,7 @@ describe ApplicationHelper do
 
 		it "should return root path" do
 			back_to_catalog_path.should == root_path
+			back_to_catalog_path({encontrar: ''}).should == root_path
 		end
 	end
 
