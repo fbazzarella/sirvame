@@ -35,4 +35,8 @@ class Company < ActiveRecord::Base
   def have_page?
     plan != 'none' && username != ''
   end
+
+  def fix_phone(phone_sugestion)
+    NotificationMailer.fix_phone({id: self.id, name: self.name, phone: phone_sugestion})
+  end
 end

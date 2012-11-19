@@ -79,5 +79,15 @@ describe Company do
 				company3.have_page?.should be_true
 			end
 		end
+
+		describe "fix_phone" do
+			let!(:sugestion) { {id: company1.id, name: company1.name, phone: '(12) 3456-7890'} }
+			let!(:mailer)    { NotificationMailer.fix_phone(sugestion) }
+	    after            { company1.fix_phone(sugestion[:phone]) }
+
+			it "should call notification mailer with a fix phone sugestion" do
+				NotificationMailer.should_receive('fix_phone').with(sugestion).once.and_return(mailer)
+			end
+		end
 	end
 end
