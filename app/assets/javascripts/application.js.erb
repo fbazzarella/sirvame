@@ -76,8 +76,12 @@ $(function(){
 
   $.imgpreload('<%= image_path('layout/background_new_lead.jpg') %>');
 
-  $('span.test').live('click', function(){
-    console.log($(this).closest('li').data('id'))
+  $('.fix-submit').live('click', function(){
+    var fixSugestion = {
+      id:    $(this).closest('li').data('id'),
+      phone: $(this).prev().val() };
+
+    
   })
 
 });

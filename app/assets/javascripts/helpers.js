@@ -20,7 +20,7 @@ function loadFancyBox(){
 function loadPopovers(){
   var popOvers = $('a[rel=popover]');
 
-  popOvers.click(function(e){
+  popOvers.show().click(function(e){
     $('a[rel=popover]').not(this).popover('hide');
     e.preventDefault() });
 
