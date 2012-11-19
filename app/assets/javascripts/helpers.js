@@ -28,17 +28,22 @@ function loadPopovers(){
     html:      true,
     placement: 'bottom',
     title:     'Enviar Sugestão de Correção',
-    content:   $('template#fix-phone').html() })
+    content:   $('#fix-phone-sugestion').html() })
 
   $('.fix-phone .sugestion button').live('click', function(){
-    var fixPhone = {
-      id:    $(this).closest('li').data('id'),
-      phone: $(this).prev().val() };
+    var button = $(this);
+    var result;
 
-    $(this).closest('.fix-phone').slideUp('high', function(){
-      $(this).empty().append($('#fix-phone-thanks').html()).slideDown('high') }) });
+    $.ajax({
+      url: '/companies/' + button.closest('li').data('id') + '/fix_phone',
+      type: 'POST',
+      data: {phone_sugestion: button.prev().val()},
+      dataType: 'html',
+      complete: function(xhr, status){
+        button.closest('.fix-phone').slideUp('high', function(){
+          $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high') }) } }) });
 
-  $('.fix-phone .thanks button').live('click', function(){
+  $('.fix-phone .success button').live('click', function(){
     $(this).closest('.popover').prev().popover('hide') });
 
   $('.fix-phone .error button').live('click', function(){
