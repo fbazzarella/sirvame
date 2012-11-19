@@ -19,4 +19,9 @@ class CompaniesController < ApplicationController
   		render file: Rails.root.join('public/404.html'), layout: false, status: 404
   	end
   end
+
+  def fix_phone
+    Company.find(params[:id]).fix_phone(params[:phone_sugestion])
+    head :ok
+  end
 end

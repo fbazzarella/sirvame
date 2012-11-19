@@ -79,4 +79,28 @@ describe CompaniesController do
 			end
 		end
 	end
+
+	describe "POST fix_phone" do
+		let!(:company) { FactoryGirl.create(:company) }
+
+		def do_action
+			post :fix_phone, id: company.id, phone_sugestion: '(12) 3456-7890'
+		end
+
+		it "should call notification mailer with a fix phone sugestion" do
+			Company.should_receive('find').with(company.id.to_s).once.and_return(company)
+			company.should_receive('fix_phone').with('(12) 3456-7890').once
+			do_action
+		end
+
+		it "should response with success" do
+			do_action
+			response.should be_success
+		end
+
+		it "should response with blank body" do
+			do_action
+			response.body.should be_blank
+		end
+	end
 end
