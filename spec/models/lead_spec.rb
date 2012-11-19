@@ -19,7 +19,7 @@ describe Lead do
 
   describe "after_create" do
     let!(:mailer) { NotificationMailer.new_lead }
-    after { FactoryGirl.create(:lead) }
+    after         { FactoryGirl.create(:lead) }
 
     it "should create and deliver new lead notification email once time" do
       NotificationMailer.should_receive(:new_lead).once.and_return(mailer)
