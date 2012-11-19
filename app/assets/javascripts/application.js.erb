@@ -76,14 +76,4 @@ $(function(){
 
   $.imgpreload('<%= image_path('layout/background_new_lead.jpg') %>');
 
-  $('.fix-phone button').live('click', function(){
-    var fixPhone = {
-      id:    $(this).closest('li').data('id'),
-      phone: $(this).prev().val() };
-
-    $(this).parent().slideUp('high', function(){
-      $(this).empty().append($('#fix-phone-thanks').html()).slideDown('high') })
-    
-  })
-
 });

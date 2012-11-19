@@ -1,13 +1,26 @@
 <templates>
   <template id="fix-phone">
     <div class="fix-phone">
-      <p>Digite o número correto no campo abaixo e clique em 'Sugerir Correção'. Caso não saiba o número, deixe o campo em branco e apenas clique no botão.</p>
-      <input type="text" />
-      <button>Sugerir Correção</button>
+      <div class="sugestion">
+        <p>Digite o número correto no campo abaixo e clique em 'Sugerir Correção'. Caso não saiba o número, deixe o campo em branco e apenas clique no botão.</p>
+        <input type="text" />
+        <button>Sugerir Correção</button>
+      </div>
     </div>
   </template>
   <template id="fix-phone-thanks">
-    <p><strong>Obrigado por colaborar!</strong></p>
-    <p>Vamos conferir o número e atualizaremos o mais breve possível.</p>
+    <div class="thanks">
+      <p><strong>Obrigado por colaborar :-)</strong></p>
+      <p>Vamos conferir o número e se for o caso, atualizaremos o mais breve possível.</p>
+      <button>Ok, Obrigado</button>
+    </div>
+  </template>
+  <template id="fix-phone-error">
+    <div class="error">
+      <p><strong>Ocorreu um erro :-(</strong></p>
+      <p>Por favor, tente novamente.</p>
+      <p>Caso o erro persista, possivelmente a conexão com a internet caiu ou está lenta e com isso, sugerimos que tente em outro momento.</p>
+      <button>Tentar Novamente</button>
+    </div>
   </template>
 </templates>

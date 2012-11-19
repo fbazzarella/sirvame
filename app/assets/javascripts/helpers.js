@@ -28,7 +28,22 @@ function loadPopovers(){
     html:      true,
     placement: 'bottom',
     title:     'Enviar Sugestão de Correção',
-    content:   $('template#fix-phone').html() }) };
+    content:   $('template#fix-phone').html() })
+
+  $('.fix-phone .sugestion button').live('click', function(){
+    var fixPhone = {
+      id:    $(this).closest('li').data('id'),
+      phone: $(this).prev().val() };
+
+    $(this).closest('.fix-phone').slideUp('high', function(){
+      $(this).empty().append($('#fix-phone-thanks').html()).slideDown('high') }) });
+
+  $('.fix-phone .thanks button').live('click', function(){
+    $(this).closest('.popover').prev().popover('hide') });
+
+  $('.fix-phone .error button').live('click', function(){
+    $(this).closest('.fix-phone').slideUp('high', function(){
+      $(this).empty().append($('template .fix-phone').html()).slideDown('high') }) }) };
 
 function sanitize(params, direction){
   if(!params) return '';
