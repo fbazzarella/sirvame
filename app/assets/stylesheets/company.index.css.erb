@@ -134,13 +134,18 @@ header.search input[type=text] {
   font-weight: normal;
 }
 
-.fix-sugestion {
-  margin-bottom: 10px;
+.fix-phone p {
+  width: 196px;
+  font-size: .9em;
+}
+
+.fix-phone input {
+  margin: 10px 0;
   width: 196px;
   font-size: 1em !important;
 }
 
-.fix-submit {
+.fix-phone button {
   position: relative;
   background: transparent url('<%= image_path('layout/fix_submit.png') %>');
   left: -1px;
@@ -155,12 +160,12 @@ header.search input[type=text] {
   text-transform: uppercase;
 }
 
-.fix-submit:hover {
+.fix-phone button:hover {
   background-position: left -35px;
   cursor: pointer;
 }
 
-.fix-submit:active {
+.fix-phone button:active {
   background-position: left -70px;
   outline: none;
   top: 1px;

@@ -27,8 +27,8 @@ function loadPopovers(){
   popOvers.popover({
     html:      true,
     placement: 'bottom',
-    title:     'Digite o Número Correto',
-    content:   $('templates #fix-phone').html() }) };
+    title:     'Enviar Sugestão de Correção',
+    content:   $('template#fix-phone').html() }) };
 
 function sanitize(params, direction){
   if(!params) return '';
