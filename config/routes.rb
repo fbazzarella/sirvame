@@ -5,10 +5,11 @@ SirvaMe::Application.routes.draw do
   post '/experimente-gratis-sem-compromisso-por-30-dias',               to: 'leads#create',     as: :leads
   get  '/experimente-gratis-sem-compromisso-por-30-dias/sabia-decisao', to: 'leads#effectived', as: :effectived_lead
   
-  get '/tire-suas-duvidas',      to: 'pages#questions', as: :questions
-  get '/sitemap',                to: 'pages#sitemap',   as: :sitemap
-  get '/robots',                 to: 'pages#robots',    as: :robots
+  get  '/tire-suas-duvidas',       to: 'pages#questions',     as: :questions
+  get  '/sitemap',                 to: 'pages#sitemap',       as: :sitemap
+  get  '/robots',                  to: 'pages#robots',        as: :robots
 
-  get '/encontrar(/:encontrar)', to: 'companies#index', as: :companies
-  get '/:company',               to: 'companies#show',  as: :company
+  post '/companies/:id/fix_phone', to: 'companies#fix_phone', as: :fix_phone
+  get  '/encontrar(/:encontrar)',  to: 'companies#index',     as: :companies
+  get  '/:company',                to: 'companies#show',      as: :company
 end
