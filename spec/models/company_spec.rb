@@ -87,6 +87,7 @@ describe Company do
 
 			it "should call notification mailer with a fix phone sugestion" do
 				NotificationMailer.should_receive('fix_phone').with(sugestion).once.and_return(mailer)
+	      mailer.should_receive(:deliver).once
 			end
 		end
 	end

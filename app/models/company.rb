@@ -37,6 +37,6 @@ class Company < ActiveRecord::Base
   end
 
   def fix_phone(phone_sugestion)
-    NotificationMailer.fix_phone({id: self.id, name: self.name, phone: phone_sugestion})
+    NotificationMailer.fix_phone({id: self.id, name: self.name, phone: phone_sugestion}).deliver
   end
 end
