@@ -21,6 +21,7 @@ function loadPopovers(){
   var popOvers = $('a[rel=popover]');
 
   popOvers.show().click(function(e){
+    setTimeout(function(){ $('.fix-phone input').mask('(99) 9999-9999') }, 10);
     $('a[rel=popover]').not(this).popover('hide');
     e.preventDefault() });
 
@@ -32,13 +33,14 @@ function loadPopovers(){
 
 function loadFixPhone(){
   $('.fix-phone .sugestion button').live('click', function(){
-    var spinContainer = $(this).parent();
-    var spinner = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
+    var spinContainer  = $(this).parent();
+    var phoneSugestion = spinContainer.prev().attr('disabled', 'disabled');
+    var spinner        = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
 
     $.ajax({
       url: '/companies/' + spinContainer.closest('li').data('id') + '/fix_phone',
       type: 'POST',
-      data: {phone_sugestion: spinContainer.prev().val()},
+      data: {phone_sugestion: phoneSugestion.val()},
       dataType: 'html',
       complete: function(xhr, status){
         spinContainer.closest('.fix-phone').slideUp('high', function(){
