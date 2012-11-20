@@ -26,7 +26,7 @@ function loadPopovers(){
 
   popOvers.popover({
     html:      true,
-    placement: 'bottom',
+    placement: 'top',
     title:     'Enviar Sugestão de Correção',
     content:   $('#fix-phone-sugestion').html() }) };
 
