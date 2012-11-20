@@ -32,17 +32,18 @@ function loadPopovers(){
 
 function loadFixPhone(){
   $('.fix-phone .sugestion button').live('click', function(){
-    var button = $(this);
-    var result;
+    var spinContainer = $(this).parent();
+    var spinner = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
 
     $.ajax({
-      url: '/companies/' + button.closest('li').data('id') + '/fix_phone',
+      url: '/companies/' + spinContainer.closest('li').data('id') + '/fix_phone',
       type: 'POST',
-      data: {phone_sugestion: button.prev().val()},
+      data: {phone_sugestion: spinContainer.prev().val()},
       dataType: 'html',
       complete: function(xhr, status){
-        button.closest('.fix-phone').slideUp('high', function(){
-          $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high') }) } }) });
+        spinContainer.closest('.fix-phone').slideUp('high', function(){
+          $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high') }) } }) 
+  });
 
   $('.fix-phone .success button').live('click', function(){
     $(this).closest('.popover').prev().popover('hide') });
