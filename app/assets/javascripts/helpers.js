@@ -28,8 +28,9 @@ function loadPopovers(){
     html:      true,
     placement: 'bottom',
     title:     'Enviar Sugestão de Correção',
-    content:   $('#fix-phone-sugestion').html() })
+    content:   $('#fix-phone-sugestion').html() }) };
 
+function loadFixPhone(){
   $('.fix-phone .sugestion button').live('click', function(){
     var button = $(this);
     var result;
