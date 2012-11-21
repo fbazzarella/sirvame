@@ -1,10 +1,13 @@
 Shuttle.setup do |s|
   s.steps = [
-    'shuttle:start',
+    'shuttle:git:check',
+    'shuttle:git:pull',
     'shuttle:bundle',
     'db:migrate',
     'shuttle:spec',
-    'shuttle:git:push'
+    'shuttle:git:push',
+    'log:clear',
+    'tmp:clear'
   ]
 
   s.stages = {
