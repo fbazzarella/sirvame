@@ -147,7 +147,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
     shoulda-matchers (1.0.0)
-    shuttle (1.2.8)
+    shuttle (1.2.9)
       colored (~> 1.2)
     simplecov (0.7.1)
       multi_json (~> 1.0)
