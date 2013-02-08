@@ -7,25 +7,15 @@ SimpleCov.start('rails') do
 end
 
 require File.expand_path("../../config/environment", __FILE__)
-
 require 'rspec/rails'
 require 'capybara/rspec'
 
-module SpecHelper
-  def simule_page_for_company!
-    let(:company) { FactoryGirl.create(:company) }
-    let(:fixture) { Rails.root.join('spec/fixtures', 'home.html.erb') }
-    let(:to_dir)  { Rails.root.join("app/views/companies/#{company.username}") }
-
-    before { FileUtils.cp(fixture, FileUtils.mkdir_p(to_dir).join) }
-    after  { FileUtils.rm_r(to_dir) }
-  end
-end
+Dir[File.join(File.dirname(__FILE__), 'support/**/*')].each { |f| require f }
 
 Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
-  config.extend SpecHelper, type: :controller
+  config.extend ControllerMacros, type: :controller
 
   config.use_transactional_fixtures = false
 
