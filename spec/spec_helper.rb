@@ -17,11 +17,5 @@ Capybara.javascript_driver = :webkit
 RSpec.configure do |config|
   config.extend ControllerMacros, type: :controller
 
-  config.use_transactional_fixtures = false
-
-  config.before(:suite) { DatabaseCleaner.strategy = :truncation }
-  config.before(:each)  { DatabaseCleaner.start }
-  config.after(:each)   { DatabaseCleaner.clean }
+  config.use_transactional_fixtures = true
 end
-
-ActiveSupport::Dependencies.clear

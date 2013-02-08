@@ -33,6 +33,5 @@ group :test do
   gem 'factory_girl_rails', '3.3.0'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'database_cleaner'
   gem 'simplecov', require: false
 end
