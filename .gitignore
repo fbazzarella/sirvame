@@ -1,5 +1,4 @@
 coverage/
-db/backup/*.pgsql
 db/structure.sql
 log/
 tmp/
