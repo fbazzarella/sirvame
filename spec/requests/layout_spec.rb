@@ -15,11 +15,4 @@ describe "Main Navigation" do
 
     page.should have_content('Em qualquer lugar. A qualquer hora.')
   end
-
-  xit "should display questions page" do
-    visit root_path
-    click_link 'Ajuda'
-
-    page.should have_content('Tire Suas Dúvidas')
-  end
 end

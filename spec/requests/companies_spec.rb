@@ -33,10 +33,10 @@ describe Company do
 					page.should have_content('Movies [dvds]')
 				end
 			end
-			
-			context "with ajax", js: true do
-				it_behaves_like "company search"
-			end
+
+			# context "with ajax", js: true do
+			# 	it_behaves_like "company search" # Run this when JS is modified...
+			# end
 
 			context "without ajax" do
 				it_behaves_like "company search"
