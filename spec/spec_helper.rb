@@ -6,11 +6,11 @@ SimpleCov.start('rails') do
   minimum_coverage 100
 end
 
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 
-Dir[File.join(File.dirname(__FILE__), 'support/**/*')].each { |f| require f }
+Dir[File.expand_path('../support/*', __FILE__)].each { |f| require f }
 
 Capybara.javascript_driver = :webkit
 
