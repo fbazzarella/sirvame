@@ -11,7 +11,6 @@ gem 'kaminari'
 gem 'colored'
 gem 'pry-rails'
 gem 'awesome_print'
-gem 'shuttle'
 
 group :assets do
   gem 'yui-compressor'
@@ -25,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'shuttle'
   gem 'quiet_assets'
 end
 
