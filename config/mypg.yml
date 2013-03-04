@@ -1,2 +1,2 @@
-target_directory: '~/Dropbox/sirvame-apps/backup/sirvame'
+target_directory: '/home/fbazzarella/Dropbox/sirvame-apps/backup/sirvame'
 files_to_keep:    7
