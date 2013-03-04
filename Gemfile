@@ -5,6 +5,7 @@ gem 'thin'
 gem 'exception_notification'
 gem 'pg'
 gem 'pg_search'
+gem 'mypg'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
 
