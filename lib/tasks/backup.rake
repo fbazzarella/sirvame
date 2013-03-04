@@ -8,8 +8,13 @@ namespace :db do
 		config     = ActiveRecord::Base.configurations[Rails.env]
 		backup_dir = '~/Dropbox/sirvame-apps/backup/sirvame'
 		file       = "#{config['database']}_#{Time.now.strftime('%Y%m%d%H%M%S')}.pgsql"
+    keep       = 7
 
 		system "PGPASSWORD=#{config['password']} pg_dump --clean -h localhost -U #{config['username']} #{config['database']} > #{backup_dir}/#{file}"
+
+    files = Dir["#{backup_dir}/*.pgsql"].sort_by{ |f| File.mtime(f) }.reverse
+
+    FileUtils.rm files.last(files.size - files_to_keep) if files.size > files_to_keep
 
 		puts "Done!".green.bold
 	end
