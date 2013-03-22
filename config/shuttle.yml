@@ -9,5 +9,5 @@ steps:
   - tmp:clear
 
 stages:
-  staging:    fbazzarella@sirvame.com:apps/sirvame-staging.git
-  production: fbazzarella@sirvame.com:apps/sirvame-production.git
+  staging:    boss@bazzarella.com:apps/sirvame-staging.git
+  production: boss@bazzarella.com:apps/sirvame-production.git
