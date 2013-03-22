@@ -71,6 +71,6 @@ SirvaMe::Application.configure do
 
   config.middleware.use ExceptionNotifier,
     email_prefix:         '[PRODUCTION] ',
-    sender_address:       %{'Sirva.me Apps' <webbynode-apps@sirva.me>},
+    sender_address:       %{'Sirva.me' <fale-com@sirva.me>},
     exception_recipients: %w{fbazzarella@gmail.com}
 end
