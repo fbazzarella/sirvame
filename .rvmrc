@@ -1,1 +1,1 @@
-rvm use 1.9.3@sirvame --create
+rvm use 2.0.0@sirvame --create
