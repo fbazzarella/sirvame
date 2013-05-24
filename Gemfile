@@ -14,7 +14,7 @@ gem 'pry-rails'
 gem 'awesome_print'
 
 group :assets do
-  gem 'yui-compressor'
+  gem 'uglifier'
   gem 'jquery-rails'
   gem 'jquery-lionbars'
   gem 'fancybox-rails'
