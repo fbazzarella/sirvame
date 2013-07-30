@@ -25,15 +25,15 @@ module ApplicationHelper
   end
 
   def sanitize(params = nil, direction = nil)
-  	return nil if params.nil? || direction.nil?
+    return nil if params.nil? || direction.nil?
 
-		params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
-		params.any? ? params.join({go: ' ', back: '+'}[direction]) : nil
+    params = params.gsub(/,|\s|\++/i, '+').split('+') - ['']
+    params.any? ? params.join({go: ' ', back: '+'}[direction]) : nil
   end
 
   def account_token_for(service = nil)
-  	{
-  		analytics: 'UA-30669028-2',
+    {
+      analytics: 'UA-30669028-2',
       addthis:   'ra-4e8a7fd659dbd41c'
   	}[service]
   end
