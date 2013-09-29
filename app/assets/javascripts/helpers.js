@@ -32,7 +32,7 @@ function loadPopovers(){
     content:   $('#fix-phone-sugestion').html() }) };
 
 function loadFixPhone(){
-  $('.fix-phone .sugestion button').live('click', function(){
+  $('.fix-phone .sugestion button').on('click', function(){
     var spinContainer  = $(this).parent();
     var phoneSugestion = spinContainer.prev().attr('disabled', 'disabled');
     var spinner        = new Spinner(spinOptions).spin(spinContainer.empty()[0]);
@@ -47,10 +47,10 @@ function loadFixPhone(){
           $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high') }) } }) 
   });
 
-  $('.fix-phone .success button').live('click', function(){
+  $('.fix-phone .success button').on('click', function(){
     $(this).closest('.popover').prev().popover('hide') });
 
-  $('.fix-phone .error button').live('click', function(){
+  $('.fix-phone .error button').on('click', function(){
     $(this).closest('.fix-phone').slideUp('high', function(){
       $(this).empty().append($('template .fix-phone').html()).slideDown('high') }) }) };
 

@@ -1,4 +1,3 @@
-# encoding: utf-8
 module ApplicationHelper
   def page_title(title = '')
     (title.blank? ? 'Encontre o que precisa em Valença' : title) + ' - Sirva.me'

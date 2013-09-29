@@ -1,4 +1,3 @@
-# encoding: utf-8
 class NotificationMailer < ActionMailer::Base
   default from: '"Sirva.me Apps" <webbynode-apps@sirva.me>'
 
