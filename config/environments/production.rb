@@ -69,8 +69,10 @@ SirvaMe::Application.configure do
 
   config.action_mailer.default_url_options = { host: 'sirva.me' }
 
-  config.middleware.use ExceptionNotifier,
-    email_prefix:         '[PRODUCTION] ',
-    sender_address:       %{'Sirva.me' <fale-com@sirva.me>},
-    exception_recipients: %w{fbazzarella@gmail.com}
+  config.middleware.use ExceptionNotification::Rack,
+    email: {
+      email_prefix:         '[PRODUCTION] ',
+      sender_address:       %{'Sirva.me' <fale-com@sirva.me>},
+      exception_recipients: %w{fbazzarella@gmail.com}
+    }
 end
