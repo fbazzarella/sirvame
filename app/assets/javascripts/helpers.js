@@ -20,8 +20,11 @@ function loadFancyBox(){
 function loadPopovers(){
   var popOvers = $('a[rel=popover]');
 
-  popOvers.show().click(function(e){
-    setTimeout(function(){ $('.fix-phone input').mask('(99) 9999-9999') }, 10);
+  popOvers.show().on('click', function(e){
+    setTimeout(function(){
+      loadFixPhone();
+      $('.fix-phone input').mask('(99) 9999-9999') }, 10);
+
     $('a[rel=popover]').not(this).popover('hide');
     e.preventDefault() });
 
@@ -44,15 +47,14 @@ function loadFixPhone(){
       dataType: 'html',
       complete: function(xhr, status){
         spinContainer.closest('.fix-phone').slideUp('high', function(){
-          $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high') }) } }) 
-  });
+          $(this).empty().append($('#fix-phone-' + status).html()).slideDown('high');
 
-  $('.fix-phone .success button').on('click', function(){
-    $(this).closest('.popover').prev().popover('hide') });
+          $('.fix-phone .success button').on('click', function(){
+            $(this).closest('.popover').prev().popover('hide') });
 
-  $('.fix-phone .error button').on('click', function(){
-    $(this).closest('.fix-phone').slideUp('high', function(){
-      $(this).empty().append($('template .fix-phone').html()).slideDown('high') }) }) };
+          $('.fix-phone .error button').on('click', function(){
+            $(this).closest('.fix-phone').slideUp('high', function(){
+              $(this).empty().append($('template .fix-phone').html()).slideDown('high') }) }) }) } }) }) };
 
 function sanitize(params, direction){
   if(!params) return '';
