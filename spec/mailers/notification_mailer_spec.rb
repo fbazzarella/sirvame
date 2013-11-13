@@ -5,7 +5,7 @@ describe NotificationMailer do
     let(:mailer) { NotificationMailer.new_lead }
 
     it "should set correct header From" do
-      mailer.header['From'].to_s.should == '"Sirva.me Apps" <webbynode-apps@sirva.me>'
+      mailer.header['From'].to_s.should == '"Sirva.me Apps" <fale-com@sirva.me>'
     end
 
     it "should set correct header To" do
@@ -29,7 +29,7 @@ describe NotificationMailer do
     let(:mailer) { NotificationMailer.fix_phone({id: 1, name: 'Name', phone: '(12) 3456-7890'}) }
 
     it "should set correct header From" do
-      mailer.header['From'].to_s.should == '"Sirva.me Apps" <webbynode-apps@sirva.me>'
+      mailer.header['From'].to_s.should == '"Sirva.me Apps" <fale-com@sirva.me>'
     end
 
     it "should set correct header To" do
