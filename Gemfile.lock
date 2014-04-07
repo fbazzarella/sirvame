@@ -52,9 +52,6 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    exception_notification (4.0.1)
-      actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -183,7 +180,6 @@ DEPENDENCIES
   capybara (= 1.1.2)
   capybara-webkit
   colored
-  exception_notification
   factory_girl_rails
   fancybox-rails
   jquery-lionbars

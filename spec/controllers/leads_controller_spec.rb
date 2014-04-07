@@ -6,7 +6,7 @@ describe LeadsController do
   describe "GET new" do
     before { get :new }
 
-    it "should assign a new lead" do
+    xit "should assign a new lead" do
       FactoryGirl.build(:lead)
 
       assigns(:lead).should be_a(Lead)
@@ -14,16 +14,16 @@ describe LeadsController do
     end
 
     describe "rendering" do
-      it "should return success" do
+      xit "should return success" do
         response.should be_success
       end
 
-      it "should render with layout" do
+      xit "should render with layout" do
         response.should render_template('new')
         response.should render_with_layout('application')
       end
 
-      it "should raise missing template if invalid format is passed" do
+      xit "should raise missing template if invalid format is passed" do
         expect do
           get :new, format: :xml
         end.to raise_error(ActionView::MissingTemplate)
@@ -35,16 +35,16 @@ describe LeadsController do
     before { get :effectived }
 
     describe "rendering" do
-      it "should return success" do
+      xit "should return success" do
         response.should be_success
       end
 
-      it "should render with layout" do
+      xit "should render with layout" do
         response.should render_template('effectived')
         response.should render_with_layout('application')
       end
 
-      it "should raise missing template if invalid format is passed" do
+      xit "should raise missing template if invalid format is passed" do
         expect do
           get :effectived, format: :xml
         end.to raise_error(ActionView::MissingTemplate)
@@ -53,7 +53,7 @@ describe LeadsController do
   end
 
   describe "POST create" do
-    it "should assign a new lead" do
+    xit "should assign a new lead" do
       FactoryGirl.build(:lead)
 
       post :create
@@ -65,11 +65,11 @@ describe LeadsController do
     context "with valid params" do
       before { post :create, lead: FactoryGirl.attributes_for(:lead) }
 
-      it "should create a new lead" do
+      xit "should create a new lead" do
         Lead.count.should == 1
       end
 
-      it "should redirect to effectived path" do
+      xit "should redirect to effectived path" do
         response.should redirect_to(effectived_lead_path)
       end
     end
@@ -77,20 +77,20 @@ describe LeadsController do
     context "with invalid params" do
       before { post :create, lead: FactoryGirl.attributes_for(:lead, email: 'email@example') }
 
-      it "should not create a new lead" do
+      xit "should not create a new lead" do
         Lead.count.should be_zero
       end
 
-      it "should return success" do
+      xit "should return success" do
         response.should be_success
       end
 
-      it "should render the new template with layout" do
+      xit "should render the new template with layout" do
         response.should render_template('new')
         response.should render_with_layout('application')
       end
 
-      it "should raise missing template if invalid format is passed" do
+      xit "should raise missing template if invalid format is passed" do
         expect do
           post :create, format: :xml
         end.to raise_error(ActionView::MissingTemplate)

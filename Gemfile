@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
-gem 'exception_notification'
 gem 'pg'
 gem 'pg_search', '0.5'
 gem 'mypg'

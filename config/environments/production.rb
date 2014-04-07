@@ -68,11 +68,4 @@ SirvaMe::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { host: 'sirva.me' }
-
-  config.middleware.use ExceptionNotification::Rack,
-    email: {
-      email_prefix:         '[PRODUCTION] ',
-      sender_address:       %{'Sirva.me' <fale-com@sirva.me>},
-      exception_recipients: %w{fbazzarella@gmail.com}
-    }
 end

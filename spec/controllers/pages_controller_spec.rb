@@ -6,16 +6,16 @@ describe PagesController do
   describe "GET questions" do
     before { get :questions }
 
-    it "should return success" do
+    xit "should return success" do
       response.should be_success
     end
 
-    it "should render questions with layout" do
+    xit "should render questions with layout" do
       response.should render_template('questions')
       response.should render_with_layout('application')
     end
 
-    it "should raise missing template if invalid format is passed" do
+    xit "should raise missing template if invalid format is passed" do
       expect do
         get :questions, format: :xml
       end.to raise_error(ActionView::MissingTemplate)

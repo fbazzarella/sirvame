@@ -17,8 +17,3 @@ production:
   <<: *commom
   database: sirvame_production
   password: expira90
-
-staging:
-  <<: *commom
-  database: sirvame_staging
-  password: expira90

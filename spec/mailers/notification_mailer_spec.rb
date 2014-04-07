@@ -5,11 +5,11 @@ describe NotificationMailer do
     let(:mailer) { NotificationMailer.new_lead }
 
     it "should set correct header From" do
-      mailer.header['From'].to_s.should == '"Sirva.me Apps" <fale-com@sirva.me>'
+      mailer.header['From'].to_s.should == '"Atendimento Sirva.me" <fbazzarella@gmail.com>'
     end
 
     it "should set correct header To" do
-      mailer.header['To'].to_s.should == '"Atendimento Sirva.me" <fale-com@sirva.me>'
+      mailer.header['To'].to_s.should == '"Atendimento Sirva.me" <fbazzarella@gmail.com>'
     end
 
     it "should set correct subject" do
@@ -29,11 +29,11 @@ describe NotificationMailer do
     let(:mailer) { NotificationMailer.fix_phone({id: 1, name: 'Name', phone: '(12) 3456-7890'}) }
 
     it "should set correct header From" do
-      mailer.header['From'].to_s.should == '"Sirva.me Apps" <fale-com@sirva.me>'
+      mailer.header['From'].to_s.should == '"Atendimento Sirva.me" <fbazzarella@gmail.com>'
     end
 
     it "should set correct header To" do
-      mailer.header['To'].to_s.should == '"Atendimento Sirva.me" <fale-com@sirva.me>'
+      mailer.header['To'].to_s.should == '"Atendimento Sirva.me" <fbazzarella@gmail.com>'
     end
 
     it "should set correct subject" do
