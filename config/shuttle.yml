@@ -1,5 +1,0 @@
-steps:
-  - shuttle:spec
-  - shuttle:git:push
-  - log:clear
-  - tmp:clear

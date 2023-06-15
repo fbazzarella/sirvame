@@ -1,0 +1,23 @@
+common: &common
+  adapter:  postgresql
+  encoding: utf8
+  pool:     25
+
+local: &local
+  <<: *common
+  username: postgres
+
+development:
+  <<: *local
+  database: sirvame_development
+
+test:
+  <<: *local
+  database: sirvame_test
+
+production:
+  <<: *common
+  database: _database 
+  username: _username
+  password: _password
+  host:     _host
